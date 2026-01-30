@@ -7,5 +7,6 @@
     "startSite":"01/01/2021",
     "filingNum":"ICP备20210628号",
     "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
+    "script":"<script>document.getElementById('cmButton').click();</script>",
     "GMEEK_VERSION":"last"
 }
