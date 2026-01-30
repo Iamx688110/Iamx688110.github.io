@@ -1,6 +1,11 @@
 {
-    "displayTitle":"Meekdai",
-    "homeUrl":"http://blog.meekdai.com",
-    "faviconUrl":"https://github.githubassets.com/favicons/favicon.svg",
+    "title":"陈金福的78小博客",
+    "subTitle":"分享下载链接、源码、教程、帮助等等",
+    "avatarUrl":"https://s1.imagehub.cc/images/2026/01/26/0a1d937d95382d02921bc0b5d2cfcf9f.jpg",
+    "allHead":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
     "GMEEK_VERSION":"last"
+    "startSite":"01/01/2021",
+    "filingNum":"ICP备20210628号",
+    "onePageListNum":10,
 }
