@@ -5,7 +5,7 @@
     "allHead":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script>",
     "startSite":"01/01/2021",
     "filingNum":"ICP备20210628号",
-    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script>",
+    "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
     "singlePage":["about"],
     "GMEEK_VERSION":"last"
 }
