@@ -26,8 +26,7 @@
 ❌ 不接受违反中华人民共和国法律法规的站点
 
 如果符合如上条件，可在本页面评论区留言您的友链信息
-`- name: Meekdai
-- url: https://meekdai.com
-- avatar: https://blog.meekdai.com/avatar.svg
-- desc: 童话是一种生活态度，仅此而已。
-`
+`- name: Chen Jinfu
+- url: https://iamx688110.github.io/
+- avatar: https://s1.imagehub.cc/images/2026/01/26/0a1d937d95382d02921bc0b5d2cfcf9f.jpg
+- desc: 分享下载链接、源码、教程、帮助等等`
