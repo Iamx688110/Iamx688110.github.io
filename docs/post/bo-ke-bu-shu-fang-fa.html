@@ -10,10 +10,10 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="博客部署
+<meta name="description" content="# 部署
 Gmeek一个博客框架，超轻量级个人博客模板。">
 <meta property="og:title" content="博客部署方法">
-<meta property="og:description" content="博客部署
+<meta property="og:description" content="# 部署
 Gmeek一个博客框架，超轻量级个人博客模板。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://Iamx688110.github.io/post/bo-ke-bu-shu-fang-fa.html">
@@ -75,23 +75,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>博客部署<br>
-Gmeek一个博客框架，超轻量级个人博客模板。完全基于 、 和 。不需要本地部署，从搭建到写作，只需要18秒，2步搭建好博客，第3步就是写作。Github PagesGithub IssuesGithub Actions</p>
+<div class="markdown-body" id="postBody"><h1>部署</h1>
+<p>Gmeek一个博客框架，超轻量级个人博客模板。完全基于 、 和 。不需要本地部署，从搭建到写作，只需要18秒，2步搭建好博客，第3步就是写作。Github PagesGithub IssuesGithub Actions</p>
 <p><a href="http://meekdai.github.io/" rel="nofollow">Demo页面</a><br>
 <a href="https://meekdai.github.io/post/Gmeek-geng-xin-ri-zhi.html" rel="nofollow">Gmeek更新日志</a><br>
-<a href="https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html" rel="nofollow">Gmeek快速上手</a><br>
-light</p>
-<p>安装<br>
-1.【创建仓库】点击<a href="https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai">通过模板创建仓库</a>，建议仓库名称为，其中为你的github用户名。XXX.github.ioXXX</p>
+<a href="https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html" rel="nofollow">Gmeek快速上手</a></p>
+<h1>安装</h1>
+<p>1.【创建仓库】点击<a href="https://github.com/new?template_name=Gmeek-template&amp;template_owner=Meekdai">通过模板创建仓库</a>，建议仓库名称为，其中为你的github用户名。XXX.github.ioXXX</p>
 <p>2.【启用Pages】在仓库的中下面选择。SettingsPages-&gt;Build and deployment-&gt;SourceGithub Actions</p>
 <p>3.【开始写作】打开一篇issue，开始写作，并且必须添加一个（至少添加一个），再保存issue后会自动创建博客内容，片刻后可通过<a href="https://xxx.github.io/" rel="nofollow">https://xxx.github.io/</a> 访问（可进入Actions页面查看构建进度）。标签Label</p>
 <p>4.【手动全局生成】这个步骤只有在修改文件或者出现奇怪问题的时候，需要执行。config.json</p>
 <p>通过Actions-&gt;build Gmeek-&gt;Run workflow-&gt;里面的按钮全局重新生成一次<br>
-提交问题<br>
-如果有问题可参考<a href="https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html" rel="nofollow">Gmeek快速上手</a><br>
-在本仓库提交<a href="https://github.com/Meekdai/Gmeek/issues">Issues</a>之前，请手动全局生成一次。如果还有错误，提交后，我会帮忙查看构建流程，定位问题出处。Issues<br>
-特性<br>
-UI界面和Github同源，只引入了Github原生CSS：<a href="https://primer.style/css" rel="nofollow">primer.style</a><br>
+在本仓库提交<a href="https://github.com/Meekdai/Gmeek/issues">Issues</a>之前，请手动全局生成一次。如果还有错误，提交后，我会帮忙查看构建流程，定位问题出处。</p>
+<h1>特性</h1>
+<p>UI界面和Github同源，只引入了Github原生CSS：<a href="https://primer.style/css" rel="nofollow">primer.style</a><br>
 博客写作在Issues中完成后，自动触发Actions执行部署任务<br>
 评论系统引入<a href="https://utteranc.es/" rel="nofollow">utteranc.es</a><br>
 使用对html进行渲染，可通过模板自定义UI主题jinja2</p></div>
