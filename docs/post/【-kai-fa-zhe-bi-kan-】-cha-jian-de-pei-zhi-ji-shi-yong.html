@@ -19,7 +19,7 @@
 <meta property="og:url" content="https://Iamx688110.github.io/post/%E3%80%90-kai-fa-zhe-bi-kan-%E3%80%91-cha-jian-de-pei-zhi-ji-shi-yong.html">
 <meta property="og:image" content="https://s1.imagehub.cc/images/2026/01/26/0a1d937d95382d02921bc0b5d2cfcf9f.jpg">
 <title>【开发者必看】插件的配置及使用</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -55,7 +55,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     font-size: 12px;
 }
 </style>
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style><style>.markdown-alert.markdown-alert-caution {border-left-color:var(--borderColor-danger-emphasis, var(--color-danger-emphasis));background-color:var(--color-danger-subtle);}.markdown-alert.markdown-alert-caution .markdown-alert-title {color: var(--fgColor-danger,var(--color-danger-fg));}</style>
 
 
 
@@ -100,7 +100,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 <p>全站添加Vercount，只需要在config.json文件内添加配置<br>
 <code class="notranslate">"allHead":"&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'&gt;&lt;/script&gt;",</code><br>
-单个文章页添加不蒜子，只需要在文章最后一行添加如下<br>
+单个文章页添加Vercount，只需要在文章最后一行添加如下<br>
 <code class="notranslate">&lt;!-- ##{"script":"&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'&gt;&lt;/script&gt;"}## --&gt;</code></p>
 <h1>TOC目录</h1>
 <div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>效果预览：<a href="https://meekdai.github.io/post/markdown-ce-shi-ye-mian.html" rel="nofollow">markdown测试页面</a><br>
@@ -126,156 +126,261 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h1>多插件使用</h1>
 <p>同时在所有文章页使用TOC目录和灯箱插件，需要这样添加配置文件：<br>
 <code class="notranslate">"script":"&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;",</code><br>
-同时在一篇文章页使用TOC目录和灯箱插件，需要这样添加配置文件：</p>
-<pre class="notranslate"><code class="notranslate">&lt;!-- ##{"script":"&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;"}## --&gt;
-
-&gt; [!Caution]
-&gt; 需要特别注意区分script head allHead 等这些键的用途
-&gt; 有了插件就可以在基础版的Gmeek框架上玩出很多很多定制化的功能，简单的UI修改也可以通过插件实现，只需要学习一点点前端知识，另外非常欢迎大家一起完善Gmeek，开发出更多的插件。
-
-# 二、配置文件
-&gt; [!Caution]
-&gt; 按照安装步骤成功搭建好后，就可以阅读下面的内容修改配置文件啦。
-&gt; 注意修改配置文件后一定要手动全局生成一次，不然会报错。
-&gt; 如果对json格式不熟悉，建议先简单学习一下。
-
-config.json 文件就是配置文件，在创建的仓库内可以找到，对应修改为自己的即可。
-
-
+同时在一篇文章页使用TOC目录和灯箱插件，需要这样添加配置：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span> ##{"script":"&lt;script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'&gt;&lt;/script&gt;&lt;script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'&gt;&lt;/script&gt;"}## <span class="pl-c">--&gt;</span></span></pre></div>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>需要特别注意区分script、head、allHead等这些键的用途：</p>
+<ul>
+<li>allHead：作用于所有页面（首页+文章页）</li>
+<li>script：仅作用于所有文章页</li>
+<li>head：仅作用于单篇文章页的head区域<br>
+有了插件就可以在基础版的Gmeek框架上玩出很多定制化的功能，简单的UI修改也可以通过插件实现，只需要学习一点点前端知识。另外非常欢迎大家一起完善Gmeek，开发出更多的插件。</li>
+</ul>
+</div>
+<h1>二、配置文件</h1>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p>按照安装步骤成功搭建好后，就可以阅读下面的内容修改配置文件啦。<br>
+注意修改配置文件后一定要手动全局生成一次，不然会报错。<br>
+如果对json格式不熟悉，建议先简单学习一下。</p>
+</div>
+<p>config.json 文件就是配置文件，在创建的仓库内可以找到，对应修改为自己的即可。</p>
+<h2>基础必填配置</h2>
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+    <span class="pl-ent">"title"</span>:<span class="pl-s"><span class="pl-pds">"</span>Meekdai<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"subTitle"</span>:<span class="pl-s"><span class="pl-pds">"</span>童话是一种生活态度，仅此而已。<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"avatarUrl"</span>:<span class="pl-s"><span class="pl-pds">"</span>https://github.githubassets.com/favicons/favicon.svg<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"GMEEK_VERSION"</span>:<span class="pl-s"><span class="pl-pds">"</span>last<span class="pl-pds">"</span></span>
+}</pre></div>
+<h2>完整可选配置（整合后）</h2>
+<p>以上是必须的字段，下面是可以自定义的字段，可按需加入到config.json中（已修复JSON格式错误）：</p>
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+    <span class="pl-ent">"title"</span>:<span class="pl-s"><span class="pl-pds">"</span>Meekdai<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"subTitle"</span>:<span class="pl-s"><span class="pl-pds">"</span>童话是一种生活态度，仅此而已。<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"avatarUrl"</span>:<span class="pl-s"><span class="pl-pds">"</span>https://github.githubassets.com/favicons/favicon.svg<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"GMEEK_VERSION"</span>:<span class="pl-s"><span class="pl-pds">"</span>last<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"displayTitle"</span>:<span class="pl-s"><span class="pl-pds">"</span>Meekdai<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"homeUrl"</span>:<span class="pl-s"><span class="pl-pds">"</span>http://blog.meekdai.com<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"faviconUrl"</span>:<span class="pl-s"><span class="pl-pds">"</span>https://github.githubassets.com/favicons/favicon.svg<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"email"</span>:<span class="pl-s"><span class="pl-pds">"</span>meekdai@163.com<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"startSite"</span>:<span class="pl-s"><span class="pl-pds">"</span>02/16/2015<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"filingNum"</span>:<span class="pl-s"><span class="pl-pds">"</span>浙ICP备20023628号<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"onePageListNum"</span>:<span class="pl-c1">15</span>,
+    <span class="pl-ent">"singlePage"</span>:[<span class="pl-s"><span class="pl-pds">"</span>about<span class="pl-pds">"</span></span>],
+    <span class="pl-ent">"iconList"</span>:{<span class="pl-ent">"music"</span>:<span class="pl-s"><span class="pl-pds">"</span>M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z<span class="pl-pds">"</span></span>},
+    <span class="pl-ent">"exlink"</span>:{<span class="pl-ent">"music"</span>:<span class="pl-s"><span class="pl-pds">"</span>https://music.meekdai.com<span class="pl-pds">"</span></span>},
+    <span class="pl-ent">"commentLabelColor"</span>:<span class="pl-s"><span class="pl-pds">"</span>#006b75<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"yearColorList"</span>:[<span class="pl-s"><span class="pl-pds">"</span>#bc4c00<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>#0969da<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>#1f883d<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>#A333D0<span class="pl-pds">"</span></span>],
+    <span class="pl-ent">"i18n"</span>:<span class="pl-s"><span class="pl-pds">"</span>CN<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"UTC"</span>:<span class="pl-c1">8</span>,
+    <span class="pl-ent">"themeMode"</span>:<span class="pl-s"><span class="pl-pds">"</span>manual<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"dayTheme"</span>:<span class="pl-s"><span class="pl-pds">"</span>light<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"nightTheme"</span>:<span class="pl-s"><span class="pl-pds">"</span>dark_colorblind<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"urlMode"</span>:<span class="pl-s"><span class="pl-pds">"</span>pinyin<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"style"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"script"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"head"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"allHead"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"indexStyle"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"indexScript"</span>:<span class="pl-s"><span class="pl-pds">"</span><span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"showPostSource"</span>:<span class="pl-c1">1</span>,
+    <span class="pl-ent">"rssSplit"</span>:<span class="pl-s"><span class="pl-pds">"</span>sentence<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"bottomText"</span>:<span class="pl-s"><span class="pl-pds">"</span>转载请注明出处<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"ogImage"</span>:<span class="pl-s"><span class="pl-pds">"</span>https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"primerCSS"</span>:<span class="pl-s"><span class="pl-pds">"</span>&lt;link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' /&gt;<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"needComment"</span>:<span class="pl-c1">0</span>
+}</pre></div>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p>
+<ol>
+<li>最后一行配置末尾<strong>不需要</strong>加逗号</li>
+<li>其他行末尾都需要加<strong>英文逗号</strong></li>
+<li>所有引号必须是英文双引号，不能使用中文引号</li>
+<li>可通过 <a href="https://jsonlint.com/" rel="nofollow">JSON校验工具</a> 验证配置格式是否正确</li>
+</ol>
+</div>
+<h2>配置参数说明</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>配置参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>【必填】博客标题</td>
+</tr>
+<tr>
+<td>subTitle</td>
+<td>【必填】博客描述&amp;自述</td>
+</tr>
+<tr>
+<td>avatarUrl</td>
+<td>【必填】博客头像</td>
+</tr>
+<tr>
+<td>GMEEK_VERSION</td>
+<td>【必填】Gmeek版本，一般写last也可以用具体tag版本</td>
+</tr>
+<tr>
+<td>displayTitle</td>
+<td>用于头像后面的标题展示，如果和title一致则不用添加</td>
+</tr>
+<tr>
+<td>homeUrl</td>
+<td>博客的主页地址，自定义域名时需要配置</td>
+</tr>
+<tr>
+<td>faviconUrl</td>
+<td>页面的favicon地址，如果和avatarUrl一致则不用添加</td>
+</tr>
+<tr>
+<td>email</td>
+<td>用于自动提交仓库时用，不添加也可以</td>
+</tr>
+<tr>
+<td>startSite</td>
+<td>用于页面底部显示网站运行天数</td>
+</tr>
+<tr>
+<td>filingNum</td>
+<td>用于页面底部显示备案信息</td>
+</tr>
+<tr>
+<td>onePageListNum</td>
+<td>用于首页每页展示的文章数量</td>
+</tr>
+<tr>
+<td>singlePage</td>
+<td>自定义独立页面，例如about或者link等</td>
+</tr>
+<tr>
+<td>iconList</td>
+<td>用于定义singlePage按钮展示的SVG图标 (16px)，about和link内置无需定义</td>
+</tr>
+<tr>
+<td>exlink</td>
+<td>用于自定义首页右上角圆形按钮到外部链接功能，按钮图标定义在iconList中</td>
+</tr>
+<tr>
+<td>commentLabelColor</td>
+<td>用于自定义显示评论数量标签的颜色</td>
+</tr>
+<tr>
+<td>yearColorList</td>
+<td>用于自定义显示不同年份标签的颜色</td>
+</tr>
+<tr>
+<td>i18n</td>
+<td>用于定义博客语言，目前支持EN/CN/RU</td>
+</tr>
+<tr>
+<td>UTC</td>
+<td>用于定义时区</td>
+</tr>
+<tr>
+<td>themeMode</td>
+<td>用于定义主题模式，默认为manual，也可选择fix</td>
+</tr>
+<tr>
+<td>dayTheme</td>
+<td>用于定义亮主题</td>
+</tr>
+<tr>
+<td>nightTheme</td>
+<td>用于定义暗主题</td>
+</tr>
+<tr>
+<td>urlMode</td>
+<td>用于定义文章链接生成模式，目前支持pinyin/issue/ru_translit</td>
+</tr>
+<tr>
+<td>style</td>
+<td>用于自定义文章页CSS</td>
+</tr>
+<tr>
+<td>script</td>
+<td>用于自定义文章页JavaScript</td>
+</tr>
+<tr>
+<td>head</td>
+<td>用于自定义文章页head内容</td>
+</tr>
+<tr>
+<td>allHead</td>
+<td>用于自定义所有页面head内容</td>
+</tr>
+<tr>
+<td>indexStyle</td>
+<td>用于自定义首页CSS</td>
+</tr>
+<tr>
+<td>indexScript</td>
+<td>用于自定义首页JavaScript</td>
+</tr>
+<tr>
+<td>showPostSource</td>
+<td>设置为1则在文章页显示issue链接按钮，设置为0则不显示</td>
+</tr>
+<tr>
+<td>rssSplit</td>
+<td>设置RSS输出的截断符号，默认sentence为第一句话，可配置其他特殊符号</td>
+</tr>
+<tr>
+<td>bottomText</td>
+<td>用于设置文章页面右下角显示的内容</td>
+</tr>
+<tr>
+<td>ogImage</td>
+<td>用于设置Open Graph协议展示的图片</td>
+</tr>
+<tr>
+<td>primerCSS</td>
+<td>用于设置primer.css的CDN地址，默认使用南科大镜像</td>
+</tr>
+<tr>
+<td>needComment</td>
+<td>用于设置是否需要评论功能，1开启评论，0关闭</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h1>常见问题</h1>
+<ol>
+<li>导入以前的文章<br>
+如需修改发布时间，可以在文章最后一行添加如下代码。里面的时间是采用时间戳的形式，可以用 <a href="https://tool.lu/timestamp" rel="nofollow">时间戳转换工具</a> 转换。</li>
+</ol>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span> ##{"timestamp":1490764800}## <span class="pl-c">--&gt;</span></span></pre></div>
+<ol start="2">
+<li>自定义单篇文章参数<br>
+自定义单篇文章页面的style和script：</li>
+</ol>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span> ##{"style":"&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;"}## <span class="pl-c">--&gt;</span></span>
+<span class="pl-c"><span class="pl-c">&lt;!--</span> ##{"script":"&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;"}## <span class="pl-c">--&gt;</span></span></pre></div>
+<ol start="3">
+<li>多种自定义参数<br>
+可同时添加多种自定义参数（参数间用英文逗号分隔，最后一个参数后无逗号）：</li>
+</ol>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-c"><span class="pl-c">&lt;!--</span> ##{"script":"&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;","style":"&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;","timestamp":1490764800}## <span class="pl-c">--&gt;</span></span></pre></div>
+<ol start="4">
+<li>自定义全局文章参数<br>
+添加全局文章页面的style和script，在config.json文件中添加：</li>
+</ol>
+<div class="highlight highlight-source-json"><pre class="notranslate"><span class="pl-ent">"style"</span>:<span class="pl-s"><span class="pl-pds">"</span>&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;<span class="pl-pds">"</span></span>,
+<span class="pl-ent">"script"</span>:<span class="pl-s"><span class="pl-pds">"</span>&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;<span class="pl-pds">"</span></span>,</pre></div>
+<ol start="5">
+<li>
+<p>置顶博客文章<br>
+只需要Pin issue后，手动全局生成一次即可。</p>
+</li>
+<li>
+<p>utteranc报错<br>
+如果在评论里面登录后评论报错，可直接按照提示安装utteranc app即可</p>
+</li>
+</ol>
+<pre class="notranslate"><code class="notranslate">Error: utterances is not installed on xxx/xxx.github.io. If you own this repo, install the app. Read more about this change in the PR.
 </code></pre>
-<p>{<br>
-"title":"Meekdai",<br>
-"subTitle":"童话是一种生活态度，仅此而已。",<br>
-"avatarUrl":"<a href="https://github.githubassets.com/favicons/favicon.svg" rel="nofollow">https://github.githubassets.com/favicons/favicon.svg</a>",<br>
-"GMEEK_VERSION":"last"<br>
-}</p>
-<pre class="notranslate"><code class="notranslate">
-
-
-   以上是必须的字段，下面是可以自定义字段的描述，可以选择加入到config.json中。
-
-
-</code></pre>
-<p>"displayTitle":"Meekdai",<br>
-"homeUrl":"<a href="http://blog.meekdai.com" rel="nofollow">http://blog.meekdai.com</a>",<br>
-"faviconUrl":"<a href="https://github.githubassets.com/favicons/favicon.svg" rel="nofollow">https://github.githubassets.com/favicons/favicon.svg</a>",<br>
-"email":"<a href="mailto:meekdai@163.com">meekdai@163.com</a>",<br>
-"startSite":"02/16/2015",<br>
-"filingNum":"浙ICP备20023628号",<br>
-"onePageListNum":15,<br>
-"singlePage":["about"],<br>
-"iconList":{"music":"M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13Z"},<br>
-"exlink":{"music":"<a href="https://music.meekdai.com%22%7D" rel="nofollow">https://music.meekdai.com"}</a>,<br>
-"commentLabelColor":"#006b75",<br>
-"yearColorList":["#bc4c00", "#0969da", "#1f883d", "#A333D0"],<br>
-"i18n":"CN",<br>
-"UTC":8,<br>
-"themeMode":"manual",<br>
-"dayTheme":"light",<br>
-"nightTheme":"dark_colorblind",<br>
-"urlMode":"pinyin",<br>
-"style":"",<br>
-"script":"",<br>
-"head":"",<br>
-"allHead":"",<br>
-"indexStyle":"",<br>
-"indexScript":"",<br>
-"showPostSource":1,<br>
-"rssSplit":"sentence",<br>
-"bottomText":"转载请注明出处",<br>
-"ogImage":"<a href="https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg" rel="nofollow">https://cdn.jsdelivr.net/gh/Meekdai/meekdai.github.io/logo64.jpg</a>",<br>
-"primerCSS":"",<br>
-"needComment":0,</p>
-<pre class="notranslate"><code class="notranslate">
-
-
-&gt; [!Caution]
-&gt;最后一行配置末尾不需要逗号，其他行末尾都需要逗号（英文逗号）
-
-
-
-配置参数 | 说明
--- | --
-title | 【必填】博客标题
-subTitle | 【必填】博客描述&amp;自述
-avatarUrl | 【必填】博客头像
-GMEEK_VERSION | 【必填】Gmeek版本，一般写last也可以用具体tag版本
-displayTitle | 用于头像后面的标题展示，如果和title一致则不用添加
-homeUrl | 博客的主页地址，自定义域名时需要配置
-faviconUrl | 页面的favicon地址，如果和avatarUrl一致则不用添加
-email | 用于自动提交仓库时用，不添加也可以
-startSite | 用于页面底部显示网站运行天数
-filingNum | 用于页面底部显示备案信息
-onePageListNum | 用于首页每页展示的文章数量
-singlePage | 自定义独立页面，例如about或者link等
-iconList | 用于定义singlePage按钮展示的SVG图标 (16px)，about和link内置无需定义
-exlink | 用于自定义首页右上角圆形按钮到外部链接功能，按钮图标定义在iconList中
-commentLabelColor | 用于自定义显示评论数量标签的颜色
-yearColorList | 用于自定义显示不同年份标签的颜色
-i18n | 用于定义博客语言，目前支持EN/CN/RU
-UTC | 用于定义时区
-themeMode | 用于定义主题模式，默认为manual，也可选择fix详细说明
-dayTheme | 用于定义亮主题
-nightTheme | 用于定义暗主题
-urlMode | 用于定义文章链接生成模式，目前支持pinyin/issue/ru_translit
-style | 用于自定义文章页CSS
-script | 用于自定义文章页JavaScript
-head | 用于自定义文章页head内容
-allHead | 用于自定义所有页面head内容
-indexStyle | 用于自定义首页CSS
-indexScript | 用于自定义首页JavaScript
-showPostSource | 设置为1则在文章页显示issue链接按钮，设置为0则不显示
-rssSplit | 设置RSS输出的截断符号，默认sentence为第一句话，可配置其他特殊符号
-bottomText | 用于设置文章页面右下角显示的内容
-ogImage | 用于设置Open Graph协议展示的图片
-primerCSS | 用于设置primer.css的CDN地址，默认使用南科大
-needComment | 用于设置是否需要评论功能，1开启评论，0关闭
-
-
-
-
-
-# 常见问题
-1. 导入以前的文章
-如需修改发布时间，可以在文章最后一行添加如下代码。里面的时间是采用时间戳的形式，可以用如下[网站](https://tool.lu/timestamp)转换。
-
-`&lt;!-- ##{"timestamp":1490764800}## --&gt;`
-
-
-2. 自定义单篇文章参数
-自定义单篇文章页面的style和script
-
-`&lt;!-- ##{"style":"&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;"}## --&gt;`
-
-`&lt;!-- ##{"script":"&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;"}## --&gt;`
-
-
-3.多种自定义参数
-可同时一起添加多种自定义参数：
-
-`&lt;!-- ##{"script":"&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;","style":"&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;","timestamp":1490764800}## --&gt;`
-
-
-4.自定义全局文章参数
-添加全局文章页面的style和script，在config.json文件中添加
-
-</code></pre>
-<p>"style":"&lt;style&gt;#postBody{font-size:20px}&lt;/style&gt;",<br>
-"script":"&lt;script async src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'&gt;&lt;/script&gt;",</p>
-<pre class="notranslate"><code class="notranslate">
-
-5. 置顶博客文章
-只需要Pin issue后，手动全局生成一次即可。
-
-
-6. utteranc报错
-如果在评论里面登录后评论报错，可直接按照提示安装utteranc app即可
-
-`Error: utterances is not installed on xxx/xxx.github.io. If you own this repo, install the app. Read more about this change in the PR.`
-
-
-7.  删除文章只需要Close issue或者Delete issue后，再手动全局生成一次即可。
-</code></pre></div>
+<ol start="7">
+<li>删除文章<br>
+只需要Close issue或者Delete issue后，再手动全局生成一次即可。</li>
+</ol></div>
 <div style="font-size:small;margin-top:8px;float:right;">【备注】文章取材|@珍珠工作室|@78工作室|@金叶工作室|78论坛|转载请注明出处◑﹏◐</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
