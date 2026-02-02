@@ -5,10 +5,13 @@
 
 # 瓦们会干的事情
 一张图片足矣 ~
-![Image](https://github.com/user-attachments/assets/3dbc16e2-023c-41e7-bbda-abfa57ef3941)
+![Image](https://github.com/user-attachments/assets/3dbc1https://barcode-maker.com/zh?data=CJF-zhuanshutiaoxingyanzhengma6e2-023c-41e7-bbda-abfa57ef3941)
+
+# 如何验证？
+如果你看到了像这样的图片，说明你正确了
 
 # 友情链接
-## 这里记录了一些有趣的链接。
+**这里记录了一些有趣的链接。**
 [kn007](http://kn007.net/) 抒发心情，折腾wp，偶尔的遐想，音乐骚人，爱护自然，帮忙折腾
 [夜枫忆栈](http://yefengs.com/) 多愁善感的小伙子
 [王崇宇的ACG博客](http://www.mr158.cn/) 不屈的心，不懈的努力，不忘欣赏沿路的风景
