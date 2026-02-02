@@ -3,6 +3,13 @@
 原博客上线时间为2021年1月1日，所以新博客（此博客）依旧延续这个时间。
 至现在，我会尽快把我们的文章搬运过来，敬请期待 ~
 
+除了这个小黄人，也有小紫人哦 ~
+![Image](https://github.com/user-attachments/assets/4ee9588a-732b-4507-8189-b9a12277b629)
+
+# 瓦们会干的事情
+一张图片足矣 ~
+![Image](https://github.com/user-attachments/assets/3dbc16e2-023c-41e7-bbda-abfa57ef3941)
+
 # 友情链接
 ## 这里记录了一些有趣的链接。
 [kn007](http://kn007.net/) 抒发心情，折腾wp，偶尔的遐想，音乐骚人，爱护自然，帮忙折腾
