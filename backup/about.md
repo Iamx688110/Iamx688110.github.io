@@ -4,6 +4,9 @@
 至现在，我会尽快把我们的文章搬运过来，敬请期待 ~
 
 除了这个小黄人，也有小紫人哦 ~
+
+<img width="460" height="460" alt="Image" src="https://github.com/user-attachments/assets/0950873e-b76d-42e4-87dd-f7189d58545c" />
+
 ![Image](https://github.com/user-attachments/assets/4ee9588a-732b-4507-8189-b9a12277b629)
 
 # 瓦们会干的事情
