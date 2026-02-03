@@ -8,5 +8,5 @@
     "script":"<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>",
     "singlePage": ["about"],
     "bottomText": "【备注】文章取材  @珍珠工作室  转载请注明出处💛✨",
-    "GEEK_VERSION": "last"
+    "GMEEK_VERSION": "last"
 }
