@@ -5,9 +5,9 @@
     "allHead": "<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script><style>body{background: url('https://images.cnblogs.com/cnblogs_com/blogs/847537/galleries/2471191/o_250818083143');background-size: cover;background-attachment: fixed;}</style>",
     "startSite": "01/01/2021",
     "filingNum": "ICP备20210628号",
-    "script": "<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><div id='commentBox' style='margin:30px auto;padding:0 10px;max-width:1200px;'></div><script src='https://cdn.jsdelivr.net/npm/comment-box@1.2.0/dist/comment-box.min.js' onload='new CommentBox({el:\"#commentBox\",allowAnonymous:true,allowImage:true,allowEmoji:true,placeholder:\"想说点什么？免登录直接发，支持图片和表情～\"})'></script>",
+    "script": "<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
     "singlePage": ["about"],
-    "bottomText": "【备注】文章取材  @珍珠工作室  转载请注明出处◑﹏◐",
+    "bottomText": "【备注】文章取材  @珍珠工作室  转载请注明出处◑﹏◐<div id='comment' style='margin:20px 0;padding:10px;background:rgba(255,255,255,0.9);border-radius:8px;'><h3>评论区</h3><script src='https://cdn.jsdelivr.net/npm/utteranc.es@1.0.0/dist/utteranc.es.min.js' onload='new UtterancEs({el:\"#comment\",repo:\"iamx68811/iamx68811.github.io\",issueTerm:\"pathname\",label:\"comment\"})'></script></div>",
     "needComment": false,
     "GMEEK_VERSION": "last"
 }
