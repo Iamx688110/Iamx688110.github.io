@@ -7,7 +7,7 @@
     "filingNum": "ICP备20210628号",
     "script": "<script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script>",
     "singlePage": ["about"],
-    "bottomText": "【备注】文章取材  @珍珠工作室  转载请注明出处◑﹏◐<div id='comment' style='margin:20px 0;padding:20px;background:rgba(255,255,255,0.9);border-radius:8px;'><h3>评论区</h3><script src='https://utteranc.es/client.js' repo='iamx68811/iamx68811.github.io' issue-term='pathname' theme='github-light' crossorigin='anonymous' async></script></div>",
+    "bottomText": "【备注】文章取材  @珍珠工作室  转载请注明出处◑﹏◐<div id=\"utterances-container\" style=\"margin:30px 0;padding:25px;background:rgba(255,255,255,0.95);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.1);\"><h3 style=\"margin-top:0;color:#333;\">💬 评论区</h3><script src=\"https://utteranc.es/client.js\" repo=\"iamx68811/iamx68811.github.io\" issue-term=\"pathname\" theme=\"github-light\" crossorigin=\"anonymous\"></script></div>",
     "needComment": false,
     "GMEEK_VERSION": "last"
 }
