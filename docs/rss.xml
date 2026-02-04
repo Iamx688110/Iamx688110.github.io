@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Tue, 03 Feb 2026 11:25:24 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>【开发者必看】插件的配置及使用 - 代码版本</title><link>https://Iamx688110.github.io/post/%E3%80%90-kai-fa-zhe-bi-kan-%E3%80%91-cha-jian-de-pei-zhi-ji-shi-yong-%20-%20-dai-ma-ban-ben.html</link><description>可复制 ~
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Wed, 04 Feb 2026 12:42:29 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>【公告】我的博客有桌面版了</title><link>https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</link><description>经过了1天半的思考后，我的博客迎来了第一个桌面版
+网页版体验  https://iamx688110.github.io/819800.github.io/
+
+![Image](https://github.com/user-attachments/assets/cf6f8880-e3b7-4d4d-aa76-8b2c914ccce9)
+
+![Image](https://github.com/user-attachments/assets/e5b5e030-149c-4077-8052-8e8ed3ed2108)
+![Image](https://github.com/user-attachments/assets/82fc4201-4e30-4384-9d9e-2a27d5893d5d)
+你觉得呢...我感觉还不错....嗯...对！！！。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</guid><pubDate>Wed, 04 Feb 2026 12:41:59 +0000</pubDate></item><item><title>【开发者必看】插件的配置及使用 - 代码版本</title><link>https://Iamx688110.github.io/post/%E3%80%90-kai-fa-zhe-bi-kan-%E3%80%91-cha-jian-de-pei-zhi-ji-shi-yong-%20-%20-dai-ma-ban-ben.html</link><description>可复制 ~
 
 ```
 # 一、插件功能的使用
