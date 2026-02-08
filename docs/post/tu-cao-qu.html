@@ -10,22 +10,15 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="吐槽区~
-# 吐槽格式：
-
-```
-1.吐槽日期：
-2.吐槽网址url：
-3.想法：
-```
-
-<!DOCTYPE html>
+<meta name="description" content="<!DOCTYPE html>
 <html>
 <head>
   <meta charset='UTF-8'>
   <title>吐槽区</title>
   <!-- 代码高亮样式 -->
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'>
+  <!-- 表情包样式 -->
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.css'>
 </head>
 <body>
   <h1>吐槽区</h1>
@@ -38,68 +31,54 @@
     <li>想法：</li>
   </ol>
 
-  <!-- 1. Cusdis评论系统容器（必须添加） -->
-  <div id='cusdis_thread'
-    data-host='https://cusdis.com'
-    data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
-    data-page-id='tucao_area'
-    data-page-url='https://iamx688110.github.io/post/tu-cao-qhtml吐槽格式'
-    data-page-title='吐槽区'
-    style='max-width: 800px; margin: 20px 0;'
-  ></div>
+  <!-- Gmeek原生评论区（基于GitHub Issues） -->
+  <div id='gmeek-comments' style='max-width: 800px; margin: 20px 0;'></div>
 
-  <!-- 2. 资源引入 -->
+  <!-- 功能脚本 -->
   <script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'></script>
-  <script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'></script>
-  <script async defer src='https://cusdis.com/js/cusdis.es.js'></script>
-
-  <!-- 3. 增强功能脚本 -->
+  <script src='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.js'></script>
   <script>
-    // 监听Cusdis加载完成
-    document.addEventListener('cusdis:loaded', function() {
-      // 代码高亮
-      Prism.highlightAll();
-
-      // 表情包解析
-      const emojiParser = new EmojiJS();
-      emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
-      emojiParser.img_sets.emojione.sheet = 64;
-
-      // 监听评论新增并解析表情包
-      const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.addedNodes.length) {
-            document.querySelectorAll('#cusdis_thread .comment-content').forEach(el => {
-              if (!el.dataset.emojiParsed) {
-                el.innerHTML = emojiParser.replace_colons(el.innerHTML);
-                el.dataset.emojiParsed = 'true';
-              }
-            });
-          }
+    // 1. 加载GitHub Issues评论
+    function loadComments() {
+      const container = document.getElementById('gmeek-comments');
+      // 调用Gmeek的评论加载接口
+      fetch(`https://api.github.com/repos/lamx688110/lamx688110.github.io/issues?labels=评论`)
+        .then(res => res.json())
+        .then(issues => {
+          issues.forEach(issue => {
+            const commentEl = document.createElement('div');
+            commentEl.style = 'padding: 15px; border-bottom: 1px solid #eee;';
+            // 解析评论中的代码和表情
+            let content = issue.body
+              .replace(/```([\s\S]+?)```/g, '<pre><code class='language-$1'>$1</code></pre>') // 代码块
+              .replace(/:([a-z0-9_]+):/g, '<img src='https://cdn.jsdelivr.net/npm/emojione/assets/png/$1.png' width='20' height='20'>'); // 表情包
+            commentEl.innerHTML = `
+              <h4>${issue.user.login}</h4>
+              <div>${content}</div>
+              <p style='font-size: 12px; color: #999;'>${new Date(issue.created_at).toLocaleString()}</p>
+            `;
+            container.appendChild(commentEl);
+          });
+          // 代码高亮
+          Prism.highlightAll();
         });
-      });
-      observer.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
-    });
+    }
+
+    // 2. 初始化评论区
+    window.onload = loadComments;
   </script>
 </body>
 </html>。">
 <meta property="og:title" content="吐槽区">
-<meta property="og:description" content="吐槽区~
-# 吐槽格式：
-
-```
-1.吐槽日期：
-2.吐槽网址url：
-3.想法：
-```
-
-<!DOCTYPE html>
+<meta property="og:description" content="<!DOCTYPE html>
 <html>
 <head>
   <meta charset='UTF-8'>
   <title>吐槽区</title>
   <!-- 代码高亮样式 -->
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'>
+  <!-- 表情包样式 -->
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.css'>
 </head>
 <body>
   <h1>吐槽区</h1>
@@ -112,48 +91,41 @@
     <li>想法：</li>
   </ol>
 
-  <!-- 1. Cusdis评论系统容器（必须添加） -->
-  <div id='cusdis_thread'
-    data-host='https://cusdis.com'
-    data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
-    data-page-id='tucao_area'
-    data-page-url='https://iamx688110.github.io/post/tu-cao-qhtml吐槽格式'
-    data-page-title='吐槽区'
-    style='max-width: 800px; margin: 20px 0;'
-  ></div>
+  <!-- Gmeek原生评论区（基于GitHub Issues） -->
+  <div id='gmeek-comments' style='max-width: 800px; margin: 20px 0;'></div>
 
-  <!-- 2. 资源引入 -->
+  <!-- 功能脚本 -->
   <script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'></script>
-  <script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'></script>
-  <script async defer src='https://cusdis.com/js/cusdis.es.js'></script>
-
-  <!-- 3. 增强功能脚本 -->
+  <script src='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.js'></script>
   <script>
-    // 监听Cusdis加载完成
-    document.addEventListener('cusdis:loaded', function() {
-      // 代码高亮
-      Prism.highlightAll();
-
-      // 表情包解析
-      const emojiParser = new EmojiJS();
-      emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
-      emojiParser.img_sets.emojione.sheet = 64;
-
-      // 监听评论新增并解析表情包
-      const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-          if (mutation.addedNodes.length) {
-            document.querySelectorAll('#cusdis_thread .comment-content').forEach(el => {
-              if (!el.dataset.emojiParsed) {
-                el.innerHTML = emojiParser.replace_colons(el.innerHTML);
-                el.dataset.emojiParsed = 'true';
-              }
-            });
-          }
+    // 1. 加载GitHub Issues评论
+    function loadComments() {
+      const container = document.getElementById('gmeek-comments');
+      // 调用Gmeek的评论加载接口
+      fetch(`https://api.github.com/repos/lamx688110/lamx688110.github.io/issues?labels=评论`)
+        .then(res => res.json())
+        .then(issues => {
+          issues.forEach(issue => {
+            const commentEl = document.createElement('div');
+            commentEl.style = 'padding: 15px; border-bottom: 1px solid #eee;';
+            // 解析评论中的代码和表情
+            let content = issue.body
+              .replace(/```([\s\S]+?)```/g, '<pre><code class='language-$1'>$1</code></pre>') // 代码块
+              .replace(/:([a-z0-9_]+):/g, '<img src='https://cdn.jsdelivr.net/npm/emojione/assets/png/$1.png' width='20' height='20'>'); // 表情包
+            commentEl.innerHTML = `
+              <h4>${issue.user.login}</h4>
+              <div>${content}</div>
+              <p style='font-size: 12px; color: #999;'>${new Date(issue.created_at).toLocaleString()}</p>
+            `;
+            container.appendChild(commentEl);
+          });
+          // 代码高亮
+          Prism.highlightAll();
         });
-      });
-      observer.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
-    });
+    }
+
+    // 2. 初始化评论区
+    window.onload = loadComments;
   </script>
 </body>
 </html>。">
@@ -227,17 +199,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>吐槽区~</p>
-<h1>吐槽格式：</h1>
-<pre class="notranslate"><code class="notranslate">1.吐槽日期：
-2.吐槽网址url：
-3.想法：
-</code></pre>
-
+<div class="markdown-body" id="postBody">
 
 
   
   &lt;title&gt;吐槽区&lt;/title&gt;
+  
+  
   
   
 
@@ -251,38 +219,40 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <li>想法：</li>
   </ol>
   
-  <div id="user-content-cusdis_thread"></div>
+  <div id="user-content-gmeek-comments"></div>
   
   &lt;script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"&gt;&lt;/script&gt;
-  &lt;script src="https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js"&gt;&lt;/script&gt;
-  &lt;script async defer src="https://cusdis.com/js/cusdis.es.js"&gt;&lt;/script&gt;
-  
+  &lt;script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.js"&gt;&lt;/script&gt;
   &lt;script&gt;
-    // 监听Cusdis加载完成
-    document.addEventListener('cusdis:loaded', function() {
+    // 1. 加载GitHub Issues评论
+    function loadComments() {
+      const container = document.getElementById('gmeek-comments');
+      // 调用Gmeek的评论加载接口
+      fetch(`https://api.github.com/repos/lamx688110/lamx688110.github.io/issues?labels=评论`)
+        .then(res =&gt; res.json())
+        .then(issues =&gt; {
+          issues.forEach(issue =&gt; {
+            const commentEl = document.createElement('div');
+            commentEl.style = "padding: 15px; border-bottom: 1px solid #eee;";
+            // 解析评论中的代码和表情
+            let content = issue.body
+              .replace(/```([\s\S]+?)```/g, '<pre class="notranslate"><code class="notranslate">$1</code></pre>') // 代码块
+<pre class="notranslate"><code class="notranslate">          .replace(/:([a-z0-9_]+):/g, '&lt;img src="https://cdn.jsdelivr.net/npm/emojione/assets/png/$1.png" width="20" height="20"&gt;'); // 表情包
+        commentEl.innerHTML = `
+          &lt;h4&gt;${issue.user.login}&lt;/h4&gt;
+          &lt;div&gt;${content}&lt;/div&gt;
+          &lt;p style="font-size: 12px; color: #999;"&gt;${new Date(issue.created_at).toLocaleString()}&lt;/p&gt;
+        `;
+        container.appendChild(commentEl);
+      });
       // 代码高亮
       Prism.highlightAll();
-
-      // 表情包解析
-      const emojiParser = new EmojiJS();
-      emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
-      emojiParser.img_sets.emojione.sheet = 64;
-
-      // 监听评论新增并解析表情包
-      const observer = new MutationObserver(mutations =&gt; {
-        mutations.forEach(mutation =&gt; {
-          if (mutation.addedNodes.length) {
-            document.querySelectorAll('#cusdis_thread .comment-content').forEach(el =&gt; {
-              if (!el.dataset.emojiParsed) {
-                el.innerHTML = emojiParser.replace_colons(el.innerHTML);
-                el.dataset.emojiParsed = 'true';
-              }
-            });
-          }
-        });
-      });
-      observer.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
     });
+}
+
+// 2. 初始化评论区
+window.onload = loadComments;
+</code></pre>
   &lt;/script&gt;
 
 </div>
