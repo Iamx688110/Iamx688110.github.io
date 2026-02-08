@@ -1,63 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sun, 08 Feb 2026 12:02:36 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset='UTF-8'&gt;
-  &lt;title&gt;吐槽区&lt;/title&gt;
-  &lt;!-- 代码高亮样式 --&gt;
-  &lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'&gt;
-  &lt;!-- 表情包样式 --&gt;
-  &lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.css'&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;吐槽区&lt;/h1&gt;
-  &lt;p&gt;吐槽区~&lt;/p&gt;
-  
-  &lt;h2&gt;吐槽格式：&lt;/h2&gt;
-  &lt;ol&gt;
-    &lt;li&gt;吐槽日期：&lt;/li&gt;
-    &lt;li&gt;吐槽网址url：&lt;/li&gt;
-    &lt;li&gt;想法：&lt;/li&gt;
-  &lt;/ol&gt;
-
-  &lt;!-- Gmeek原生评论区（基于GitHub Issues） --&gt;
-  &lt;div id='gmeek-comments' style='max-width: 800px; margin: 20px 0;'&gt;&lt;/div&gt;
-
-  &lt;!-- 功能脚本 --&gt;
-  &lt;script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'&gt;&lt;/script&gt;
-  &lt;script src='https://cdn.jsdelivr.net/npm/emoji-picker-element@1/dist/emoji-picker-element.min.js'&gt;&lt;/script&gt;
-  &lt;script&gt;
-    // 1. 加载GitHub Issues评论
-    function loadComments() {
-      const container = document.getElementById('gmeek-comments');
-      // 调用Gmeek的评论加载接口
-      fetch(`https://api.github.com/repos/lamx688110/lamx688110.github.io/issues?labels=评论`)
-        .then(res =&gt; res.json())
-        .then(issues =&gt; {
-          issues.forEach(issue =&gt; {
-            const commentEl = document.createElement('div');
-            commentEl.style = 'padding: 15px; border-bottom: 1px solid #eee;';
-            // 解析评论中的代码和表情
-            let content = issue.body
-              .replace(/```([\s\S]+?)```/g, '&lt;pre&gt;&lt;code class='language-$1'&gt;$1&lt;/code&gt;&lt;/pre&gt;') // 代码块
-              .replace(/:([a-z0-9_]+):/g, '&lt;img src='https://cdn.jsdelivr.net/npm/emojione/assets/png/$1.png' width='20' height='20'&gt;'); // 表情包
-            commentEl.innerHTML = `
-              &lt;h4&gt;${issue.user.login}&lt;/h4&gt;
-              &lt;div&gt;${content}&lt;/div&gt;
-              &lt;p style='font-size: 12px; color: #999;'&gt;${new Date(issue.created_at).toLocaleString()}&lt;/p&gt;
-            `;
-            container.appendChild(commentEl);
-          });
-          // 代码高亮
-          Prism.highlightAll();
-        });
-    }
-
-    // 2. 初始化评论区
-    window.onload = loadComments;
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/tu-cao-qu.html</guid><pubDate>Sun, 08 Feb 2026 11:29:21 +0000</pubDate></item><item><title>【公告】我的博客有桌面版了</title><link>https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</link><description>经过了1天半的思考后，我的博客迎来了第一个桌面版
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sun, 08 Feb 2026 12:05:47 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>&lt;div id='cusdis_thread'
+  data-host='https://cusdis.com'
+  data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
+  data-page-id='tucao_area'  &lt;!-- 固定值：吐槽区专属ID --&gt;
+  data-page-url='https://lamx688110.github.io/post/tu-cao-qu'  &lt;!-- 你的吐槽区页面实际链接 --&gt;
+  data-page-title='吐槽区'  &lt;!-- 页面标题 --&gt;
+  style='max-width: 800px; margin: 20px 0;'  &lt;!-- 适配博客排版 --&gt;
+&gt;&lt;/div&gt;
+&lt;script async defer src='https://cusdis.com/js/cusdis.es.js'&gt;&lt;/script&gt;。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/tu-cao-qu.html</guid><pubDate>Sun, 08 Feb 2026 11:29:21 +0000</pubDate></item><item><title>【公告】我的博客有桌面版了</title><link>https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</link><description>经过了1天半的思考后，我的博客迎来了第一个桌面版
 网页版体验  https://iamx688110.github.io/819800.github.io/
 
 ![Image](https://github.com/user-attachments/assets/cf6f8880-e3b7-4d4d-aa76-8b2c914ccce9)
