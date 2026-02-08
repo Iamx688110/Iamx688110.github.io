@@ -19,18 +19,46 @@
 3.想法：
 ```
 
-# 开始
-<script defer src='https://chirpy.dev/bootstrapper.js' data-chirpy-domain='iamx688110.github.io'></script>
-<!--
-  The widget follows 'system' settings for light/dark mode
-  by default, but you can manually select 'light' or 'dark'
-  mode for a consistent display
--->
-<div
-  data-chirpy-theme='system'
-  data-chirpy-comment='true'
-  id='chirpy-comment'
-></div>。">
+<!-- Cusdis 增强版 - 支持代码高亮+表情包 -->
+<div id='cusdis_thread'
+  data-host='https://cusdis.com'
+  data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
+  data-page-id='article_001'
+  data-page-url='https://iamx688110.github.io/post/tu-cao-qu.html'
+  data-page-title='吐槽区'
+  style='max-width: 800px; margin: 20px auto;'
+></div>
+<!-- 引入代码高亮样式 -->
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'>
+<script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'></script>
+<!-- 引入表情包支持 -->
+<script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'></script>
+<script async defer src='https://cusdis.com/js/cusdis.es.js'></script>
+
+<!-- 自动处理评论中的代码高亮和表情包 -->
+<script>
+// 监听 Cusdis 加载完成
+document.addEventListener('cusdis:loaded', function() {
+  // 代码高亮
+  Prism.highlightAll();
+  
+  // 表情包解析
+  const emojiParser = new EmojiJS();
+  emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
+  emojiParser.img_sets.emojione.sheet = 64;
+  
+  // 替换评论中的表情符号
+  setInterval(() => {
+    const commentContents = document.querySelectorAll('#cusdis_thread .comment-content');
+    commentContents.forEach(el => {
+      if (!el.dataset.emojiParsed) {
+        el.innerHTML = emojiParser.replace_colons(el.innerHTML);
+        el.dataset.emojiParsed = 'true';
+      }
+    });
+  }, 1000);
+});
+</script>。">
 <meta property="og:title" content="吐槽区">
 <meta property="og:description" content="吐槽区~
 # 吐槽格式：
@@ -41,18 +69,46 @@
 3.想法：
 ```
 
-# 开始
-<script defer src='https://chirpy.dev/bootstrapper.js' data-chirpy-domain='iamx688110.github.io'></script>
-<!--
-  The widget follows 'system' settings for light/dark mode
-  by default, but you can manually select 'light' or 'dark'
-  mode for a consistent display
--->
-<div
-  data-chirpy-theme='system'
-  data-chirpy-comment='true'
-  id='chirpy-comment'
-></div>。">
+<!-- Cusdis 增强版 - 支持代码高亮+表情包 -->
+<div id='cusdis_thread'
+  data-host='https://cusdis.com'
+  data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
+  data-page-id='article_001'
+  data-page-url='https://iamx688110.github.io/post/tu-cao-qu.html'
+  data-page-title='吐槽区'
+  style='max-width: 800px; margin: 20px auto;'
+></div>
+<!-- 引入代码高亮样式 -->
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'>
+<script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'></script>
+<!-- 引入表情包支持 -->
+<script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'></script>
+<script async defer src='https://cusdis.com/js/cusdis.es.js'></script>
+
+<!-- 自动处理评论中的代码高亮和表情包 -->
+<script>
+// 监听 Cusdis 加载完成
+document.addEventListener('cusdis:loaded', function() {
+  // 代码高亮
+  Prism.highlightAll();
+  
+  // 表情包解析
+  const emojiParser = new EmojiJS();
+  emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
+  emojiParser.img_sets.emojione.sheet = 64;
+  
+  // 替换评论中的表情符号
+  setInterval(() => {
+    const commentContents = document.querySelectorAll('#cusdis_thread .comment-content');
+    commentContents.forEach(el => {
+      if (!el.dataset.emojiParsed) {
+        el.innerHTML = emojiParser.replace_colons(el.innerHTML);
+        el.dataset.emojiParsed = 'true';
+      }
+    });
+  }, 1000);
+});
+</script>。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://Iamx688110.github.io/post/tu-cao-qu.html">
 <meta property="og:image" content="https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png">
@@ -129,10 +185,38 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 2.吐槽网址url：
 3.想法：
 </code></pre>
-<h1>开始</h1>
-&lt;script defer src="https://chirpy.dev/bootstrapper.js" data-chirpy-domain="iamx688110.github.io"&gt;&lt;/script&gt;
 
-<div id="user-content-chirpy-comment"></div></div>
+<div id="user-content-cusdis_thread"></div>
+
+
+&lt;script src="https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js"&gt;&lt;/script&gt;
+
+&lt;script src="https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js"&gt;&lt;/script&gt;
+&lt;script async defer src="https://cusdis.com/js/cusdis.es.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// 监听 Cusdis 加载完成
+document.addEventListener('cusdis:loaded', function() {
+  // 代码高亮
+  Prism.highlightAll();
+  
+  // 表情包解析
+  const emojiParser = new EmojiJS();
+  emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
+  emojiParser.img_sets.emojione.sheet = 64;
+  
+  // 替换评论中的表情符号
+  setInterval(() =&gt; {
+    const commentContents = document.querySelectorAll('#cusdis_thread .comment-content');
+    commentContents.forEach(el =&gt; {
+      if (!el.dataset.emojiParsed) {
+        el.innerHTML = emojiParser.replace_colons(el.innerHTML);
+        el.dataset.emojiParsed = 'true';
+      }
+    });
+  }, 1000);
+});
+&lt;/script&gt;</div>
 <div style="font-size:small;margin-top:8px;float:right;">【备注】文章取材  @珍珠工作室  转载请注明出处💛✨</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
