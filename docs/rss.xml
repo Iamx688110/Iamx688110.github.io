@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sun, 08 Feb 2026 11:56:37 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>吐槽区~
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sun, 08 Feb 2026 12:00:14 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>吐槽区~
 # 吐槽格式：
 
 ```
@@ -8,46 +8,70 @@
 3.想法：
 ```
 
-&lt;!-- Cusdis 增强版 - 支持代码高亮+表情包 --&gt;
-&lt;div id='cusdis_thread'
-  data-host='https://cusdis.com'
-  data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
-  data-page-id='article_001'
-  data-page-url='https://iamx688110.github.io/post/tu-cao-qu.html'
-  data-page-title='吐槽区'
-  style='max-width: 800px; margin: 20px auto;'
-&gt;&lt;/div&gt;
-&lt;!-- 引入代码高亮样式 --&gt;
-&lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'&gt;
-&lt;script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'&gt;&lt;/script&gt;
-&lt;!-- 引入表情包支持 --&gt;
-&lt;script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'&gt;&lt;/script&gt;
-&lt;script async defer src='https://cusdis.com/js/cusdis.es.js'&gt;&lt;/script&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset='UTF-8'&gt;
+  &lt;title&gt;吐槽区&lt;/title&gt;
+  &lt;!-- 代码高亮样式 --&gt;
+  &lt;link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/prismjs@1/themes/prism.min.css'&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;吐槽区&lt;/h1&gt;
+  &lt;p&gt;吐槽区~&lt;/p&gt;
+  
+  &lt;h2&gt;吐槽格式：&lt;/h2&gt;
+  &lt;ol&gt;
+    &lt;li&gt;吐槽日期：&lt;/li&gt;
+    &lt;li&gt;吐槽网址url：&lt;/li&gt;
+    &lt;li&gt;想法：&lt;/li&gt;
+  &lt;/ol&gt;
 
-&lt;!-- 自动处理评论中的代码高亮和表情包 --&gt;
-&lt;script&gt;
-// 监听 Cusdis 加载完成
-document.addEventListener('cusdis:loaded', function() {
-  // 代码高亮
-  Prism.highlightAll();
-  
-  // 表情包解析
-  const emojiParser = new EmojiJS();
-  emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
-  emojiParser.img_sets.emojione.sheet = 64;
-  
-  // 替换评论中的表情符号
-  setInterval(() =&gt; {
-    const commentContents = document.querySelectorAll('#cusdis_thread .comment-content');
-    commentContents.forEach(el =&gt; {
-      if (!el.dataset.emojiParsed) {
-        el.innerHTML = emojiParser.replace_colons(el.innerHTML);
-        el.dataset.emojiParsed = 'true';
-      }
+  &lt;!-- 1. Cusdis评论系统容器（必须添加） --&gt;
+  &lt;div id='cusdis_thread'
+    data-host='https://cusdis.com'
+    data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
+    data-page-id='tucao_area'
+    data-page-url='https://iamx688110.github.io/post/tu-cao-qhtml吐槽格式'
+    data-page-title='吐槽区'
+    style='max-width: 800px; margin: 20px 0;'
+  &gt;&lt;/div&gt;
+
+  &lt;!-- 2. 资源引入 --&gt;
+  &lt;script src='https://cdn.jsdelivr.net/npm/prismjs@1/prism.min.js'&gt;&lt;/script&gt;
+  &lt;script src='https://cdn.jsdelivr.net/npm/emoji-js@3/lib/emoji.min.js'&gt;&lt;/script&gt;
+  &lt;script async defer src='https://cusdis.com/js/cusdis.es.js'&gt;&lt;/script&gt;
+
+  &lt;!-- 3. 增强功能脚本 --&gt;
+  &lt;script&gt;
+    // 监听Cusdis加载完成
+    document.addEventListener('cusdis:loaded', function() {
+      // 代码高亮
+      Prism.highlightAll();
+
+      // 表情包解析
+      const emojiParser = new EmojiJS();
+      emojiParser.img_sets.emojione.path = 'https://cdn.jsdelivr.net/npm/emojione/assets/png/';
+      emojiParser.img_sets.emojione.sheet = 64;
+
+      // 监听评论新增并解析表情包
+      const observer = new MutationObserver(mutations =&gt; {
+        mutations.forEach(mutation =&gt; {
+          if (mutation.addedNodes.length) {
+            document.querySelectorAll('#cusdis_thread .comment-content').forEach(el =&gt; {
+              if (!el.dataset.emojiParsed) {
+                el.innerHTML = emojiParser.replace_colons(el.innerHTML);
+                el.dataset.emojiParsed = 'true';
+              }
+            });
+          }
+        });
+      });
+      observer.observe(document.getElementById('cusdis_thread'), { childList: true, subtree: true });
     });
-  }, 1000);
-});
-&lt;/script&gt;。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/tu-cao-qu.html</guid><pubDate>Sun, 08 Feb 2026 11:29:21 +0000</pubDate></item><item><title>【公告】我的博客有桌面版了</title><link>https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</link><description>经过了1天半的思考后，我的博客迎来了第一个桌面版
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/tu-cao-qu.html</guid><pubDate>Sun, 08 Feb 2026 11:29:21 +0000</pubDate></item><item><title>【公告】我的博客有桌面版了</title><link>https://Iamx688110.github.io/post/%E3%80%90-gong-gao-%E3%80%91-wo-de-bo-ke-you-zhuo-mian-ban-le.html</link><description>经过了1天半的思考后，我的博客迎来了第一个桌面版
 网页版体验  https://iamx688110.github.io/819800.github.io/
 
 ![Image](https://github.com/user-attachments/assets/cf6f8880-e3b7-4d4d-aa76-8b2c914ccce9)
