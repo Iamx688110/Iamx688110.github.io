@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sun, 08 Feb 2026 12:05:47 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>&lt;div id='cusdis_thread'
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>陈金福的78小博客</title><link>https://Iamx688110.github.io</link><description>Hi ~ 你可以看看哦... 删繁就简三秋树，代码精简一行足..嘻嘻</description><copyright>陈金福的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Fri, 13 Feb 2026 08:51:24 +0000</lastBuildDate><managingEditor>陈金福的78小博客</managingEditor><ttl>60</ttl><webMaster>陈金福的78小博客</webMaster><item><title>打印机是如何获得页面最大尺寸?</title><link>https://Iamx688110.github.io/post/da-yin-ji-shi-ru-he-huo-de-ye-mian-zui-da-chi-cun--.html</link><description># 前提
+&gt; [!IMPORTANT]
+&gt; **本篇博客编辑@Iamx688110  、  @茉莉工作室**
+&gt; 最后搬运时间：2026年2月13日   原上线时间：2024年5月18日
+&gt; 鸣谢  &lt;img width='193' height='61' alt='Image' src='https://github.com/user-attachments/assets/e9983fe4-19e4-4dbf-a2ed-c2a8e9b63001' /&gt;
+
+先搞懂2个关键问题（不用记术语，知道区别就行）
+1. **你要的是“整张纸”，不是“能写字的地方”**  
+   打印机的纸（比如A4）边缘有一点点地方是硬件印不到的（叫“边距”）。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/da-yin-ji-shi-ru-he-huo-de-ye-mian-zui-da-chi-cun--.html</guid><pubDate>Fri, 13 Feb 2026 08:50:57 +0000</pubDate></item><item><title>吐槽区</title><link>https://Iamx688110.github.io/post/tu-cao-qu.html</link><description>&lt;div id='cusdis_thread'
   data-host='https://cusdis.com'
   data-app-id='b4b64339-a95d-4343-add5-e9a6b521d7eb'
   data-page-id='tucao_area'  &lt;!-- 固定值：吐槽区专属ID --&gt;
