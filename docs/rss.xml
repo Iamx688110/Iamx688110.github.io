@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>CJF的78小博客</title><link>https://Iamx688110.github.io</link><description>删繁就简三秋树，代码精简一行足~</description><copyright>CJF的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sat, 28 Feb 2026 05:24:14 +0000</lastBuildDate><managingEditor>CJF的78小博客</managingEditor><ttl>60</ttl><webMaster>CJF的78小博客</webMaster><item><title>博客社区版规</title><link>https://Iamx688110.github.io/post/bo-ke-she-qu-ban-gui.html</link><description># **生效日期：** 2021年01月01日
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>CJF的78小博客</title><link>https://Iamx688110.github.io</link><description>删繁就简三秋树，代码精简一行足~</description><copyright>CJF的78小博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png</url><title>avatar</title><link>https://Iamx688110.github.io</link></image><lastBuildDate>Sat, 07 Mar 2026 05:19:50 +0000</lastBuildDate><managingEditor>CJF的78小博客</managingEditor><ttl>60</ttl><webMaster>CJF的78小博客</webMaster><item><title>🍎 Gmeek UI 增强插件使用教程</title><link>https://Iamx688110.github.io/post/%F0%9F%8D%8E%20Gmeek%20UI%20-zeng-qiang-cha-jian-shi-yong-jiao-cheng.html</link><description>
+# 🍎 Gmeek UI 增强插件使用教程
+
+## 📦 插件简介
+
+Gmeek UI 插件通过纯前端增强的方式，为 Gmeek 框架博客带来 Apple 风格的焕然一新体验，包括：
+
+| 文件名                   | 功能说明                                                                 |
+|--------------------------|--------------------------------------------------------------------------|
+| `GmeekBaseTheme.css`     | 基础布局样式：字体、圆角、卡片排版，兼容原始结构不污染构建样式                          |
+| `GmeekCustomizeCss.js`   | UI 动态增强：卡片结构重构、玻璃拟态样式、深浅模式自适应、渐变背景、标签配色自动对比等功能       |
+
+&gt; 🧠 零依赖、构建无侵入、插拔可选、明暗自动识别、视觉沉浸体验，100% 兼容 Gmeek 原生内容结构。</description><guid isPermaLink="true">https://Iamx688110.github.io/post/%F0%9F%8D%8E%20Gmeek%20UI%20-zeng-qiang-cha-jian-shi-yong-jiao-cheng.html</guid><pubDate>Sat, 07 Mar 2026 05:19:23 +0000</pubDate></item><item><title>博客社区版规</title><link>https://Iamx688110.github.io/post/bo-ke-she-qu-ban-gui.html</link><description># **生效日期：** 2021年01月01日
 **最后修订日期：** 2021年01月01日
 
 &gt; [!Tip]
