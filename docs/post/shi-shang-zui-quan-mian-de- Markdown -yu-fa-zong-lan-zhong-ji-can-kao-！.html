@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <link rel="preconnect" href="https://code.buxiantang.top"><link rel="preconnect" href="https://blog.meekdai.com"><link rel="stylesheet" href="https://code.buxiantang.top/assets/GmeekBaseTheme.css"><script src="https://code.buxiantang.top/assets/GmeekCustomizeCss.js"></script><script src="https://blog.meekdai.com/assets/GmeekVercount.js"></script><script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","na4qnk47pl");</script>
+    <link rel="icon" href="https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content=" GitHub Flavored Markdown (GFM) 语法总览。">
+<meta property="og:title" content="史上最全面的 Markdown 语法总览终极参考！">
+<meta property="og:description" content=" GitHub Flavored Markdown (GFM) 语法总览。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Iamx688110.github.io/post/shi-shang-zui-quan-mian-de-%20Markdown%20-yu-fa-zong-lan-zhong-ji-can-kao-%EF%BC%81.html">
+<meta property="og:image" content="https://s1.imagehub.cc/images/2026/02/03/39589a1c102c02b19e6017b8edcfc96d.png">
+<title>史上最全面的 Markdown 语法总览终极参考！</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">史上最全面的 Markdown 语法总览终极参考！</h1>
+<div class="title-right">
+    <a href="https://Iamx688110.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Iamx688110/Iamx688110.github.io/issues/10" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>GitHub Flavored Markdown (GFM) 语法总览。<br>
+虽然 Markdown 的核心语法元素是有限的，但通过组合、嵌套和特定于 GitHub 的扩展功能，可以实现非常丰富的效果。</p>
+<hr>
+<h3><strong>一、 基本文本格式 (1-15)</strong></h3>
+<ol>
+<li>
+<p><strong>标题 H1 (Setext-style):</strong> <code class="notranslate">This is an H1</code> + <code class="notranslate">=======</code></p>
+<blockquote>
+<h1>This is an H1</h1>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H2 (Setext-style):</strong> <code class="notranslate">This is an H2</code> + <code class="notranslate">-------</code></p>
+<blockquote>
+<h2>This is an H2</h2>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H1 (ATX-style):</strong> <code class="notranslate"># H1</code></p>
+<blockquote>
+<h1>H1</h1>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H2 (ATX-style):</strong> <code class="notranslate">## H2</code></p>
+<blockquote>
+<h2>H2</h2>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H3 (ATX-style):</strong> <code class="notranslate">### H3</code></p>
+<blockquote>
+<h3>H3</h3>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H4 (ATX-style):</strong> <code class="notranslate">#### H4</code></p>
+<blockquote>
+<h4>H4</h4>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H5 (ATX-style):</strong> <code class="notranslate">##### H5</code></p>
+<blockquote>
+<h5>H5</h5>
+</blockquote>
+</li>
+<li>
+<p><strong>标题 H6 (ATX-style):</strong> <code class="notranslate">###### H6</code></p>
+<blockquote>
+<h6>H6</h6>
+</blockquote>
+</li>
+<li>
+<p><strong>粗体 (Asterisks):</strong> <code class="notranslate">**bold text**</code></p>
+<blockquote>
+<p><strong>bold text</strong></p>
+</blockquote>
+</li>
+<li>
+<p><strong>粗体 (Underscores):</strong> <code class="notranslate">__bold text__</code></p>
+<blockquote>
+<p><strong>bold text</strong></p>
+</blockquote>
+</li>
+<li>
+<p><strong>斜体 (Asterisk):</strong> <code class="notranslate">*italicized text*</code></p>
+<blockquote>
+<p><em>italicized text</em></p>
+</blockquote>
+</li>
+<li>
+<p><strong>斜体 (Underscore):</strong> <code class="notranslate">_italicized text_</code></p>
+<blockquote>
+<p><em>italicized text</em></p>
+</blockquote>
+</li>
+<li>
+<p><strong>粗斜体 (Asterisks):</strong> <code class="notranslate">***bold and italic***</code></p>
+<blockquote>
+<p><em><strong>bold and italic</strong></em></p>
+</blockquote>
+</li>
+<li>
+<p><strong>粗斜体 (Underscores):</strong> <code class="notranslate">___bold and italic___</code></p>
+<blockquote>
+<p><em><strong>bold and italic</strong></em></p>
+</blockquote>
+</li>
+<li>
+<p><strong>删除线 (GFM):</strong> <code class="notranslate">~~The world is flat.~~</code></p>
+<blockquote>
+<p><del>The world is flat.</del></p>
+</blockquote>
+</li>
+</ol>
+<h3><strong>二、 列表 (16-30)</strong></h3>
+<ol start="16">
+<li>
+<p><strong>无序列表 - 星号:</strong> <code class="notranslate">* Item</code></p>
+<blockquote>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>无序列表 - 加号:</strong> <code class="notranslate">+ Item</code></p>
+<blockquote>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>无序列表 - 连字符:</strong> <code class="notranslate">- Item</code></p>
+<blockquote>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>有序列表:</strong> <code class="notranslate">1. First item</code></p>
+<blockquote>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p><strong>嵌套列表 (无序内有序):</strong> <code class="notranslate">* Item</code> + <code class="notranslate">  1. Nested ordered</code></p>
+<blockquote>
+<ul>
+<li>Item
+<ol>
+<li>Nested ordered</li>
+<li>Another nested</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>嵌套列表 (有序内无序):</strong> <code class="notranslate">1. First</code> + <code class="notranslate">   * Nested unordered</code></p>
+<blockquote>
+<ol>
+<li>First
+<ul>
+<li>Nested unordered</li>
+<li>Another nested</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p><strong>任务列表 (GFM):</strong> <code class="notranslate">- [x] Completed task</code></p>
+<blockquote>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> Completed task</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Incomplete task"> Incomplete task</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>列表项内的段落:</strong> <code class="notranslate">* First line</code> + <code class="notranslate">  </code> + <code class="notranslate">  Paragraph break</code></p>
+<blockquote>
+<ul>
+<li>
+<p>This is the first line.</p>
+<p>And this is a paragraph within the list item.</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>列表项内的代码块:</strong> <code class="notranslate">* Code:</code> + <code class="notranslate">  </code> + `  ```code````</p>
+<blockquote>
+<ul>
+<li>
+<p>Here is some code:</p>
+<pre class="notranslate"><code class="notranslate">function hello() { console.log("hi"); }
+</code></pre>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>列表项内的引用:</strong> <code class="notranslate">* Quote:</code> + <code class="notranslate">  </code> + <code class="notranslate">  &gt; quote</code></p>
+<blockquote>
+<ul>
+<li>
+<p>A quote here:</p>
+<blockquote>
+<p>This is a quote inside a list.</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>不同层级缩进的列表 (Level 2):</strong> <code class="notranslate">* Level 1</code> + <code class="notranslate">  + Level 2</code></p>
+<blockquote>
+<ul>
+<li>Level 1
+<ul>
+<li>Level 2
+<ul>
+<li>Level 3</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>不同标记混用的列表 (Level 2):</strong> <code class="notranslate">1. Ordered</code> + <code class="notranslate">   * Unordered nested</code></p>
+<blockquote>
+<ol>
+<li>Ordered
+<ul>
+<li>Unordered nested</li>
+</ul>
+</li>
+<li>Next ordered</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p><strong>紧凑列表 (无空行):</strong> <code class="notranslate">* Item 1</code> + <code class="notranslate">* Item 2</code></p>
+<blockquote>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>列表项内多个段落 (再次强调):</strong> <code class="notranslate">* Para 1</code> + <code class="notranslate">  </code> + <code class="notranslate">  Para 2</code></p>
+<blockquote>
+<ul>
+<li>
+<p>This is the first paragraph in the list item.</p>
+<p>This is the second paragraph in the same list item.</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>列表中的复杂结构 (综合):</strong> 在列表项中混合使用代码、引用等。</p>
+<blockquote>
+<ul>
+<li>Complex Item:
+<ol>
+<li>Step one.
+<div class="highlight highlight-source-js"><pre class="notranslate"><span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s">'code'</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre></div>
+</li>
+<li>Step two.
+<blockquote>
+<p>A nested quote.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3><strong>三、 链接与图片 (31-45)</strong></h3>
+<ol start="31">
+<li>
+<p><strong>内联链接:</strong> <code class="notranslate">[title](https://example.com)</code></p>
+<blockquote>
+<p><a href="https://example.com" rel="nofollow">My Website</a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>带标题的内联链接:</strong> <code class="notranslate">[title](https://example.com "Optional title")</code></p>
+<blockquote>
+<p><a href="https://example.com" title="Go to my site" rel="nofollow">My Website</a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>自动链接 (URL):</strong> <code class="notranslate">&lt;https://www.example.com&gt;</code></p>
+<blockquote>
+<p><a href="https://www.example.com" rel="nofollow">https://www.example.com</a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>参考式链接 (定义):</strong> <code class="notranslate">[Reference link][id]</code> + <code class="notranslate">[id]: https://example.com</code></p>
+<blockquote>
+<p><a href="https://example.com" rel="nofollow">Reference link</a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>图片 (内联):</strong> <code class="notranslate">![alt text](/path/to/img.jpg)</code></p>
+<blockquote>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ec394605c6a8d58f1d0bbe4efdcddde51262688ebc6425b01d64b54d2084597a/68747470733a2f2f706c616365686f6c642e636f2f313530"><img src="https://camo.githubusercontent.com/ec394605c6a8d58f1d0bbe4efdcddde51262688ebc6425b01d64b54d2084597a/68747470733a2f2f706c616365686f6c642e636f2f313530" alt="An image" data-canonical-src="https://placehold.co/150" style="max-width: 100%;"></a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>带链接的图片:</strong> <code class="notranslate">[![alt text](/path/to/img.jpg)](https://example.com)</code></p>
+<blockquote>
+<p><a href="https://example.com" rel="nofollow"><img src="https://camo.githubusercontent.com/ec394605c6a8d58f1d0bbe4efdcddde51262688ebc6425b01d64b54d2084597a/68747470733a2f2f706c616365686f6c642e636f2f313530" alt="An image" data-canonical-src="https://placehold.co/150" style="max-width: 100%;"></a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>图片 (参考式):</strong> <code class="notranslate">![alt text][img-id]</code> + <code class="notranslate">[img-id]: /path/to/img.jpg</code></p>
+<blockquote>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/ec394605c6a8d58f1d0bbe4efdcddde51262688ebc6425b01d64b54d2084597a/68747470733a2f2f706c616365686f6c642e636f2f313530"><img src="https://camo.githubusercontent.com/ec394605c6a8d58f1d0bbe4efdcddde51262688ebc6425b01d64b54d2084597a/68747470733a2f2f706c616365686f6c642e636f2f313530" alt="An image" data-canonical-src="https://placehold.co/150" style="max-width: 100%;"></a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>为图片添加链接 (方法二):</strong> 使用HTML <code class="notranslate">&lt;a&gt;</code> 标签。</p>
+<blockquote>
+<p><code class="notranslate">&lt;a href="https://example.com"&gt;&lt;img src="https://placehold.co/150" alt="An image" /&gt;&lt;/a&gt;</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>调整图片大小 (HTML):</strong> <code class="notranslate">&lt;img src="..." width="200" height="100"&gt;</code></p>
+<blockquote>
+<p><code class="notranslate">&lt;img src="https://placehold.co/150" width="100" /&gt;</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>居中图片 (HTML/CSS):</strong> <code class="notranslate">&lt;p align="center"&gt;...&lt;img&gt;...&lt;/p&gt;</code></p>
+<blockquote>
+<p><code class="notranslate">&lt;p align="center"&gt;&lt;img src="https://placehold.co/150" /&gt;&lt;/p&gt;</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>链接到锚点:</strong> <code class="notranslate">[Go to Section](#section-title)</code></p>
+<blockquote>
+<p>(需要页面内有对应的 <code class="notranslate">## Section Title</code> )</p>
+</blockquote>
+</li>
+<li>
+<p><strong>链接到仓库文件:</strong> <code class="notranslate">[Link to file](./path/to/file.md)</code></p>
+<blockquote>
+<p><a href="./README.md">Link to README</a></p>
+</blockquote>
+</li>
+<li>
+<p><strong>链接到 Issues/Pull Requests:</strong> <code class="notranslate">#123</code></p>
+<blockquote>
+<p>See issue #123 for more details.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>链接到特定用户:</strong> <code class="notranslate">@username</code></p>
+<blockquote>
+<p>Thanks for your contribution, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/octocat/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/octocat">@octocat</a>!</p>
+</blockquote>
+</li>
+<li>
+<p><strong>链接到特定提交 (Commit):</strong> <code class="notranslate">00213a8bd...</code></p>
+<blockquote>
+<p>The fix was introduced in 00213a8bd...</p>
+</blockquote>
+</li>
+</ol>
+<h3><strong>四、 引用与水平线 (46-55)</strong></h3>
+<ol start="46">
+<li>
+<p><strong>基本引用:</strong> <code class="notranslate">&gt; blockquote</code></p>
+<blockquote>
+<blockquote>
+<p>This is a blockquote.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>嵌套引用:</strong> <code class="notranslate">&gt; Outer</code> + <code class="notranslate">&gt;&gt; Inner</code></p>
+<blockquote>
+<blockquote>
+<p>This is the outer quote.</p>
+<blockquote>
+<p>This is the inner quote.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>引用内含列表:</strong> <code class="notranslate">&gt; * List in quote</code></p>
+<blockquote>
+<blockquote>
+<ul>
+<li>A list item in a blockquote</li>
+<li>Another item</li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>引用内含代码:</strong> <code class="notranslate">&gt; </code>code``</p>
+<blockquote>
+<blockquote>
+<p>Inline <code class="notranslate">code</code> inside a blockquote.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>引用内含标题:</strong> <code class="notranslate">&gt; # Title in quote</code></p>
+<blockquote>
+<blockquote>
+<h1>A heading in a blockquote</h1>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>引用后紧跟段落:</strong> 正确的格式需要用两个空格换行或空行分隔。</p>
+<blockquote>
+<blockquote>
+<p>This is a quote.</p>
+</blockquote>
+<p>This is a new paragraph.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>多段落引用 (Paragraph breaks):</strong> <code class="notranslate">&gt; Para 1</code> + <code class="notranslate">&gt; </code> + <code class="notranslate">&gt; Para 2</code></p>
+<blockquote>
+<blockquote>
+<p>This is the first paragraph of the blockquote.</p>
+<p>This is the second paragraph.</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>水平线 (连字符):</strong> <code class="notranslate">---</code></p>
+<blockquote>
+<hr>
+</blockquote>
+</li>
+<li>
+<p><strong>水平线 (星号):</strong> <code class="notranslate">***</code></p>
+<blockquote>
+<hr>
+</blockquote>
+</li>
+<li>
+<p><strong>水平线 (下划线):</strong> <code class="notranslate">___</code></p>
+<blockquote>
+<hr>
+</blockquote>
+</li>
+</ol>
+<h3><strong>五、 代码 (56-70)</strong></h3>
+<ol start="56">
+<li>
+<p><strong>行内代码:</strong> <code class="notranslate">`code`</code></p>
+<blockquote>
+<p>Here is some <code class="notranslate">inline code</code>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块 (围栏式, 无语言):</strong></p>
+<div class="highlight highlight-text-md"><pre class="notranslate">...
+code here
+...</pre></div>
+<blockquote>
+<pre class="notranslate"><code class="notranslate">Sample text here...
+</code></pre>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块 (围栏式, 指定语言):</strong></p>
+<div class="highlight highlight-text-md"><pre class="notranslate">...python
+def hello():
+    print("Hello")
+...</pre></div>
+<blockquote>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">def</span> <span class="pl-en">hello</span>():
+    <span class="pl-en">print</span>(<span class="pl-s">"Hello"</span>)</pre></div>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块 (缩进式):</strong> Indent every line with 4 spaces.</p>
+<blockquote>
+<pre class="notranslate"><code class="notranslate">function hello() {
+    console.log("Hello");
+}
+</code></pre>
+</blockquote>
+</li>
+<li>
+<p><strong>包含反引号的行内代码:</strong> ```` <code class="notranslate">`code`</code> ``</p>
+<blockquote>
+<p>This is <code class="notranslate">`backticks`</code> inside inline code.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块中的缩进:</strong> 保持代码原有的缩进。</p>
+<blockquote>
+<div class="highlight highlight-source-json"><pre class="notranslate">{
+  <span class="pl-ent">"key"</span>: <span class="pl-s"><span class="pl-pds">"</span>value<span class="pl-pds">"</span></span>
+}</pre></div>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块中的特殊字符:</strong> 代码块会原样显示，无需转义。</p>
+<blockquote>
+<div class="highlight highlight-text-html-basic"><pre class="notranslate"><span class="pl-kos">&lt;</span><span class="pl-ent">div</span> <span class="pl-c1">class</span>="<span class="pl-s">test</span>"<span class="pl-kos">&gt;</span> &amp;lt; &amp;gt; <span class="pl-kos">&lt;/</span><span class="pl-ent">div</span><span class="pl-kos">&gt;</span></pre></div>
+</blockquote>
+</li>
+<li>
+<p><strong>行内高亮 (非标准):</strong> GitHub 不直接支持，但可用HTML <code class="notranslate">&lt;mark&gt;</code>。</p>
+<blockquote>
+<p>Use <code class="notranslate">&lt;mark&gt;highlighted&lt;/mark&gt;</code> text.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>长代码块 (滚动):</strong> 长代码会自动出现横向滚动条。</p>
+<blockquote>
+<pre lang="text" class="notranslate"><code class="notranslate">This is a very long line of text that will demonstrate the horizontal scrolling behavior of a code block in GitHub Flavored Markdown. It should allow users to scroll horizontally to see all the content without breaking the layout.
+</code></pre>
+</blockquote>
+</li>
+<li>
+<p><strong>代码块内换行:</strong> 在代码语言标识符后加 <code class="notranslate">{1,2}</code> 可指定高亮行（此为YAML Front Matter风格，非GFM标准，但某些渲染器支持）。</p>
+<blockquote>
+<p>(此功能非GFM标准，不保证通用性)</p>
+</blockquote>
+</li>
+<li>
+<p><strong>注释 (HTML):</strong> <code class="notranslate">&lt;!-- This is a comment --&gt;</code></p>
+<blockquote>
+
+</blockquote>
+</li>
+<li>
+<p><strong>转义字符 (Backslash):</strong> <code class="notranslate">\*literal asterisks\*</code></p>
+<blockquote>
+<p>*literal asterisks*</p>
+</blockquote>
+</li>
+<li>
+<p><strong>转义反引号:</strong> ```literal backtick``</p>
+<blockquote>
+<p><code class="notranslate">\</code>literal backtick`<code class="notranslate">(显示为</code> ` ``)</p>
+</blockquote>
+</li>
+<li>
+<p><strong>转义井号:</strong> <code class="notranslate">\# Not a header</code></p>
+<blockquote>
+<p># Not a header</p>
+</blockquote>
+</li>
+<li>
+<p><strong>转义感叹号:</strong> <code class="notranslate">\! Not an image</code></p>
+<blockquote>
+<p>! Not an image</p>
+</blockquote>
+</li>
+</ol>
+<h3><strong>六、 表格 (GFM 扩展, 71-80)</strong></h3>
+<ol start="71">
+<li>
+<p><strong>基本表格:</strong></p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-ml">|</span> Syntax      <span class="pl-ml">|</span> Description <span class="pl-ml">|</span>
+<span class="pl-ml">|</span> ----------- <span class="pl-ml">|</span> ----------- <span class="pl-ml">|</span>
+<span class="pl-ml">|</span> Header      <span class="pl-ml">|</span> Title       <span class="pl-ml">|</span>
+<span class="pl-ml">|</span> Paragraph   <span class="pl-ml">|</span> Text        <span class="pl-ml">|</span></pre></div>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>左对齐 (默认):</strong> <code class="notranslate">| :--- |</code></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">Left-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Content</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>右对齐:</strong> <code class="notranslate">| ---: |</code></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="right">Right-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Content</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>居中对齐:</strong> <code class="notranslate">| :---: |</code></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="center">Center-aligned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Content</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>混合对齐:</strong></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left">Left</th>
+<th align="center">Center</th>
+<th align="right">Right</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A</td>
+<td align="center">B</td>
+<td align="right">C</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>表格内使用行内格式:</strong> <code class="notranslate">| *Italic* | **Bold** |</code></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th align="left"><em>Italic</em></th>
+<th align="center"><strong>Bold</strong></th>
+<th align="right"><code class="notranslate">Code</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Cell 1</td>
+<td align="center">Cell 2</td>
+<td align="right">Cell 3</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>空单元格表格:</strong></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Col 1</th>
+<th>Col 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Data</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>长文本换行:</strong></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Short</th>
+<th>Long Text Column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>This is a very long piece of text that will wrap within the table cell to demonstrate how content flows.</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>表格内代码:</strong></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">git status</code></td>
+<td>List all new or modified files</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>表格作为布局工具 (不推荐):</strong> 不应滥用表格做文档布局。</p>
+</li>
+</ol>
+<h3><strong>七、 其他 GFM 特有功能 (81-100)</strong></h3>
+<ol start="81">
+<li>
+<p><strong>提及用户 (@):</strong> <code class="notranslate">@github</code></p>
+<blockquote>
+<p>Please review this PR, <a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/Reviewer/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/Reviewer">@Reviewer</a>.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>引用 Issue 或 Pull Request (#):</strong> <code class="notranslate">#1</code></p>
+<blockquote>
+<p>Fixes #1</p>
+</blockquote>
+</li>
+<li>
+<p><strong>引用特定提交 (SHA):</strong> <code class="notranslate">6a5b3f1</code></p>
+<blockquote>
+<p>The bug was fixed in 6a5b3f1.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>表情符号 (Emoji) (使用别名):</strong> <code class="notranslate">:smile:</code></p>
+<blockquote>
+<p>This is great! 😄</p>
+</blockquote>
+</li>
+<li>
+<p><strong>表情符号 (使用 Unicode):</strong> <code class="notranslate">😀</code></p>
+<blockquote>
+<p>Look, a smiley face! 😀</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Strikethrough in Tables:</strong></p>
+<blockquote>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Old feature</td>
+<td><del>Deprecated</del></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+</blockquote>
+</li>
+<li>
+<p><strong>Task Lists in Comments:</strong></p>
+<blockquote>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Completed task" checked=""> Understand task lists</li>
+<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox" aria-label="Incomplete task"> Close the issue</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><strong>Shorthand for Web URLs:</strong> 自动识别 <code class="notranslate">https://example.com</code></p>
+<blockquote>
+<p>Visit <a href="https://example.com" rel="nofollow">https://example.com</a> for more info.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Highlighting (Fenced Code Blocks):</strong> 见第58条，语法高亮是其重要功能。</p>
+</li>
+<li>
+<p><strong>Diff Formatting in Code Blocks:</strong></p>
+<div class="highlight highlight-source-diff"><pre class="notranslate"><span class="pl-mi1"><span class="pl-mi1">+</span> Added line</span>
+<span class="pl-md"><span class="pl-md">-</span> Removed line</span></pre></div>
+<blockquote>
+<div class="highlight highlight-source-diff"><pre class="notranslate"><span class="pl-mi1"><span class="pl-mi1">+</span> Added line</span>
+<span class="pl-md"><span class="pl-md">-</span> Removed line</span></pre></div>
+</blockquote>
+</li>
+<li>
+<p><strong>折叠细节 (HTML Details/Summary):</strong></p>
+<blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>Mermaid 图表 (在支持的环境中):</strong></p>
+<blockquote>
+<div class="highlight highlight-source-mermaid"><pre class="notranslate"><span class="pl-k">graph</span> <span class="pl-ent">TD</span><span class="pl-sg">;</span>
+    <span class="pl-ent">A</span><span class="pl-k">--&gt;</span><span class="pl-ent">B</span><span class="pl-sg">;</span>
+    <span class="pl-ent">A</span><span class="pl-k">--&gt;</span><span class="pl-ent">C</span><span class="pl-sg">;</span></pre></div>
+</blockquote>
+</li>
+<li>
+<p><strong>警告提示框 (HTML Block):</strong></p>
+<blockquote>
+</blockquote>
+</li>
+<li>
+<p><strong>行内 HTML:</strong> <code class="notranslate">&lt;strong&gt;HTML bold&lt;/strong&gt;</code></p>
+<blockquote>
+<p>Use  if needed.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>HTML 换行:</strong> <code class="notranslate">&lt;br&gt;</code></p>
+<blockquote>
+<p>First LineSecond Line</p>
+</blockquote>
+</li>
+<li>
+<p><strong>HTML 分区:</strong> <code class="notranslate">&lt;div&gt;...&lt;/div&gt;</code></p>
+<blockquote>
+<p><code class="notranslate">&lt;div align="right"&gt;Right-aligned content.&lt;/div&gt;</code></p>
+</blockquote>
+</li>
+<li>
+<p><strong>脚注 (非标准GFM, 部分平台支持):</strong> <code class="notranslate">[^1]</code></p>
+<blockquote>
+<p>This is a sentence with a footnote.<sup><a href="#user-content-fn-1-ef6c78d5b7946cab21410241a1e0adfd" id="user-content-fnref-1-ef6c78d5b7946cab21410241a1e0adfd" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup></p>
+</blockquote>
+</li>
+<li>
+<p><strong>定义列表 (非标准GFM):</strong> 通常需用HTML <code class="notranslate">&lt;dl&gt;</code>, <code class="notranslate">&lt;dt&gt;</code>, <code class="notranslate">&lt;dd&gt;</code>。</p>
+</li>
+<li>
+<p><strong>数学公式 (LaTeX, 非标准GFM):</strong> <code class="notranslate">$\sqrt{3}$</code>，GitHub本身不直接渲染，但可在支持的编辑器或CI/CD流程中处理。</p>
+</li>
+<li>
+<p><strong>YAML Front Matter:</strong> (用于 Jekyll 等静态博客)</p>
+<div class="highlight highlight-source-yaml"><pre class="notranslate">---
+<span class="pl-ent">title</span>: <span class="pl-s">My Page</span>
+---</pre></div>
+<p>(放置在Markdown文件最顶部)</p>
+</li>
+</ol>
+<hr>
+<section data-footnotes="" class="footnotes"><h2 id="footnote-label" class="sr-only">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1-ef6c78d5b7946cab21410241a1e0adfd">
+<p>This is the footnote definition. <a href="#user-content-fnref-1-ef6c78d5b7946cab21410241a1e0adfd" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section></div>
+<div style="font-size:small;margin-top:8px;float:right;">🤞转载请注明出处🤞</div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Iamx688110.github.io">CJF的78小博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Iamx688110/Iamx688110.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://code.buxiantang.top/assets/backtop.js'></script><script src='https://code.buxiantang.top/assets/articletoc.js'></script><script src='https://code.buxiantang.top/assets/pagination.js'></script><script src='https://code.buxiantang.top/assets/lightbox.js'></script><script>document.querySelectorAll('a').forEach(anchor => {const img = anchor.querySelector('img');if (img && img.hasAttribute('data-canonical-src')) {const canonicalSrc = img.getAttribute('data-canonical-src');anchor.setAttribute('href', canonicalSrc);img.setAttribute('src', canonicalSrc);img.removeAttribute('data-canonical-src');}});</script>
+
+</html>
