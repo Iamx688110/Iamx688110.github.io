@@ -15,7 +15,7 @@ const site: SiteConfig = {
   },
   author: {
     name: "Iamx",
-    avatar: "/favicon.svg",
+    avatar: "https://b.kafan.cn/001/33/65/84_avatar_big.jpg",
     email: "3349038071@qq.com",
     bio: "哈哈哈",
   },
