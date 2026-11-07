@@ -1,0 +1,39 @@
+---
+/** 站点统计：全部可插拔（site.ts features.analytics / counter），空值即不注入 */
+import site from "../config/site";
+const { cloudflare, umami, clarity } = site.features.analytics;
+const vercount = site.features.counter === "vercount";
+---
+
+{
+  vercount && <script is:inline async src="https://vercount.one/js" />
+}
+
+{
+  cloudflare && (
+    <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cloudflare })} />
+  )
+}
+
+{
+  umami && <script is:inline defer src={umami.src} data-website-id={umami.websiteId} />
+}
+
+{
+  clarity && (
+    <script is:inline define:vars={{ clarityId: clarity }}>
+      (function (c, l, a, r, i, t, y) {
+        c[a] =
+          c[a] ||
+          function () {
+            (c[a].q = c[a].q || []).push(arguments);
+          };
+        t = l.createElement(r);
+        t.async = 1;
+        t.src = "https://www.clarity.ms/tag/" + clarityId;
+        y = l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t, y);
+      })(window, document, "clarity", "script", clarityId);
+    </script>
+  )
+}

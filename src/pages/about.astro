@@ -1,0 +1,112 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatsStrip from "../components/StatsStrip.astro";
+import SkillRadar from "../components/SkillRadar.astro";
+import PostHeatmap from "../components/PostHeatmap.astro";
+import ContactCard from "../components/ContactCard.astro";
+import Comments from "../components/Comments.astro";
+import { allPosts, tagCounts } from "../utils/posts";
+import site from "../config/site";
+
+const contacts = site.about.contacts;
+
+const about = (await getCollection("pages")).find((p) => p.id === "about");
+if (!about) {
+  Astro.response.status = 404;
+}
+const { Content } = about ? await render(about) : { Content: () => null as never };
+const d = about?.data;
+
+const posts = await allPosts();
+const firstYear = posts.length > 0 ? Math.min(...posts.map((p) => p.data.pubDate.getUTCFullYear())) : new Date().getUTCFullYear();
+const years = new Date().getUTCFullYear() - firstYear + 1;
+const stats = [
+  { label: "文章", value: posts.length },
+  { label: "标签", value: tagCounts(posts).length },
+  { label: "折腾年头", value: years },
+  { label: "好奇心", value: 100, suffix: "%" },
+];
+---
+
+{
+  about && d && (
+    <BaseLayout title={d.title} ogType="profile">
+      <article class="post container">
+        <header class="post-head" data-reveal style="--i:0">
+          <h1 class="post-title">{d.title}</h1>
+          <p class="post-bio">{site.author.bio}</p>
+        </header>
+
+        <StatsStrip stats={stats} />
+
+        <div class="post-body">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+
+        <div class:list={["about-duo", contacts.length === 0 && "solo"]}>
+          <SkillRadar />
+          {contacts.length > 0 && <ContactCard />}
+        </div>
+        <PostHeatmap posts={posts} />
+
+        <Comments issueNumber={d.issueNumber} />
+      </article>
+    </BaseLayout>
+  )
+}
+
+<style>
+  .container {
+    max-width: var(--w-prose);
+    margin: 0 auto;
+    padding: 56px 20px 0;
+  }
+  .post-head {
+    margin: 0 auto 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .post-title {
+    font-size: clamp(var(--fs-xl), 4.6vw, var(--fs-2xl));
+    line-height: 1.35;
+  }
+  .post-bio {
+    margin-top: 10px;
+    color: var(--c-fg-muted);
+    font-family: var(--ft-display);
+    font-size: var(--fs-lg);
+  }
+  .post-body {
+    margin-top: 20px;
+  }
+  /* 底部双栏：分隔线/上边距由容器统一提供，两栏顶边严格对齐（窄屏退化为上下） */
+  .about-duo {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 72px;
+    padding-top: 32px;
+    border-top: 1px solid var(--c-border);
+  }
+  @media (min-width: 900px) {
+    .about-duo {
+      grid-template-columns: 1.25fr 1fr;
+      align-items: start;
+      column-gap: 48px;
+    }
+  }
+  /* 未配置联系方式时，雷达独占整行并水平居中 */
+  .about-duo.solo {
+    grid-template-columns: 1fr;
+  }
+  .about-duo.solo .radar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-duo.solo .radar {
+    margin: 0 auto;
+  }
+</style>

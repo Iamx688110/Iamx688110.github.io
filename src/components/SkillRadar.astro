@@ -1,0 +1,174 @@
+---
+/** 技能光谱 · 雷达图 —— 维度与数值在 site.ts 的 about.skillAxes 配置（3-8 轴自适应，
+    viewBox 按轴数与最长标签动态计算，任意配置不裁切） */
+import site from "../config/site";
+
+const AXES = site.about.skillAxes;
+const N = AXES.length;
+const R = 104;
+
+// 自适应画布：按最长标签与轴数决定边距/字号
+const fontSize = N > 6 ? 12.5 : 14;
+const longest = Math.max(...AXES.map((a) => a.label.length), 2);
+const marginX = 30 + longest * fontSize * 1.04;
+const marginY = 26 + fontSize * 1.2;
+const VBW = Math.ceil(2 * (R + marginX));
+const VBH = Math.ceil(2 * (R + marginY) + 14);
+const CX = VBW / 2;
+const CY = VBH / 2;
+
+const pt = (r: number, i: number) => {
+  const a = (-90 + (360 / N) * i) * (Math.PI / 180);
+  return [CX + r * Math.cos(a), CY + r * Math.sin(a)] as const;
+};
+const ring = (r: number) => AXES.map((_, i) => pt(r, i).map((n) => n.toFixed(1)).join(",")).join(" ");
+const rings = [R, R * 0.75, R * 0.5, R * 0.25].map(ring);
+const polygon = AXES.map((a, i) => pt((R * a.value) / 100, i).map((n) => n.toFixed(1)).join(",")).join(" ");
+const dots = AXES.map((a, i) => ({ ...a, x: pt((R * a.value) / 100, i)[0].toFixed(1), y: pt((R * a.value) / 100, i)[1].toFixed(1) }));
+const labels = AXES.map((a, i) => {
+  const [x, y] = pt(R + 28, i);
+  return { ...a, x: x.toFixed(1), y: (y + fontSize * 0.36).toFixed(1), anchor: x < CX - 6 ? "end" : x > CX + 6 ? "start" : "middle" as const };
+});
+---
+
+<section class="radar-wrap" aria-label="技能光谱">
+  <h2 class="sec-title">技能光谱</h2>
+  <svg class="radar" viewBox={`0 0 ${VBW} ${VBH}`} role="img" aria-label={AXES.map((a) => `${a.label} ${a.value}%`).join("，")}>
+    <defs>
+      <radialGradient id="jadeGlow" cx="50%" cy="50%" r="65%">
+        <stop offset="0%" stop-color="var(--c-accent)" stop-opacity="0.30" />
+        <stop offset="100%" stop-color="var(--c-accent)" stop-opacity="0.04" />
+      </radialGradient>
+    </defs>
+
+    {rings.map((points, ri) => <polygon class:list={["ring", ri === rings.length - 1 && "ring-solid"]} points={points} />)}
+    {AXES.map((_, i) => {
+      const [x, y] = pt(R, i);
+      return <line class="axis" x1={CX} y1={CY} x2={x.toFixed(1)} y2={y.toFixed(1)} />;
+    })}
+
+    <polygon class="value" points={polygon} pathLength="100" />
+
+    {dots.map((d, i) => (
+      <g class="dot-g" style={`--d:${i}`}>
+        <circle class="dot-halo" cx={d.x} cy={d.y} r="8" />
+        <circle class="dot" cx={d.x} cy={d.y} r="4" />
+        <text class="dot-num nums" x={d.x} y={String(Number(d.y) - 12)} text-anchor="middle">
+          {d.value}
+        </text>
+      </g>
+    ))}
+
+    {
+      labels.map((l, i) => (
+        <text class="label" style={`--d:${i};font-size:${fontSize}px`} x={l.x} y={l.y} text-anchor={l.anchor} dominant-baseline="middle">
+          {l.label}
+        </text>
+      ))
+    }
+  </svg>
+  <p class="radar-note">自己打的分，玄学一栏可能有幸存者偏差。</p>
+</section>
+
+<style>
+  .radar-wrap {
+    text-align: center;
+  }
+  .sec-title {
+    font-size: var(--fs-xl);
+    margin-bottom: 14px;
+  }
+  .radar {
+    width: min(100%, 380px);
+    height: auto;
+    overflow: visible;
+  }
+
+  .ring {
+    fill: none;
+    stroke: var(--c-border);
+    stroke-width: 1;
+  }
+  .ring-solid {
+    stroke: color-mix(in oklch, var(--c-border) 70%, var(--c-fg-subtle));
+  }
+  .axis {
+    stroke: var(--c-border);
+    stroke-width: 1;
+    stroke-dasharray: 2 5;
+  }
+
+  .value {
+    fill: url(#jadeGlow);
+    stroke: var(--c-accent);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    fill-opacity: 0;
+    animation: radar-draw 1.1s var(--mo-ease) 0.2s forwards;
+  }
+  @keyframes radar-draw {
+    60% {
+      fill-opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+      fill-opacity: 1;
+    }
+  }
+
+  .dot-g {
+    opacity: 0;
+    animation: radar-fade 0.5s var(--mo-ease) forwards;
+    animation-delay: calc(0.9s + var(--d) * 0.09s);
+    transition: transform var(--mo-base) var(--mo-ease);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .dot-g:hover {
+    transform: scale(1.35);
+  }
+  .dot {
+    fill: var(--c-accent-strong);
+    stroke: var(--c-bg);
+    stroke-width: 1.5;
+  }
+  .dot-halo {
+    fill: var(--c-accent);
+    opacity: 0.22;
+  }
+  .dot-num {
+    fill: var(--c-accent-strong);
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .label {
+    fill: var(--c-fg-muted);
+    font-family: var(--ft-display);
+    opacity: 0;
+    animation: radar-fade 0.5s var(--mo-ease) forwards;
+    animation-delay: calc(0.7s + var(--d) * 0.09s);
+  }
+  @keyframes radar-fade {
+    to {
+      opacity: 1;
+    }
+  }
+  .radar-note {
+    margin-top: 10px;
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .value,
+    .dot-g,
+    .label {
+      animation: none;
+      stroke-dashoffset: 0;
+      fill-opacity: 1;
+      opacity: 1;
+    }
+  }
+</style>
