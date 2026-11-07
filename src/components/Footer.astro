@@ -1,0 +1,102 @@
+---
+import site from "../config/site";
+const year = new Date().getFullYear();
+const isExternal = (href: string) => /^https?:\/\//.test(href);
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-text">{site.footer.text}</p>
+    <nav class="footer-links" aria-label="页脚链接">
+      {
+        site.footer.links.map((l) =>
+          isExternal(l.href) ? (
+            <a href={l.href} rel="noopener" target="_blank">
+              {l.label}
+            </a>
+          ) : (
+            <a href={l.href}>{l.label}</a>
+          ),
+        )
+      }
+    </nav>
+    <p class="footer-copy nums">© {year} {site.author.name}</p>
+    {
+      site.features.counter === "vercount" && (
+        <p class="footer-visit nums" aria-label="访问统计">
+          <span id="busuanzi_container_site_pv" class="bc">访问 <span id="busuanzi_value_site_pv" class="nums">-</span></span>
+          <span id="busuanzi_container_site_uv" class="bc">访客 <span id="busuanzi_value_site_uv" class="nums">-</span></span>
+        </p>
+      )
+    }
+    <!-- 主题署名：属主题本体而非配置，套用本模板请保留此行（版权行/文案/链接在 site.ts 可自行修改） -->
+    <p class="footer-theme">
+      Theme · <a href="https://github.com/tiengming/tiengming.github.io" rel="noopener" target="_blank">不言堂 / 墨玉</a> by Tiengming
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 96px;
+    border-top: 1px solid var(--c-border);
+    background: color-mix(in oklch, var(--c-surface) 55%, transparent);
+  }
+  .footer-inner {
+    max-width: var(--w-prose);
+    margin: 0 auto;
+    padding: 32px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-text {
+    color: var(--c-fg-muted);
+    font-size: var(--fs-sm);
+  }
+  .footer-links {
+    display: flex;
+    gap: 16px;
+  }
+  .footer-links a {
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-sm);
+    text-decoration: none;
+  }
+  .footer-links a:hover {
+    color: var(--c-accent-strong);
+  }
+  .footer-copy {
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+  }
+  .footer-visit {
+    display: flex;
+    gap: 14px;
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+  }
+  .footer-visit .bc {
+    visibility: hidden;
+  }
+  /* vercount 写入数值后显示容器 */
+  .footer-visit .bc:has(#busuanzi_value_site_pv:not(:empty)),
+  .footer-visit .bc:has(#busuanzi_value_site_uv:not(:empty)) {
+    visibility: visible;
+  }
+  .footer-theme {
+    margin-top: 6px;
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+    opacity: 0.85;
+  }
+  .footer-theme a {
+    color: var(--c-fg-subtle);
+    text-decoration-color: color-mix(in oklch, var(--c-accent) 40%, transparent);
+  }
+  .footer-theme a:hover {
+    color: var(--c-accent-strong);
+  }
+</style>

@@ -1,0 +1,186 @@
+---
+/** ⌘K 命令面板：多层级浮层（DESIGN.md 签名场景之一）。Pagefind 仅在首次打开时加载。 */
+import site from "../config/site";
+const enabled = site.features.search;
+const nav = [{ label: "首页", href: "/" }, ...site.nav.filter((n) => !n.href.startsWith("/"))];
+---
+
+{
+  enabled && (
+    <>
+      <div class="palette-backdrop" hidden />
+      <div class="palette" role="dialog" aria-modal="true" aria-label="搜索与快速导航" hidden>
+        <div class="palette-input-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.8-3.8" />
+          </svg>
+          <input class="palette-input" type="search" placeholder="搜索文章、标签……" autocomplete="off" spellcheck="false" />
+          <kbd class="palette-kbd">Esc</kbd>
+        </div>
+        <div class="palette-results" role="listbox" aria-label="结果" />
+      </div>
+    </>
+  )
+}
+
+<style>
+  @keyframes palette-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.98);
+    }
+  }
+  @keyframes backdrop-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  .palette-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    background: color-mix(in oklch, var(--c-bg) 62%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    animation: backdrop-in 160ms var(--mo-ease) both;
+    cursor: pointer;
+  }
+  .palette {
+    position: fixed;
+    z-index: 81;
+    top: 12vh;
+    left: 50%;
+    width: min(92vw, 34rem);
+    transform: translateX(-50%);
+    border-radius: var(--rd-card);
+    background: color-mix(in oklch, var(--c-surface) 92%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3);
+    backdrop-filter: blur(18px) saturate(1.3);
+    box-shadow: var(--sh-card-hover);
+    overflow: hidden;
+    animation: palette-in 200ms var(--mo-ease) both;
+    transform-origin: top center;
+  }
+  .palette-input-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--c-border);
+  }
+  .palette-input-row svg {
+    width: 18px;
+    height: 18px;
+    color: var(--c-fg-subtle);
+    flex: none;
+  }
+  .palette-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--c-fg);
+    font-size: var(--fs-base);
+    font-family: var(--ft-body);
+    min-width: 0;
+  }
+  .palette-input::placeholder {
+    color: var(--c-fg-subtle);
+  }
+  .palette-kbd {
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid var(--c-border);
+    border-bottom-width: 2px;
+    background: var(--c-surface-2);
+    color: var(--c-fg-subtle);
+    font-family: var(--ft-mono);
+    font-size: 0.72rem;
+  }
+  .palette-results {
+    max-height: min(50dvh, 26rem);
+    overflow-y: auto;
+    padding: 8px;
+    scrollbar-width: thin;
+  }
+
+  /* 结果条目 */
+  :global(.palette-group) {
+    padding: 8px 10px 4px;
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+  }
+  :global(.palette-item) {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--c-fg);
+    cursor: pointer;
+  }
+  :global(.palette-item .pi-title) {
+    font-size: var(--fs-sm);
+    line-height: 1.5;
+  }
+  :global(.palette-item .pi-sub) {
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-xs);
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  :global(.palette-item .pi-sub mark),
+  :global(.palette-item .pi-title mark) {
+    background: none;
+    color: var(--c-accent-strong);
+    font-weight: 700;
+  }
+  :global(.palette-item.selected) {
+    background: var(--c-accent-soft);
+  }
+  :global(.palette-empty) {
+    padding: 26px 10px;
+    text-align: center;
+    color: var(--c-fg-subtle);
+    font-size: var(--fs-sm);
+  }
+
+  /* 移动端：底部抽屉形态 */
+  @media (max-width: 640px) {
+    .palette {
+      top: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      border-radius: var(--rd-card) var(--rd-card) 0 0;
+      transform: none;
+      animation-name: palette-in-mobile;
+    }
+    @keyframes palette-in-mobile {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .palette,
+    .palette-backdrop {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  import { initPalette } from "../scripts/palette";
+  document.addEventListener("astro:page-load", () => {
+    initPalette();
+  });
+</script>
