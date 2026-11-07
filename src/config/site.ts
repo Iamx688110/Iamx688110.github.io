@@ -7,28 +7,27 @@ import type { SiteConfig } from "./types";
  */
 const site: SiteConfig = {
   site: {
-    url: "https://code.buxiantang.top",
-    title: "不言堂",
+    url: "https://iamx688110.github.io/",
+    title: "Iamx的博客",
     subtitle: "发现世界上所有美好的事物，分享有趣的东西",
-    description: "Tiengming 的个人博客：Cloudflare、AI、输入法、量化与随笔。",
+    description: "Iamx 的个人博客",
     lang: "zh-CN",
   },
   author: {
-    name: "Tiengming",
+    name: "Iamx",
     avatar: "/favicon.svg",
-    email: "tiengming@qq.com",
-    bio: "在技术与玄学之间反复横跳。",
+    email: "3349038071@qq.com",
+    bio: "哈哈哈",
   },
   nav: [
     { label: "首页", href: "/" },
     { label: "标签", href: "/tags/" },
     { label: "关于", href: "/about/" },
-    { label: "导航站", href: "https://nav.buxiantang.top" },
   ],
   footer: {
     text: "转载请注明出处",
     links: [
-      { label: "GitHub", href: "https://github.com/tiengming" },
+      { label: "GitHub", href: "https://github.com/Iamx688110" },
       { label: "RSS", href: "/rss.xml" },
     ],
   },
@@ -40,20 +39,19 @@ const site: SiteConfig = {
   about: {
     // 技能光谱：value 0-100，随时增删维度（3-8 轴皆可渲染）
     skillAxes: [
-      { label: "编程开发", value: 82 },
-      { label: "边缘网络", value: 93 },
-      { label: "AI 工程", value: 88 },
-      { label: "量化研究", value: 74 },
-      { label: "玄学修行", value: 90 },
+      { label: "开发", value: 82 },
+      { label: "网络", value: 93 },
+      { label: "AI", value: 88 },
+      { label: "研究", value: 74 },
+      { label: "修行", value: 90 },
     ],
     contacts: [
-      { label: "GitHub", href: "https://github.com/tiengming", note: "@tiengming" },
-      { label: "邮箱", href: "mailto:tiengming@qq.com", note: "tiengming@qq.com" },
-      { label: "网址导航", href: "https://nav.buxiantang.top", note: "自用的工具集散地" },
+      { label: "GitHub", href: "https://github.com/Iamx688110", note: "@Imx688110" },
+      { label: "邮箱", href: "mailto:3349038071@qq.com", note: "3349038071@qq.com" },
     ],
   },
   features: {
-    comments: { provider: "utterances", repo: "tiengming/tiengming.github.io" },
+    comments: { provider: "utterances", repo: "Iamx688110/Iamx688110.github.io" },
     search: true,
     counter: "vercount",
     analytics: {
