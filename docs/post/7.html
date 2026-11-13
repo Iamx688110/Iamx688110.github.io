@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script><script src='https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js'></script><script>L2Dwidget.init({"model":{"jsonPath":"https://fastly.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20}},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}})</script><script src='https://fastly.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'></script><script>document.addEventListener('click',function(e){confetti({particleCount:100,spread:70,origin:{x:e.clientX/window.innerWidth,y:e.clientY/window.innerHeight}})})</script><style>#progress{position:fixed;top:0;left:0;height:3px;background:#006b75;z-index:9999}</style><script>window.onload=function(){var bar=document.createElement('div');bar.id='progress';document.body.appendChild(bar);window.onscroll=function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(s/h*100)+'%'}}</script><script async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script><div style='text-align:center;margin:10px 0;font-size:14px;color:#666'><span id='busuanzi_container_site_uv'>访客数：<span id='busuanzi_value_site_uv'></span></span> &nbsp;<span id='busuanzi_container_site_pv'>总访问：<span id='busuanzi_value_site_pv'></span></span></div><script>document.addEventListener('mousemove',function(e){var tip=document.getElementById('mousetip');if(!tip){tip=document.createElement('div');tip.id='mousetip';tip.innerText='✨Iamx的博客';tip.style.position='fixed';tip.style.zIndex='9999';tip.style.pointerEvents='none';tip.style.color='#006b75';tip.style.fontSize='14px';document.body.appendChild(tip)}tip.style.left=(e.pageX+10)+'px';tip.style.top=(e.pageY+10)+'px'})</script><script src='https://fastly.jsdelivr.net/npm/snowfall-js@2.0.1/dist/snowfall.min.js'></script><script>new Snowfall({color:'#ffffff',count:80,minRadius:1,maxRadius:4,speed:1})</script><style>@media (prefers-color-scheme: dark){body{background:#121212;color:#ddd}.markdown-body{color:#ddd}}</style><script>function runTime(){var start=new Date('2021-04-16');var now=new Date();var diff=now-start;var d=Math.floor(diff/(24*60*60*1000));var h=Math.floor((diff%(24*60*60*1000))/(60*60*1000));var m=Math.floor((diff%(60*60*1000))/(60*1000));var rt=document.getElementById('runtime');if(rt)rt.innerText='本站已运行：'+d+'天'+h+'时'+m+'分'}setInterval(runTime,60000)</script><div id='runtime' style='text-align:center;color:#666;font-size:14px;margin-bottom:12px'></div><script src='https://js.puter.com/v2/'></script><script>puter.chatbot.init({collectPageContent:true,title:'📖文章AI助手',placeholder:'针对这篇文章提问...'});</script>
+    <link rel="icon" href="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 3.1 布尔值与比较运算
+
+程序要做判断，判断的结果只有两种：`True`（真）和 `False`（假）。">
+<meta property="og:title" content="003流程控制">
+<meta property="og:description" content="## 3.1 布尔值与比较运算
+
+程序要做判断，判断的结果只有两种：`True`（真）和 `False`（假）。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Iamx688110.github.io/post/7.html">
+<meta property="og:image" content="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg">
+<title>003流程控制</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">003流程控制</h1>
+<div class="title-right">
+    <a href="https://Iamx688110.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Iamx688110/Iamx688110.github.io/issues/7" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>3.1 布尔值与比较运算</h2>
+<p>程序要做判断，判断的结果只有两种：<code class="notranslate">True</code>（真）和 <code class="notranslate">False</code>（假）。</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 3 &gt; 2
+True
+&gt;&gt;&gt; 3 &gt; 5
+False
+</code></pre>
+<p>六个比较运算符：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>运算符</th>
+<th>含义</th>
+<th>例子</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">==</code></td>
+<td>等于</td>
+<td><code class="notranslate">3 == 3</code></td>
+<td><code class="notranslate">True</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">!=</code></td>
+<td>不等于</td>
+<td><code class="notranslate">3 != 3</code></td>
+<td><code class="notranslate">False</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&gt;</code></td>
+<td>大于</td>
+<td><code class="notranslate">3 &gt; 2</code></td>
+<td><code class="notranslate">True</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;</code></td>
+<td>小于</td>
+<td><code class="notranslate">3 &lt; 2</code></td>
+<td><code class="notranslate">False</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&gt;=</code></td>
+<td>大于等于</td>
+<td><code class="notranslate">3 &gt;= 3</code></td>
+<td><code class="notranslate">True</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">&lt;=</code></td>
+<td>小于等于</td>
+<td><code class="notranslate">3 &lt;= 2</code></td>
+<td><code class="notranslate">False</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>最高频错误</strong>：把 <code class="notranslate">==</code>（比较）写成 <code class="notranslate">=</code>（赋值）。<code class="notranslate">if x = 3:</code> 会直接报 <code class="notranslate">SyntaxError</code>，这也算好事——至少它不会默默做错事。</p>
+</blockquote>
+<p>Python 支持<strong>链式比较</strong>，可以直接写数学里的区间：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 1 &lt; 2 &lt; 3
+True
+&gt;&gt;&gt; 1 &lt; 3 &lt; 2
+False        # 等价于 1 &lt; 3 and 3 &lt; 2
+&gt;&gt;&gt; age = 25
+&gt;&gt;&gt; 18 &lt;= age &lt; 60
+True
+</code></pre>
+<h2>3.2 逻辑运算：and、or、not</h2>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; True and False
+False
+&gt;&gt;&gt; True or False
+True
+&gt;&gt;&gt; not True
+False
+</code></pre>
+<p>真值表：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>A</th>
+<th>B</th>
+<th><code class="notranslate">A and B</code></th>
+<th><code class="notranslate">A or B</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr>
+<td>True</td>
+<td>False</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td>False</td>
+<td>True</td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p><code class="notranslate">and</code> 要求两边都真，<code class="notranslate">or</code> 只要一边真，<code class="notranslate">not</code> 取反。</p>
+<h3>把条件翻译成代码</h3>
+<pre class="notranslate"><code class="notranslate">age = 25
+has_ticket = True
+
+# 「年龄满 18 且持有门票」
+if age &gt;= 18 and has_ticket:
+    print("可以入场")
+
+# 「年龄不满 18，或者没有门票」
+if age &lt; 18 or not has_ticket:
+    print("不能入场")
+</code></pre>
+<h3>短路求值</h3>
+<p><code class="notranslate">and</code> 和 <code class="notranslate">or</code> 不一定会看完右边——结果已经确定时立刻停止。这既是性能优化，也是防错手段：</p>
+<pre class="notranslate"><code class="notranslate">x = 0
+
+# 先判断 x != 0，为 False 时右边的除法不会执行，避免除以 0 崩溃
+if x != 0 and 10 / x &gt; 1:
+    print("成立")
+else:
+    print("不成立")      # 输出：不成立
+
+name = input("名字：") or "匿名用户"    # 输入为空时用默认值
+</code></pre>
+<p>上面这行利用了「<code class="notranslate">or</code> 返回第一个为真的操作数」，是 Python 里很常见的写法。不过对初学者来说，写成 <code class="notranslate">if not name: name = "匿名用户"</code> 更直白。</p>
+<h3>and / or 的返回值不一定是布尔值</h3>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 0 and "hello"
+0
+&gt;&gt;&gt; 3 and "hello"
+'hello'
+&gt;&gt;&gt; "" or "默认"
+'默认'
+</code></pre>
+<p><code class="notranslate">and</code> 返回第一个假值（全真则返回最后一个），<code class="notranslate">or</code> 返回第一个真值（全假则返回最后一个）。知道这个规则，上面 <code class="notranslate">or "匿名用户"</code> 的写法就说得通了。</p>
+<h2>3.3 if / elif / else</h2>
+<pre class="notranslate"><code class="notranslate">score = 85
+
+if score &gt;= 90:
+    print("优秀")
+elif score &gt;= 75:
+    print("良好")
+elif score &gt;= 60:
+    print("及格")
+else:
+    print("不及格")
+</code></pre>
+<p>输出：</p>
+<pre class="notranslate"><code class="notranslate">良好
+</code></pre>
+<p>三条规则必须记住：</p>
+<ol>
+<li>
+<p><strong>每个条件后面有冒号 <code class="notranslate">:</code></strong>，这是很多新手第一个 <code class="notranslate">SyntaxError</code>。</p>
+</li>
+<li>
+<p><strong>代码块靠缩进划分</strong>，通常是 4 个空格。同一块内缩进必须一致。</p>
+</li>
+<li>
+<p><strong>从上往下依次判断，命中一个就跳出整个结构</strong>，后面即使条件也成立也不会执行。</p>
+<p>x = 100<br>
+if x &gt; 0:<br>
+print("正数")<br>
+elif x &gt; 50:        # 永远不会执行到，因为 x &gt; 0 已经命中了<br>
+print("大于 50")</p>
+</li>
+</ol>
+<p>所以 <code class="notranslate">elif</code> 的顺序很重要：<strong>范围判断要从窄到宽，或者从宽到窄统一排列</strong>，别让宽条件把窄条件吃掉。</p>
+<h3>嵌套 if</h3>
+<pre class="notranslate"><code class="notranslate">if age &gt;= 18:
+    if has_ticket:
+        print("入场")
+    else:
+        print("先买票")
+else:
+    print("未成年")
+</code></pre>
+<p>嵌套超过两层就该考虑重构（用 <code class="notranslate">and</code> 合并条件、提前 return、拆函数）。<strong>平铺的代码永远比嵌套的好读。</strong></p>
+<h3>空代码块用 pass 占位</h3>
+<pre class="notranslate"><code class="notranslate">if score &gt;= 60:
+    pass          # 还没想好写什么，先占位，否则 IndentationError
+else:
+    print("补考")
+</code></pre>
+<h2>3.4 直接判断「真假」</h2>
+<p><code class="notranslate">if</code> 后面不一定非得是比较表达式，任何值都能判断真假：</p>
+<pre class="notranslate"><code class="notranslate">items = []
+
+if items:                 # 空列表为假
+    print("有内容")
+else:
+    print("空列表")        # 输出这个
+
+name = ""
+if not name:
+    print("名字为空")
+</code></pre>
+<p>Python 的假值只有这几个：<code class="notranslate">False</code>、<code class="notranslate">None</code>、<code class="notranslate">0</code>、<code class="notranslate">0.0</code>、<code class="notranslate">""</code>、<code class="notranslate">[]</code>、<code class="notranslate">()</code>、<code class="notranslate">{}</code>、<code class="notranslate">set()</code>。<strong>其它都是真。</strong></p>
+<p>所以下面两种写法等价，但第一种更地道：</p>
+<pre class="notranslate"><code class="notranslate">if items:                 # ✅ 推荐
+if len(items) &gt; 0:        # 😐 能用，但啰嗦
+</code></pre>
+<p>判断 <code class="notranslate">None</code> 时用 <code class="notranslate">is</code>，不要用 <code class="notranslate">==</code>：</p>
+<pre class="notranslate"><code class="notranslate">if result is None:
+    print("没有结果")
+</code></pre>
+<p><code class="notranslate">is</code> 比较的是「是不是同一个对象」，<code class="notranslate">None</code> 全局只有一个，所以 <code class="notranslate">is None</code> 既准确又更快。</p>
+<h2>3.5 三元表达式</h2>
+<p>只有「二选一」时，可以写成一行：</p>
+<pre class="notranslate"><code class="notranslate">age = 20
+status = "成年" if age &gt;= 18 else "未成年"
+print(status)      # 成年
+</code></pre>
+<p>结构是 <code class="notranslate">值A if 条件 else 值B</code>。读起来像英文：「A，如果条件成立，否则 B」。</p>
+<p>不要嵌套三层以上，那种时候老老实实写 <code class="notranslate">if</code>。</p>
+<h2>3.6 while 循环：条件为真就一直做</h2>
+<pre class="notranslate"><code class="notranslate">count = 1
+while count &lt;= 5:
+    print(count)
+    count += 1        # 千万别忘这行
+</code></pre>
+<p>输出 <code class="notranslate">1 2 3 4 5</code>，每个一行。</p>
+<p><code class="notranslate">while</code> 的逻辑：检查条件 → 为真则执行循环体 → 回到检查条件 → ……直到条件为假。</p>
+<h3>死循环与如何避免</h3>
+<pre class="notranslate"><code class="notranslate"># ❌ 死循环：count 永远不变，条件永远为真
+count = 1
+while count &lt;= 5:
+    print(count)
+</code></pre>
+<p>按 <code class="notranslate">Ctrl + C</code> 可以强制中断。写 <code class="notranslate">while</code> 时养成习惯，先问自己两个问题：</p>
+<ol>
+<li><strong>哪个变量控制循环结束？</strong></li>
+<li><strong>它在循环体里真的被改变了吗？</strong></li>
+</ol>
+<h3>while True + break：菜单式程序的标准写法</h3>
+<pre class="notranslate"><code class="notranslate">while True:
+    cmd = input("输入命令（q 退出）：")
+    if cmd == "q":
+        break
+    print(f"你输入了：{cmd}")
+
+print("程序结束")
+</code></pre>
+<p>这种「不知道要循环多少次，靠条件退出」的场景，用 <code class="notranslate">while True</code> + <code class="notranslate">break</code> 最清晰。</p>
+<h3>累加与计数模板</h3>
+<pre class="notranslate"><code class="notranslate">total = 0
+i = 1
+while i &lt;= 100:
+    total += i
+    i += 1
+print(total)      # 5050
+</code></pre>
+<p>「初始化累加器 → 循环里更新 → 循环外使用」是所有统计类代码的骨架。</p>
+<h2>3.7 for 循环：遍历一个序列</h2>
+<p><code class="notranslate">for</code> 用来「把一堆东西挨个处理一遍」：</p>
+<pre class="notranslate"><code class="notranslate">for ch in "Python":
+    print(ch)
+</code></pre>
+<p>输出 <code class="notranslate">P y t h o n</code>。</p>
+<pre class="notranslate"><code class="notranslate">fruits = ["苹果", "香蕉", "橘子"]
+for fruit in fruits:
+    print(f"我喜欢吃{fruit}")
+</code></pre>
+<p>比 <code class="notranslate">while</code> 省事：不需要索引、不需要手动加一、不会越界。<strong>能用 <code class="notranslate">for</code> 就别用 <code class="notranslate">while</code>。</strong></p>
+<h3>range()：生成一串整数</h3>
+<pre class="notranslate"><code class="notranslate">range(5)          # 0 1 2 3 4        左闭右开，不含 5
+range(1, 5)       # 1 2 3 4
+range(0, 10, 2)   # 0 2 4 6 8        步长 2
+range(5, 0, -1)   # 5 4 3 2 1        倒着数
+
+for i in range(1, 6):
+    print(i, end=" ")      # 1 2 3 4 5
+</code></pre>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>off-by-one 错误</strong>：<code class="notranslate">range(1, 5)</code> 不含 5。要「1 到 5」必须写 <code class="notranslate">range(1, 6)</code>。这是全世界程序员都犯过的错，写循环时念一遍「左闭右开」。</p>
+</blockquote>
+<h3>需要下标时用 enumerate</h3>
+<pre class="notranslate"><code class="notranslate">names = ["小明", "小红", "小刚"]
+for i, name in enumerate(names, start=1):
+    print(f"{i}. {name}")
+</code></pre>
+<p>输出：</p>
+<pre class="notranslate"><code class="notranslate">1. 小明
+2. 小红
+3. 小刚
+</code></pre>
+<p>别写 <code class="notranslate">for i in range(len(names))</code>，再用 <code class="notranslate">names[i]</code> 取值——啰嗦且容易越界。</p>
+<h2>3.8 break、continue 和循环的 else</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>关键字</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">break</code></td>
+<td>立刻跳出<strong>当前</strong>整个循环</td>
+</tr>
+<tr>
+<td><code class="notranslate">continue</code></td>
+<td>跳过本轮剩余代码，直接进入下一轮</td>
+</tr>
+<tr>
+<td><code class="notranslate">pass</code></td>
+<td>什么也不做，纯占位</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<pre class="notranslate"><code class="notranslate"># break：找到就停
+for n in range(2, 100):
+    if n % 7 == 0:
+        print(f"第一个能被 7 整除的数是 {n}")
+        break
+
+# continue：跳过偶数
+for i in range(1, 11):
+    if i % 2 == 0:
+        continue
+    print(i, end=" ")      # 1 3 5 7 9
+</code></pre>
+<p><code class="notranslate">for ... else</code> 是个冷门但好用的语法：<strong>循环正常跑完（没被 break）时执行 else</strong>。</p>
+<pre class="notranslate"><code class="notranslate">target = 17
+for n in range(2, int(target ** 0.5) + 1):
+    if target % n == 0:
+        print(f"{target} 不是质数")
+        break
+else:
+    print(f"{target} 是质数")
+</code></pre>
+<p>如果觉得 <code class="notranslate">else</code> 容易误解，可以改用标志变量，效果一样，只是多两行。</p>
+<h2>3.9 嵌套循环</h2>
+<p>外层跑一次，内层跑一整轮：</p>
+<pre class="notranslate"><code class="notranslate">for i in range(1, 4):
+    for j in range(1, 4):
+        print(f"({i},{j})", end=" ")
+    print()      # 每行结束换行
+</code></pre>
+<p>输出：</p>
+<pre class="notranslate"><code class="notranslate">(1,1) (1,2) (1,3)
+(2,1) (2,2) (2,3)
+(3,1) (3,2) (3,3)
+</code></pre>
+<h3>经典练习：九九乘法表</h3>
+<pre class="notranslate"><code class="notranslate">for i in range(1, 10):
+    for j in range(1, i + 1):        # 内层只跑到 i，形成三角
+        print(f"{j}×{i}={i * j}", end="\t")
+    print()
+</code></pre>
+<p>输出前两行：</p>
+<pre class="notranslate"><code class="notranslate">1×1=1
+1×2=2    2×2=4
+</code></pre>
+<p><code class="notranslate">\t</code> 是制表符，用来对齐列。如果中文列宽对不齐，可以改用 f-string 的宽度控制 <code class="notranslate">f"{...:&lt;8}"</code>。</p>
+<h3>嵌套循环里的 break 只跳一层</h3>
+<pre class="notranslate"><code class="notranslate">for i in range(3):
+    for j in range(3):
+        if j == 1:
+            break          # 只跳出内层，外层继续
+        print(i, j)
+</code></pre>
+<p>输出 <code class="notranslate">0 0</code>、<code class="notranslate">1 0</code>、<code class="notranslate">2 0</code>。要一次跳出两层，常见做法是加标志位或用函数 <code class="notranslate">return</code>（第 5 课）。</p>
+<h2>3.10 常见坑清单</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>现象</th>
+<th>原因</th>
+<th>修法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="notranslate">SyntaxError: expected ':'</code></td>
+<td><code class="notranslate">if</code>/<code class="notranslate">for</code>/<code class="notranslate">while</code> 后面漏冒号</td>
+<td>补 <code class="notranslate">:</code></td>
+</tr>
+<tr>
+<td><code class="notranslate">IndentationError</code></td>
+<td>缩进不一致，Tab 和空格混用</td>
+<td>统一 4 空格</td>
+</tr>
+<tr>
+<td>程序卡住不动</td>
+<td><code class="notranslate">while</code> 条件永远为真</td>
+<td>检查控制变量是否更新</td>
+</tr>
+<tr>
+<td>循环少跑/多跑一次</td>
+<td><code class="notranslate">range</code> 左闭右开</td>
+<td>终点写「实际值 + 1」</td>
+</tr>
+<tr>
+<td>条件永远不成立</td>
+<td>用了 <code class="notranslate">=</code> 而不是 <code class="notranslate">==</code>，或类型不匹配（<code class="notranslate">"18" == 18</code> 为 False）</td>
+<td>检查运算符和类型</td>
+</tr>
+<tr>
+<td>判断浮点数相等失败</td>
+<td><code class="notranslate">0.1 + 0.2 == 0.3</code> 为 False</td>
+<td>用 <code class="notranslate">round</code> 或误差范围</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>另外两个隐蔽的坑：</p>
+<pre class="notranslate"><code class="notranslate"># 坑一：字符串和数字比较，Python 3 直接报错，别指望它「自动转换」
+&gt;&gt;&gt; "18" &gt; 9
+TypeError: '&gt;' not supported between instances of 'str' and 'int'
+
+# 坑二：浮点数做循环条件，可能永远差一点点
+&gt;&gt;&gt; i = 0.0
+&gt;&gt;&gt; while i != 1.0:      # 危险！0.1 累加十次不等于 1.0
+...     i += 0.1
+</code></pre>
+<p>浮点数循环改用整数计数：</p>
+<pre class="notranslate"><code class="notranslate">for k in range(10):
+    i = k / 10
+</code></pre>
+<h2>3.11 小结</h2>
+<ul>
+<li>比较得到布尔值，<code class="notranslate">==</code> 是比较，<code class="notranslate">=</code> 是赋值</li>
+<li><code class="notranslate">and</code> / <code class="notranslate">or</code> 短路求值，可以拿来防除零、设默认值</li>
+<li><code class="notranslate">if / elif / else</code> 从上往下命中即止，缩进决定归属</li>
+<li>假值：<code class="notranslate">False</code>、<code class="notranslate">None</code>、<code class="notranslate">0</code>、<code class="notranslate">""</code>、<code class="notranslate">[]</code>、<code class="notranslate">{}</code></li>
+<li>次数已知用 <code class="notranslate">for</code>，条件驱动用 <code class="notranslate">while</code></li>
+<li><code class="notranslate">range</code> 左闭右开；要下标用 <code class="notranslate">enumerate</code></li>
+<li><code class="notranslate">break</code> 跳一层，<code class="notranslate">continue</code> 跳一轮</li>
+<li>嵌套循环内层跑满，外层才走一步</li>
+</ul>
+<h2>3.12 课后练习</h2>
+<p><strong>练习 1</strong>　输入一个整数，判断它是正数、负数还是零。</p>
+<p><strong>练习 2</strong>　输入年份，判断是否闰年。规则：能被 4 整除但不能被 100 整除，<strong>或者</strong>能被 400 整除。</p>
+<p><strong>练习 3</strong>　打印 1～100 中所有能被 3 或 5 整除的数，每行 5 个。</p>
+<p><strong>练习 4</strong>　FizzBuzz：1～100，能被 3 整除打印 <code class="notranslate">Fizz</code>，能被 5 整除打印 <code class="notranslate">Buzz</code>，能同时被 3 和 5 整除打印 <code class="notranslate">FizzBuzz</code>，其余打印数字本身。</p>
+<p><strong>练习 5</strong>　猜数字游戏：程序随机想一个 1～100 的数，用户反复猜，程序提示「大了」或「小了」，猜对时输出猜了几次。</p>
+<p><strong>练习 6</strong>　打印如下图形（高度由用户输入，这里以 4 为例）：</p>
+<pre class="notranslate"><code class="notranslate">*
+**
+***
+****
+</code></pre>
+<hr>
+<h3>参考答案</h3>
+<p><strong>练习 1</strong></p>
+<pre class="notranslate"><code class="notranslate">num = float(input("输入一个数："))
+if num &gt; 0:
+    print("正数")
+elif num &lt; 0:
+    print("负数")
+else:
+    print("零")
+</code></pre>
+<p><strong>练习 2</strong></p>
+<pre class="notranslate"><code class="notranslate">year = int(input("年份："))
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print(f"{year} 是闰年")
+else:
+    print(f"{year} 是平年")
+</code></pre>
+<p>括号很关键。<code class="notranslate">and</code> 的优先级高于 <code class="notranslate">or</code>，不加括号时结果其实一样，但加上括号能让读代码的人立刻看懂逻辑分组。</p>
+<p><strong>练习 3</strong></p>
+<pre class="notranslate"><code class="notranslate">count = 0
+for i in range(1, 101):
+    if i % 3 == 0 or i % 5 == 0:
+        print(f"{i:&gt;4}", end="")
+        count += 1
+        if count % 5 == 0:
+            print()          # 每 5 个换一行
+</code></pre>
+<p><strong>练习 4</strong></p>
+<pre class="notranslate"><code class="notranslate">for i in range(1, 101):
+    if i % 15 == 0:
+        print("FizzBuzz")
+    elif i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print("Buzz")
+    else:
+        print(i)
+</code></pre>
+<p>顺序不能反：如果先判断 <code class="notranslate">i % 3 == 0</code>，那 15 的倍数会先命中 <code class="notranslate">Fizz</code>，永远输出不到 <code class="notranslate">FizzBuzz</code>。这是「条件顺序决定结果」的典型案例。</p>
+<p><strong>练习 5</strong></p>
+<pre class="notranslate"><code class="notranslate">import random          # import 的用法第 7 课细讲，这里照抄即可
+
+target = random.randint(1, 100)
+count = 0
+
+while True:
+    guess = int(input("猜一个 1-100 的数："))
+    count += 1
+    if guess &lt; target:
+        print("小了")
+    elif guess &gt; target:
+        print("大了")
+    else:
+        print(f"猜对了！你用了 {count} 次")
+        break
+</code></pre>
+<p><strong>练习 6</strong></p>
+<pre class="notranslate"><code class="notranslate">n = int(input("高度："))
+for i in range(1, n + 1):
+    print("*" * i)
+</code></pre>
+<p><code class="notranslate">"*" * 3</code> 得到 <code class="notranslate">"***"</code>，字符串乘法是打印图形最省事的工具。想打印居中的金字塔，改成：</p>
+<pre class="notranslate"><code class="notranslate">for i in range(1, n + 1):
+    print(" " * (n - i) + "*" * (2 * i - 1))
+</code></pre></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Iamx688110.github.io">Iamx的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("04/16/2021"!=""){
+    var startSite=new Date("04/16/2021");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Iamx688110/Iamx688110.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
