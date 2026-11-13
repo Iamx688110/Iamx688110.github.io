@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script><script src='https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js'></script><script>L2Dwidget.init({"model":{"jsonPath":"https://fastly.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20}},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}})</script><script src='https://fastly.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'></script><script>document.addEventListener('click',function(e){confetti({particleCount:100,spread:70,origin:{x:e.clientX/window.innerWidth,y:e.clientY/window.innerHeight}})})</script><style>#progress{position:fixed;top:0;left:0;height:3px;background:#006b75;z-index:9999}</style><script>window.onload=function(){var bar=document.createElement('div');bar.id='progress';document.body.appendChild(bar);window.onscroll=function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(s/h*100)+'%'}}</script><script async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script><div style='text-align:center;margin:10px 0;font-size:14px;color:#666'><span id='busuanzi_container_site_uv'>访客数：<span id='busuanzi_value_site_uv'></span></span> &nbsp;<span id='busuanzi_container_site_pv'>总访问：<span id='busuanzi_value_site_pv'></span></span></div><script>document.addEventListener('mousemove',function(e){var tip=document.getElementById('mousetip');if(!tip){tip=document.createElement('div');tip.id='mousetip';tip.innerText='✨Iamx的博客';tip.style.position='fixed';tip.style.zIndex='9999';tip.style.pointerEvents='none';tip.style.color='#006b75';tip.style.fontSize='14px';document.body.appendChild(tip)}tip.style.left=(e.pageX+10)+'px';tip.style.top=(e.pageY+10)+'px'})</script><script src='https://fastly.jsdelivr.net/npm/snowfall-js@2.0.1/dist/snowfall.min.js'></script><script>new Snowfall({color:'#ffffff',count:80,minRadius:1,maxRadius:4,speed:1})</script><style>@media (prefers-color-scheme: dark){body{background:#121212;color:#ddd}.markdown-body{color:#ddd}}</style><script>function runTime(){var start=new Date('2021-04-16');var now=new Date();var diff=now-start;var d=Math.floor(diff/(24*60*60*1000));var h=Math.floor((diff%(24*60*60*1000))/(60*60*1000));var m=Math.floor((diff%(60*60*1000))/(60*1000));var rt=document.getElementById('runtime');if(rt)rt.innerText='本站已运行：'+d+'天'+h+'时'+m+'分'}setInterval(runTime,60000)</script><div id='runtime' style='text-align:center;color:#666;font-size:14px;margin-bottom:12px'></div><script src='https://js.puter.com/v2/'></script><script>puter.chatbot.init({collectPageContent:true,title:'📖文章AI助手',placeholder:'针对这篇文章提问...'});</script>
+    <link rel="icon" href="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 2.1 变量：给数据起个名字
+
+变量不是「装数据的盒子」，更准确的说法是**贴在数据上的标签**。">
+<meta property="og:title" content="002变量与数据类型">
+<meta property="og:description" content="## 2.1 变量：给数据起个名字
+
+变量不是「装数据的盒子」，更准确的说法是**贴在数据上的标签**。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Iamx688110.github.io/post/6.html">
+<meta property="og:image" content="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg">
+<title>002变量与数据类型</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">002变量与数据类型</h1>
+<div class="title-right">
+    <a href="https://Iamx688110.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Iamx688110/Iamx688110.github.io/issues/6" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>2.1 变量：给数据起个名字</h2>
+<p>变量不是「装数据的盒子」，更准确的说法是<strong>贴在数据上的标签</strong>。</p>
+<pre class="notranslate"><code class="notranslate">age = 18
+name = "小明"
+</code></pre>
+<p><code class="notranslate">=</code> 在这里不是数学的「等于」，而是<strong>赋值</strong>：把右边的值算出来，让左边的名字指向它。</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; age = 18
+&gt;&gt;&gt; age
+18
+&gt;&gt;&gt; age = age + 1     # 先算右边得 19，再让 age 指向 19
+&gt;&gt;&gt; age
+19
+</code></pre>
+<p>因为变量只是标签，所以同一个名字可以先后指向不同类型的值：</p>
+<pre class="notranslate"><code class="notranslate">x = 10
+print(x)       # 10
+x = "十"
+print(x)       # 十
+</code></pre>
+<p>Python 是<strong>动态类型</strong>语言：不需要提前声明类型。灵活，但也意味着类型错误要到运行时才暴露。</p>
+<h3>用 id() 看见「标签」这件事</h3>
+<pre class="notranslate"><code class="notranslate">a = [1, 2, 3]
+b = a              # b 和 a 指向同一个列表，不是复制
+b.append(4)
+print(a)           # [1, 2, 3, 4]   a 也变了
+
+a = [1, 2, 3]
+b = a.copy()       # 复制出一份新的
+b.append(4)
+print(a)           # [1, 2, 3]
+</code></pre>
+<p>这个区别在第 4 课还会重点讲，现在记住一句：<strong><code class="notranslate">=</code> 不复制数据，只复制标签。</strong></p>
+<h2>2.2 怎么给变量起名字</h2>
+<p>硬性规则（违反就报错）：</p>
+<ul>
+<li>只能包含字母、数字、下划线，且<strong>不能以数字开头</strong></li>
+<li>不能是关键字（<code class="notranslate">if</code>、<code class="notranslate">for</code>、<code class="notranslate">class</code>、<code class="notranslate">def</code>、<code class="notranslate">True</code>、<code class="notranslate">None</code> 等）</li>
+<li>区分大小写：<code class="notranslate">age</code>、<code class="notranslate">Age</code>、<code class="notranslate">AGE</code> 是三个不同的名字</li>
+<li>不能用中文标点、空格</li>
+</ul>
+<p>软性规范（违反不报错，但会被同事嫌弃）：</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐</th>
+<th>不推荐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通变量、函数</td>
+<td><code class="notranslate">user_name</code>、<code class="notranslate">total_price</code>（蛇形命名）</td>
+<td><code class="notranslate">userName</code>、<code class="notranslate">a</code>、<code class="notranslate">x1</code></td>
+</tr>
+<tr>
+<td>常量</td>
+<td><code class="notranslate">MAX_SIZE</code>、<code class="notranslate">PI</code></td>
+<td><code class="notranslate">max_size</code></td>
+</tr>
+<tr>
+<td>类名</td>
+<td><code class="notranslate">StudentInfo</code>（大驼峰）</td>
+<td><code class="notranslate">student_info</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<p>好名字的标准：<strong>读代码时不需要看注释就知道它是什么。</strong></p>
+<pre class="notranslate"><code class="notranslate"># 差
+d = 30
+t = 8.5
+
+# 好
+days = 30
+daily_hours = 8.5
+</code></pre>
+<h2>2.3 五种基本类型</h2>
+<pre class="notranslate"><code class="notranslate">age = 18                # int      整数
+price = 9.9             # float    浮点数（小数）
+name = "小明"            # str      字符串
+is_student = True       # bool     布尔值（True / False）
+result = None           # NoneType 空值，表示「还没有结果」
+</code></pre>
+<p>用 <code class="notranslate">type()</code> 查看类型：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; type(18)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; type(9.9)
+&lt;class 'float'&gt;
+&gt;&gt;&gt; type("18")
+&lt;class 'str'&gt;
+&gt;&gt;&gt; type(True)
+&lt;class 'bool'&gt;
+</code></pre>
+<p><code class="notranslate">isinstance()</code> 判断是否属于某个类型，比 <code class="notranslate">type() ==</code> 更常用：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; isinstance(18, int)
+True
+&gt;&gt;&gt; isinstance(True, int)      # 注意：bool 是 int 的子类
+True
+</code></pre>
+<blockquote>
+<p><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> <strong>常见坑</strong>：<code class="notranslate">"18"</code> 和 <code class="notranslate">18</code> 看起来像，但一个是文本一个是数字。<code class="notranslate">"18" + 1</code> 会直接报 <code class="notranslate">TypeError</code>。</p>
+</blockquote>
+<h2>2.4 数字与运算</h2>
+<h3>四种数字类型相关运算</h3>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 7 + 3       # 加
+10
+&gt;&gt;&gt; 7 - 3       # 减
+4
+&gt;&gt;&gt; 7 * 3       # 乘
+21
+&gt;&gt;&gt; 7 / 3       # 除，结果永远是 float
+2.3333333333333335
+&gt;&gt;&gt; 7 // 3      # 整除，向下取整，丢掉小数部分
+2
+&gt;&gt;&gt; 7 % 3       # 取余，余数
+1
+&gt;&gt;&gt; 7 ** 3      # 幂，7 的 3 次方
+343
+</code></pre>
+<p>两个容易踩的点：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; -7 // 2     # 向下取整，不是向零取整
+-4
+&gt;&gt;&gt; -7 % 3      # 余数的符号跟除数一致
+2
+</code></pre>
+<p><code class="notranslate">//</code> 和 <code class="notranslate">%</code> 组合起来可以拆数字，比如「137 分钟是几小时几分钟」：</p>
+<pre class="notranslate"><code class="notranslate">total = 137
+print(total // 60, "小时", total % 60, "分钟")   # 2 小时 17 分钟
+</code></pre>
+<h3>优先级</h3>
+<p><code class="notranslate">**</code> &gt; 正负号 &gt; <code class="notranslate">* / // %</code> &gt; <code class="notranslate">+ -</code>，同级从左往右。记不住就加括号，<strong>括号永远不嫌多</strong>。</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 2 + 3 * 4
+14
+&gt;&gt;&gt; (2 + 3) * 4
+20
+</code></pre>
+<h3>浮点数精度</h3>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 0.1 + 0.2
+0.30000000000000004
+&gt;&gt;&gt; 0.1 + 0.2 == 0.3
+False
+</code></pre>
+<p>这不是 Python 的 bug，而是二进制无法精确表示 0.1（就像十进制写不出 1/3）。解决办法：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; round(0.1 + 0.2, 2) == 0.3
+True
+&gt;&gt;&gt; abs((0.1 + 0.2) - 0.3) &lt; 1e-9      # 更专业的写法：判断误差足够小
+True
+</code></pre>
+<p>涉及金额计算时，用 <code class="notranslate">decimal</code> 模块而不是 float：</p>
+<pre class="notranslate"><code class="notranslate">from decimal import Decimal
+print(Decimal("0.1") + Decimal("0.2"))   # 0.3
+</code></pre>
+<h3>大数字和下划线</h3>
+<p>Python 的 int 没有溢出问题，可以算很大的数：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; 2 ** 100
+1267650600228229401496703205376
+&gt;&gt;&gt; 10_000_000        # 下划线只是给人看的分隔，不影响数值
+10000000
+</code></pre>
+<h2>2.5 字符串</h2>
+<h3>三种写法</h3>
+<pre class="notranslate"><code class="notranslate">s1 = '单引号'
+s2 = "双引号"          # 和单引号完全等价，选一种风格坚持用
+s3 = """三个引号可以
+跨多行书写"""
+</code></pre>
+<h3>索引与切片</h3>
+<p>字符串是「字符的序列」，可以用下标取单个字符，<strong>从 0 开始</strong>：</p>
+<pre class="notranslate"><code class="notranslate">s = "Python"
+#    012345
+print(s[0])      # P
+print(s[5])      # n
+print(s[-1])     # n   负数从末尾数，-1 是最后一个
+print(s[0:3])    # Pyt 左闭右开：含 0 不含 3
+print(s[2:])     # thon
+print(s[:3])     # Pyt
+print(s[::2])    # Pto 每两个取一个
+print(s[::-1])   # nohtyP 反转
+</code></pre>
+<h3>常用方法</h3>
+<p>字符串方法都<strong>返回新字符串</strong>，原字符串不变（字符串不可变）：</p>
+<pre class="notranslate"><code class="notranslate">s = "  Hello, Python  "
+
+s.strip()                 # 'Hello, Python'     去掉两端空白
+s.lower()                 # '  hello, python  '  转小写
+s.upper()                 # '  HELLO, PYTHON  '  转大写
+s.replace("Python", "世界")  # '  Hello, 世界  '
+"a,b,c".split(",")        # ['a', 'b', 'c']     切成列表
+"-".join(["2026", "11"])  # '2026-11'           拼接
+"Python".find("t")        # 2                   找不到返回 -1
+"Python".startswith("Py") # True
+len("Python")             # 6                   长度，注意 len 是函数不是方法
+</code></pre>
+<p>链式调用很常见，因为每一步都返回新字符串：</p>
+<pre class="notranslate"><code class="notranslate">raw = "  XiaoMing@Example.COM  "
+email = raw.strip().lower()
+print(email)      # xiaoming@example.com
+</code></pre>
+<h3>转义字符</h3>
+<pre class="notranslate"><code class="notranslate">print("第一行\n第二行")       # \n 换行
+print("姓名\t年龄")           # \t 制表符（对齐用）
+print("C:\\Users\\me")        # \\ 表示一个反斜杠
+print("他说：\"你好\"")        # \" 在双引号字符串里表示引号
+</code></pre>
+<p>路径多的时候用<strong>原始字符串</strong>，<code class="notranslate">r</code> 前缀让反斜杠不再转义：</p>
+<pre class="notranslate"><code class="notranslate">path = r"C:\Users\me\Documents"
+print(path)      # C:\Users\me\Documents
+</code></pre>
+<h2>2.6 f-string：拼字符串的最佳方式</h2>
+<p>Python 3.6 之后，格式化字符串首选 f-string：在引号前加 <code class="notranslate">f</code>，用 <code class="notranslate">{}</code> 嵌入变量或表达式。</p>
+<pre class="notranslate"><code class="notranslate">name = "小明"
+age = 18
+print(f"{name} 今年 {age} 岁")          # 小明 今年 18 岁
+print(f"明年他 {age + 1} 岁")           # 括号里可以写表达式
+print(f"{name} 的名字有 {len(name)} 个字")
+</code></pre>
+<p>格式控制写在冒号后面：</p>
+<pre class="notranslate"><code class="notranslate">pi = 3.14159
+print(f"{pi:.2f}")        # 3.14      保留 2 位小数
+print(f"{pi:10.3f}")      #      3.142 总宽 10，右对齐
+print(f"{pi:&lt;10.3f}|")    # 3.142     |  左对齐
+print(f"{0.257:.1%}")     # 25.7%     百分比
+print(f"{1234567:,}")     # 1,234,567 千分位
+print(f"{42:05d}")        # 00042     补零到 5 位
+</code></pre>
+<p>调试时有个偷懒写法（3.8+），<code class="notranslate">=</code> 会同时打印变量名和值：</p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; x = 42
+&gt;&gt;&gt; print(f"{x=}")
+x=42
+</code></pre>
+<h2>2.7 类型转换</h2>
+<pre class="notranslate"><code class="notranslate">int("18")        # 18        字符串 → 整数
+int(3.9)         # 3         浮点 → 整数，直接截断，不四舍五入
+float("3.14")    # 3.14
+str(18)          # '18'
+bool(0)          # False
+</code></pre>
+<h3>三个必知的陷阱</h3>
+<p><strong>陷阱一：<code class="notranslate">int("3.5")</code> 会报错</strong></p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; int("3.5")
+ValueError: invalid literal for int() with base 10: '3.5'
+</code></pre>
+<p>因为 <code class="notranslate">"3.5"</code> 不是合法的整数字面量。要两步走：</p>
+<pre class="notranslate"><code class="notranslate">int(float("3.5"))    # 3
+</code></pre>
+<p><strong>陷阱二：bool 转换的规则和直觉不同</strong></p>
+<pre class="notranslate"><code class="notranslate">bool("0")      # True   非空字符串都是 True，哪怕内容是 "0" 或 "False"
+bool("")       # False  空字符串才是 False
+bool(0)        # False
+bool([])       # False  空列表
+bool(None)     # False
+</code></pre>
+<p>记法：<strong><code class="notranslate">0</code>、<code class="notranslate">""</code>、<code class="notranslate">[]</code>、<code class="notranslate">{}</code>、<code class="notranslate">None</code>、<code class="notranslate">False</code> 为假，其它一切为真。</strong></p>
+<p><strong>陷阱三：<code class="notranslate">round()</code> 是「银行家舍入」</strong></p>
+<pre class="notranslate"><code class="notranslate">&gt;&gt;&gt; round(2.5)
+2
+&gt;&gt;&gt; round(3.5)
+4
+</code></pre>
+<p>遇到 .5 时舍入到最近的偶数。做「四舍五入」的业务逻辑时要留意，必要时用 <code class="notranslate">decimal</code> 的 <code class="notranslate">ROUND_HALF_UP</code>。</p>
+<h2>2.8 input()：让程序接收输入</h2>
+<pre class="notranslate"><code class="notranslate">name = input("请输入你的名字：")
+print(f"你好，{name}")
+</code></pre>
+<p>运行效果：</p>
+<pre class="notranslate"><code class="notranslate">请输入你的名字：小明
+你好，小明
+</code></pre>
+<p>关键点：<strong><code class="notranslate">input()</code> 的返回值永远是字符串</strong>，哪怕用户输入的是 <code class="notranslate">18</code>。</p>
+<pre class="notranslate"><code class="notranslate">age = input("年龄：")
+print(type(age))       # &lt;class 'str'&gt;
+print(age + 1)         # TypeError!
+</code></pre>
+<p>必须先转换：</p>
+<pre class="notranslate"><code class="notranslate">age = int(input("年龄："))
+print(f"明年 {age + 1} 岁")
+</code></pre>
+<p>如果用户输入了非数字，<code class="notranslate">int()</code> 会抛 <code class="notranslate">ValueError</code>，程序崩溃。第 6 课会讲怎么优雅处理；现在先知道这件事会发生。</p>
+<h2>2.9 综合示例：BMI 计算器</h2>
+<pre class="notranslate"><code class="notranslate">height = float(input("请输入身高（米）："))
+weight = float(input("请输入体重（公斤）："))
+
+bmi = weight / height ** 2
+
+print(f"你的 BMI 是 {bmi:.1f}")
+
+if bmi &lt; 18.5:
+    print("偏瘦")
+elif bmi &lt; 24:
+    print("正常")
+else:
+    print("偏胖")
+</code></pre>
+<p>这段代码已经用到了本课几乎所有知识点：<code class="notranslate">input</code>、类型转换、算术运算、f-string 格式化。<code class="notranslate">if</code> 分支下一课就讲。</p>
+<h2>2.10 小结</h2>
+<ul>
+<li>变量是标签，<code class="notranslate">=</code> 是绑定不是复制</li>
+<li>五种基本类型：<code class="notranslate">int</code>、<code class="notranslate">float</code>、<code class="notranslate">str</code>、<code class="notranslate">bool</code>、<code class="notranslate">None</code></li>
+<li><code class="notranslate">/</code> 永远得 float，<code class="notranslate">//</code> 向下取整，<code class="notranslate">%</code> 取余，<code class="notranslate">**</code> 是幂</li>
+<li>浮点数有精度误差，比较时用 <code class="notranslate">round</code> 或误差范围</li>
+<li>字符串不可变，切片左闭右开，方法都返回新字符串</li>
+<li>格式化优先用 f-string</li>
+<li><code class="notranslate">input()</code> 返回 str，用前必须转换</li>
+<li>假值集合：<code class="notranslate">0</code>、<code class="notranslate">""</code>、<code class="notranslate">[]</code>、<code class="notranslate">{}</code>、<code class="notranslate">None</code>、<code class="notranslate">False</code></li>
+</ul>
+<h2>2.11 课后练习</h2>
+<p><strong>练习 1</strong>　下面哪些变量名合法？</p>
+<pre class="notranslate"><code class="notranslate">user_name   2name   _temp   my-age   class   userName   MAX_SIZE   名字
+</code></pre>
+<p><strong>练习 2</strong>　预测输出，再运行验证：</p>
+<pre class="notranslate"><code class="notranslate">print(7 / 2)
+print(7 // 2)
+print(7 % 2)
+print(2 ** 3 ** 2)
+</code></pre>
+<p><strong>练习 3</strong>　写程序：输入一个三位整数，分别输出百位、十位、个位。例如输入 <code class="notranslate">365</code>，输出 <code class="notranslate">3 6 5</code>。</p>
+<p><strong>练习 4</strong>　写程序：输入圆的半径，输出面积，保留两位小数（面积 = πr²，π 取 3.14159）。</p>
+<p><strong>练习 5</strong>　下面代码为什么报错？给出两种修改方式。</p>
+<pre class="notranslate"><code class="notranslate">age = input("年龄：")
+print("明年你 " + age + 1 + " 岁")
+</code></pre>
+<hr>
+<h3>参考答案</h3>
+<p><strong>练习 1</strong></p>
+<p>合法：<code class="notranslate">user_name</code>、<code class="notranslate">_temp</code>、<code class="notranslate">userName</code>、<code class="notranslate">MAX_SIZE</code>、<code class="notranslate">名字</code>（Python 3 支持中文变量名，但不推荐实际使用）。</p>
+<p>非法：<code class="notranslate">2name</code>（数字开头）、<code class="notranslate">my-age</code>（含减号）、<code class="notranslate">class</code>（关键字）。</p>
+<p><strong>练习 2</strong></p>
+<pre class="notranslate"><code class="notranslate">3.5
+3
+1
+512
+</code></pre>
+<p><code class="notranslate">2 ** 3 ** 2</code> 是右结合的，等价于 <code class="notranslate">2 ** (3 ** 2)</code> = <code class="notranslate">2 ** 9</code> = 512。这是幂运算的特殊规则，和 <code class="notranslate">+ - * /</code> 的左结合不同。</p>
+<p><strong>练习 3</strong></p>
+<pre class="notranslate"><code class="notranslate">num = int(input("输入三位整数："))
+hundreds = num // 100
+tens = num // 10 % 10
+ones = num % 10
+print(hundreds, tens, ones)
+</code></pre>
+<p>用除法和取余「拆位」是最基础的数字处理技巧，后面处理时间、进制转换都靠它。</p>
+<p><strong>练习 4</strong></p>
+<pre class="notranslate"><code class="notranslate">r = float(input("半径："))
+area = 3.14159 * r ** 2
+print(f"面积是 {area:.2f}")
+</code></pre>
+<p><strong>练习 5</strong></p>
+<p>原因：<code class="notranslate">age</code> 是字符串，<code class="notranslate">"明年你 " + age</code> 得到字符串，再接 <code class="notranslate">+ 1</code>（整数）时类型不匹配，抛 <code class="notranslate">TypeError</code>。</p>
+<p>改法一，先转成数字再算：</p>
+<pre class="notranslate"><code class="notranslate">age = int(input("年龄："))
+print(f"明年你 {age + 1} 岁")
+</code></pre>
+<p>改法二，保持字符串，先算再转：</p>
+<pre class="notranslate"><code class="notranslate">age = input("年龄：")
+next_age = int(age) + 1
+print("明年你 " + str(next_age) + " 岁")
+</code></pre>
+<p><strong>推荐第一种</strong>：尽早把数据转成正确的类型，而不是一路用字符串拼。</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Iamx688110.github.io">Iamx的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("04/16/2021"!=""){
+    var startSite=new Date("04/16/2021");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Iamx688110/Iamx688110.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
