@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script><script src='https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js'></script><script>L2Dwidget.init({"model":{"jsonPath":"https://fastly.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20}},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}})</script><script src='https://fastly.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'></script><script>document.addEventListener('click',function(e){confetti({particleCount:100,spread:70,origin:{x:e.clientX/window.innerWidth,y:e.clientY/window.innerHeight}})})</script><style>#progress{position:fixed;top:0;left:0;height:3px;background:#006b75;z-index:9999}</style><script>window.onload=function(){var bar=document.createElement('div');bar.id='progress';document.body.appendChild(bar);window.onscroll=function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(s/h*100)+'%'}}</script><script async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script><div style='text-align:center;margin:10px 0;font-size:14px;color:#666'><span id='busuanzi_container_site_uv'>访客数：<span id='busuanzi_value_site_uv'></span></span> &nbsp;<span id='busuanzi_container_site_pv'>总访问：<span id='busuanzi_value_site_pv'></span></span></div><script>document.addEventListener('mousemove',function(e){var tip=document.getElementById('mousetip');if(!tip){tip=document.createElement('div');tip.id='mousetip';tip.innerText='✨Iamx的博客';tip.style.position='fixed';tip.style.zIndex='9999';tip.style.pointerEvents='none';tip.style.color='#006b75';tip.style.fontSize='14px';document.body.appendChild(tip)}tip.style.left=(e.pageX+10)+'px';tip.style.top=(e.pageY+10)+'px'})</script><script src='https://fastly.jsdelivr.net/npm/snowfall-js@2.0.1/dist/snowfall.min.js'></script><script>new Snowfall({color:'#ffffff',count:80,minRadius:1,maxRadius:4,speed:1})</script><style>@media (prefers-color-scheme: dark){body{background:#121212;color:#ddd}.markdown-body{color:#ddd}}</style><script>function runTime(){var start=new Date('2021-04-16');var now=new Date();var diff=now-start;var d=Math.floor(diff/(24*60*60*1000));var h=Math.floor((diff%(24*60*60*1000))/(60*60*1000));var m=Math.floor((diff%(60*60*1000))/(60*1000));var rt=document.getElementById('runtime');if(rt)rt.innerText='本站已运行：'+d+'天'+h+'时'+m+'分'}setInterval(runTime,60000)</script><div id='runtime' style='text-align:center;color:#666;font-size:14px;margin-bottom:12px'></div><script src='https://js.puter.com/v2/'></script><script>puter.chatbot.init({collectPageContent:true,title:'📖文章AI助手',placeholder:'针对这篇文章提问...'});</script>
+    <link rel="icon" href="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 基本写作和格式语法
+如果你不会，那你就需要好好阅读哦，其实一点都不难~
+> 使用简单语法在GitHub上为散文和代码创建复杂的格式。">
+<meta property="og:title" content="Markdown基本写作和格式语法">
+<meta property="og:description" content="# 基本写作和格式语法
+如果你不会，那你就需要好好阅读哦，其实一点都不难~
+> 使用简单语法在GitHub上为散文和代码创建复杂的格式。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Iamx688110.github.io/post/8.html">
+<meta property="og:image" content="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg">
+<title>Markdown基本写作和格式语法</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Markdown基本写作和格式语法</h1>
+<div class="title-right">
+    <a href="https://Iamx688110.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Iamx688110/Iamx688110.github.io/issues/8" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>基本写作和格式语法</h1>
+<p>如果你不会，那你就需要好好阅读哦，其实一点都不难~</p>
+<blockquote>
+<p>使用简单语法在GitHub上为散文和代码创建复杂的格式。</p>
+</blockquote>
+<h2>标题</h2>
+<p>若要创建标题，请在标题文本之前添加一到六 <kbd>#</kbd> 个符号。 使用的编号 <kbd>#</kbd> 将确定标题的层次结构级别和字样大小。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-mh"># <span class="pl-en">A first-level heading</span></span>
+<span class="pl-mh">## <span class="pl-en">A second-level heading</span></span>
+<span class="pl-mh">### <span class="pl-en">A third-level heading</span></span></pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/headings-rendered.png"><img src="/assets/images/help/writing/headings-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了示例 h1、h2 和 h3 标头，这些标头按类型大小和视觉权重降序以显示层次结构级别。" style="max-width: 100%;"></a></p>
+<p>使用两个或多个标题时，GitHub会自动生成一个目录，您可以通过单击文件标头中的“大纲”菜单图标来访问该目录。 每个标题标题都列在目录中，你可以单击标题以导航到所选部分。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/repository/headings-toc.png"><img src="/assets/images/help/repository/headings-toc.png" alt="README 文件屏幕截图，其中展示了目录的下拉菜单。 目录图标以深橙色边框显示。" style="max-width: 100%;"></a></p>
+<h2>设置文本样式</h2>
+<p>可以在注释字段和 <code class="notranslate">.md</code> 文件中用粗体、斜体、删除线、下标或上标文本来指示强调。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>Style</th>
+<th>Syntax</th>
+<th>键盘快捷键</th>
+<th>Example</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="notranslate">** **</code> 或 <code class="notranslate">__ __</code></td>
+<td>CommandB &lt;&gt;c3&gt;CtrlB （Windows/Linux）</td>
+<td><code class="notranslate">**This is bold text**</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>这是粗体文本</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>斜体</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="notranslate">* *</code> 或 <code class="notranslate">_ _</code>    </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><kbd>Command</kbd>+<kbd>I</kbd> （Mac） 或 <kbd>Ctrl</kbd>+<kbd>I</kbd> （Windows/Linux）</td>
+<td><code class="notranslate">_This text is italicized_</code></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>此文本被斜体化</em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>删除线</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="notranslate">~~ ~~</code> 或 <code class="notranslate">~ ~</code></td>
+<td>None</td>
+<td><code class="notranslate">~~This was mistaken text~~</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><del>这是错误的文本</del></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>粗体和层叠斜体</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code class="notranslate">** **</code> 和 <code class="notranslate">_ _</code></td>
+<td>None</td>
+<td><code class="notranslate">**This text is _extremely_ important**</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>此文本_非常重要_</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>所有粗体和斜体</td>
+<td><code class="notranslate">*** ***</code></td>
+<td>None</td>
+<td><code class="notranslate">***All this text is important***</code></td>
+<td></td>
+</tr>
+<tr>
+<td><em><strong>所有这些文本都很重要</strong></em></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>下标</td>
+<td><code class="notranslate">&lt;sub&gt; &lt;/sub&gt;</code></td>
+<td>None</td>
+<td><code class="notranslate">This is a &lt;sub&gt;subscript&lt;/sub&gt; text</code></td>
+<td>这是 <sub>下标</sub> 文本</td>
+</tr>
+<tr>
+<td>上标</td>
+<td><code class="notranslate">&lt;sup&gt; &lt;/sup&gt;</code></td>
+<td>None</td>
+<td><code class="notranslate">This is a &lt;sup&gt;superscript&lt;/sup&gt; text</code></td>
+<td>这是 <sup>上标</sup> 文本</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td><code class="notranslate">&lt;ins&gt; &lt;/ins&gt;</code></td>
+<td>None</td>
+<td><code class="notranslate">This is an &lt;ins&gt;underlined&lt;/ins&gt; text</code></td>
+<td>这是 <ins>带下划线</ins> 的文本</td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>引用文本</h2>
+<p>可以使用 <kbd>&gt;</kbd>..</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">Text that is not a quote
+
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Text that is a quote</span></pre></div>
+<p>带引号的文本在左侧通过竖线缩进，并以灰色字体显示。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/quoted-text-rendered.png"><img src="/assets/images/help/writing/quoted-text-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了普通文本和带引号的文本之间的差异。" style="max-width: 100%;"></a></p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>查看对话时，可以通过突出显示文本，然后键入 <kbd>R</kbd> 来自动引用批注中的文本。可以通过单击 “ <strong>报价”回复来引用</strong>整个批注。 有关键盘快捷方式的详细信息，请参阅 <a href="/zh/get-started/accessibility/keyboard-shortcuts">键盘快捷方式</a>。</p>
+</div>
+<h2>引用代码</h2>
+<p>可以在句子中使用单个反引号来调用代码或命令。 使用反引号括起来的文本将不进行格式设置。 还可以按 <kbd>Command</kbd>+<kbd>E</kbd> （Mac） 或 <kbd>Ctrl </kbd>+<kbd>E</kbd>（Windows/Linux）键盘快捷方式，以便在 Markdown 行内插入代码块的反杆。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">Use <span class="pl-s">`</span><span class="pl-c1">git status</span><span class="pl-s">`</span> to list all new or modified files that haven't yet been committed.</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/inline-code-rendered.png"><img src="/assets/images/help/writing/inline-code-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示由反杆包围的字符显示在固定宽度的字样中，以浅灰色突出显示。" style="max-width: 100%;"></a></p>
+<p>若要将代码或文本格式化为独立的块，请使用三个反引号。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">Some basic Git commands are:
+<span class="pl-s">```</span><span class="pl-c1"></span>
+<span class="pl-c1">git status</span>
+<span class="pl-c1">git add</span>
+<span class="pl-c1">git commit</span>
+<span class="pl-c1"></span><span class="pl-s">```</span></pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/code-block-rendered.png"><img src="/assets/images/help/writing/code-block-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了一个简单的代码块，没有语法突出显示。" style="max-width: 100%;"></a></p>
+<p>有关详细信息，请参阅“<a href="/zh/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks">创建和突显代码块</a>”。</p>
+<p>如果经常编辑代码片段和表，则可能受益于在 GitHub 上启用对所有注释字段采用固定宽度字体。 有关详细信息，请参阅“<a href="/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github#enabling-fixed-width-fonts-in-the-editor">关于在GitHub上撰写和格式化</a>”。</p>
+<h2>支持的颜色模型</h2>
+<p>在问题、拉取请求和讨论中，可以使用反引号在句子中标记颜色。 反引号中支持的颜色模型将显示颜色的可视化效果。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">The background color is <span class="pl-s">`</span><span class="pl-c1">#ffffff</span><span class="pl-s">`</span> for light mode and <span class="pl-s">`</span><span class="pl-c1">#000000</span><span class="pl-s">`</span> for dark mode.</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/supported-color-models-rendered.png"><img src="/assets/images/help/writing/supported-color-models-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了反杆中的 HEX 值如何创建颜色的小圆圈，此处为白色和黑色。" style="max-width: 100%;"></a></p>
+<p>下面是当前支持的颜色模型。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>颜色</th>
+<th>Syntax</th>
+<th>Example</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>十六进制</td>
+<td><code class="notranslate">`#RRGGBB`</code></td>
+<td><code class="notranslate">`#0969DA`</code></td>
+<td><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/supported-color-models-hex-rendered.png"><img src="/assets/images/help/writing/supported-color-models-hex-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了 HEX 值 #0969DA 如何以蓝色圆圈显示。" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td>RGB</td>
+<td><code class="notranslate">`rgb(R,G,B)`</code></td>
+<td><code class="notranslate">`rgb(9, 105, 218)`</code></td>
+<td><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/supported-color-models-rgb-rendered.png"><img src="/assets/images/help/writing/supported-color-models-rgb-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了 RGB 值 9、105、218 与蓝色圆圈的显示方式。" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td>HSL</td>
+<td><code class="notranslate">`hsl(H,S,L)`</code></td>
+<td><code class="notranslate">`hsl(212, 92%, 45%)`</code></td>
+<td><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/supported-color-models-hsl-rendered.png"><img src="/assets/images/help/writing/supported-color-models-hsl-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了 HSL 值 212、92%、45% 与蓝色圆圈的显示方式。" style="max-width: 100%;"></a></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<ul>
+<li>支持的颜色模型在反引号中不能出现任何前导或尾随空格。</li>
+<li>颜色的可视化仅在问题、拉取请求和讨论中受支持。</li>
+</ul>
+</div>
+<h2>Links</h2>
+<p>可以通过将链接文本包装在括号 <code class="notranslate">[ ]</code>中，然后将 URL 包装在括号 <code class="notranslate">( )</code>中来创建内联链接。 还可以使用键盘快捷方式 <kbd>命令</kbd>+<kbd>K</kbd> 创建链接。 选择文本后，可以从剪贴板粘贴 URL 以自动从所选内容创建链接。</p>
+<p>还可以通过突出显示文本并使用键盘快捷方式 <kbd>命令</kbd>+<kbd>V</kbd> 来创建 Markdown 超链接。 如果要将文本替换为链接，请使用键盘快捷方式 <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>。</p>
+<p><code class="notranslate">This site was built using [GitHub Pages](https://pages.github.com/).</code></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/link-rendered.png"><img src="/assets/images/help/writing/link-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了括号中的文本“GitHub页面”如何显示为蓝色超链接。" style="max-width: 100%;"></a></p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>GitHub 在批注中写入有效 URL 时自动创建链接。 有关详细信息，请参阅“<a href="/zh/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls">自动链接引用和 URL</a>”。</p>
+</div>
+<h2>章节链接</h2>
+<p>可以直接链接到具有标题的任何章节。 若要查看呈现文件中自动生成的定位点，请将鼠标悬停在章节标题上方以显示  图标，然后单击图标以在浏览器中显示定位点。</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/repository/readme-links.png"><img src="/assets/images/help/repository/readme-links.png" alt="存储库的自述文件的屏幕截图。 在部分标题的左侧，链接图标以深橙色标出。" style="max-width: 100%;"></a></p>
+<p>如果需要确定要编辑的文件中标题的定位点，可以使用以下基本规则：</p>
+<ul>
+<li>字母转换为小写。</li>
+<li>空格由连字符（<code class="notranslate">-</code>）替换。 删除任何其他空格或标点符号字符。</li>
+<li>删除前导空格和尾随空格。</li>
+<li>将删除标记格式，只保留内容（例如， <code class="notranslate">_italics_</code> 变为 <code class="notranslate">italics</code>）。</li>
+<li>如果标题的自动生成的定位点与同一文档中的早期定位点相同，则通过追加连字符和自动递增整数来生成唯一标识符。</li>
+</ul>
+<p>有关 URI 片段要求的详细信息，请参阅 <a href="https://www.rfc-editor.org/rfc/rfc3986#section-3.5" rel="nofollow">RFC 3986：统一资源标识符（URI）：通用语法，第 3.5 节</a>。</p>
+<p>下面的代码块演示了用于从呈现内容中的标题生成定位点的基本规则。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-mh"># <span class="pl-en">Example headings</span></span>
+
+<span class="pl-mh">## <span class="pl-en">Sample Section</span></span>
+
+<span class="pl-mh">## <span class="pl-en">This'll be a <span class="pl-s">_</span>Helpful<span class="pl-s">_</span> Section About the Greek Letter Θ!</span></span>
+A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
+
+<span class="pl-mh">## <span class="pl-en">This heading is not unique in the file</span></span>
+
+TEXT 1
+
+<span class="pl-mh">## <span class="pl-en">This heading is not unique in the file</span></span>
+
+TEXT 2
+
+<span class="pl-mh"># <span class="pl-en">Links to the example headings above</span></span>
+
+Link to the sample section: <span class="pl-s">[</span>Link Text<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">#sample-section</span><span class="pl-s">)</span>.
+
+Link to the helpful section: <span class="pl-s">[</span>Link Text<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">#thisll-be-a-helpful-section-about-the-greek-letter-Θ</span><span class="pl-s">)</span>.
+
+Link to the first non-unique section: <span class="pl-s">[</span>Link Text<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">#this-heading-is-not-unique-in-the-file</span><span class="pl-s">)</span>.
+
+Link to the second non-unique section: <span class="pl-s">[</span>Link Text<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">#this-heading-is-not-unique-in-the-file-1</span><span class="pl-s">)</span>.</pre></div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>如果您编辑标题，或更改具有相同锚点的标题顺序，您还需要更新指向这些标题的任何链接，因为锚点将会变化。</p>
+</div>
+<h2>相对链接</h2>
+<p>您可以在渲染的文件中定义相对链接和图像路径，以帮助读者导航到仓库中的其他文件。</p>
+<p>相对链接是相对于当前文件的链接。 例如，如果在仓库根目录下有一个自述文件，而在 docs/CONTRIBUTING.md 中有另一个文件，则自述文件中的 CONTRIBUTING.md 的相关链接如下所示 ：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+</code></pre>
+<p>GitHub 将根据你当前使用的分支自动转换相对链接或图像路径，从而使链接或路径始终有效。 链接的路径将相对于当前文件。 以 <code class="notranslate">/</code> 开头的链接将相对于存储库根目录。 可使用所有相对链接操作数，例如 <code class="notranslate">./</code> 和 <code class="notranslate">../</code>。</p>
+<p>链接文本应位于一行上。 下面的示例将不起作用。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">[</span>Contribution
+guidelines for this project<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">docs/CONTRIBUTING.md</span><span class="pl-s">)</span></pre></div>
+<p>相对链接更便于用户克隆仓库。 绝对链接可能无法用于仓库的克隆 - 建议使用相对链接引用仓库中的其他文件。</p>
+<h2>自定义定位点</h2>
+<p>可以使用标准 HTML 定位标记 （<code class="notranslate">&lt;a name="unique-anchor-name"&gt;&lt;/a&gt;</code>） 为文档中的任何位置创建导航定位点。 为了避免不明确的引用，请使用定位标记的唯一命名方案，例如向属性值添加前缀 <code class="notranslate">name</code> 。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>自定义锚点不会包含在文档大纲/目录中。</p>
+</div>
+<p>可以使用你为定位点提供的属性的值 <code class="notranslate">name</code> 链接到自定义定位点。 其语法与链接到标题自动生成的锚点时完全相同。</p>
+<p>例如：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-mh"># <span class="pl-en">Section Heading</span></span>
+
+Some body text of this section.
+
+&lt;<span class="pl-ent">a</span> <span class="pl-e">name</span>=<span class="pl-s">"</span><span class="pl-s">my-custom-anchor-point</span><span class="pl-s">"</span>&gt;&lt;/<span class="pl-ent">a</span>&gt;
+Some text I want to provide a direct link to, but which doesn't have its own heading.
+
+(… more content…)
+
+<span class="pl-s">[</span>A link to that custom anchor<span class="pl-s">]</span><span class="pl-s">(</span><span class="pl-corl">#my-custom-anchor-point</span><span class="pl-s">)</span></pre></div>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>自定义锚点不会被自动标题链接的命名和编号行为所考虑。</p>
+</div>
+<h2>换行符</h2>
+<p>如果要在存储库中编写问题、拉取请求或讨论， GitHub 将自动呈现换行符：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">This example
+Will span two lines</pre></div>
+<p>但是，如果要在 .md 文件中编写，则上面的示例将在一行上呈现，且不带换行符。 若要在 .md 文件中创建换行符，需要包含以下项之一：</p>
+<ul>
+<li>
+<p>在第一行末尾包含两个空格。</p>
+<pre class="notranslate">This example  
+Will span two lines
+</pre>
+</li>
+<li>
+<p>在第一行末尾包含反斜杠。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">This example<span class="pl-c1">\</span>
+Will span two lines</pre></div>
+</li>
+<li>
+<p>在第一行末尾包括一个 HTML 单行分隔符标记。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">This example&lt;<span class="pl-ent">br</span>/&gt;
+Will span two lines</pre></div>
+</li>
+</ul>
+<p>如果在两行之间留空行，则 .md 文件和 Markdown 在问题、拉取请求和讨论中都会呈现由空白行分隔的两行：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate">This example
+
+Will have a blank line separating both lines</pre></div>
+<h2>映像</h2>
+<p>可以通过添加 <kbd>！</kbd> 并将替换文字包装在 <code class="notranslate">[ ]</code>. 替代文字是图像中信息的短文本等效项。 然后，将图像的链接包装在括号 <code class="notranslate">()</code>中。</p>
+<p><code class="notranslate">![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)</code></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/image-rendered.png"><img src="/assets/images/help/writing/image-rendered.png" alt="有关GitHub问题的评论的屏幕截图，其中显示了一张在 Markdown 中添加的图像，该图像在八进制猫微笑和举起触角。" style="max-width: 100%;"></a></p>
+<p>GitHub 支持将图像嵌入问题、拉取请求、讨论、注释和 <code class="notranslate">.md</code> 文件。 可以从存储库显示图像、添加联机图像的链接或上传图像。 有关详细信息，请参阅 <a href="#uploading-assets">上传资产</a>。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>如果要显示存储库中的图像，请使用相对链接而不是绝对链接。</p>
+</div>
+<p>下面是使用相对链接显示图像的一些示例。</p>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>上下文</th>
+<th>相对链接</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>在同一 <code class="notranslate">.md</code> 分支上的文件中</td>
+<td><code class="notranslate">/assets/images/electrocat.png</code></td>
+</tr>
+<tr>
+<td>在另一 <code class="notranslate">.md</code> 分支上的文件中</td>
+<td><code class="notranslate">/../main/assets/images/electrocat.png</code></td>
+</tr>
+<tr>
+<td>在存储库的问题、拉取请求和评论中</td>
+<td><code class="notranslate">../blob/main/assets/images/electrocat.png?raw=true</code></td>
+</tr>
+<tr>
+<td>在另一个 <code class="notranslate">.md</code> 存储库中的文件中</td>
+<td><code class="notranslate">/../../../../github/docs/blob/main/assets/images/electrocat.png</code></td>
+</tr>
+<tr>
+<td>在另一个存储库的议题、拉取请求和评论中</td>
+<td><code class="notranslate">../../../github/docs/blob/main/assets/images/electrocat.png?raw=true</code></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>仅当查看器至少对包含这些映像的专用存储库具有读取访问权限时，上表中的最后两个相对链接才适用于专用存储库中的映像。</p>
+</div>
+<p>有关详细信息，请参阅 <a href="#relative-links">相对链接</a>。</p>
+<h3>Picture（图片）元素</h3>
+<p><code class="notranslate">&lt;picture&gt;</code>支持 HTML 元素。</p>
+<h2>Lists</h2>
+<p>可以通过在一行或多行文本前面加上一<kbd>-</kbd><kbd>*</kbd>行或多行文本<kbd>+</kbd>来创建无序列表。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-v">-</span> George Washington
+<span class="pl-v">*</span> John Adams
+<span class="pl-v">+</span> Thomas Jefferson</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/unordered-list-rendered.png"><img src="/assets/images/help/writing/unordered-list-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了前三位美国总统姓名的项目符号列表。" style="max-width: 100%;"></a></p>
+<p>若要对列表进行排序，请在每行前面加上一个数字。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">1</span><span class="pl-v">.</span> James Madison
+<span class="pl-s">2</span><span class="pl-v">.</span> James Monroe
+<span class="pl-s">3</span><span class="pl-v">.</span> John Quincy Adams</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/ordered-list-rendered.png"><img src="/assets/images/help/writing/ordered-list-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了第四、第五和第六位美国总统姓名的编号列表。" style="max-width: 100%;"></a></p>
+<h3>嵌套列表</h3>
+<p>可以通过在另一项下方缩进一个或多个列表项来创建嵌套列表。</p>
+<p>若要使用 Web 编辑器创建 GitHub 嵌套列表，或者使用单边字体的文本编辑器，例如 <a href="https://code.visualstudio.com/" rel="nofollow">Visual Studio Code</a>，可以直观地对齐列表。 在嵌套列表项前面键入空格字符，直到列表标记字符（<kbd>-</kbd> 或 <kbd>*</kbd>）直接位于其上方的项中的文本的第一个字符下方。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">1</span><span class="pl-v">.</span> First list item
+   <span class="pl-v">-</span> First nested list item
+     <span class="pl-v">-</span> Second nested list item</pre></div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>在基于 Web 的编辑器中，可以先突出显示所需行，然后分别使用 <kbd>Tab</kbd> 或 <kbd>Shift</kbd>+<kbd>Tab</kbd> 来缩进或缩进一行或多行文本。</p>
+</div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/nested-list-alignment.png"><img src="/assets/images/help/writing/nested-list-alignment.png" alt="Visual Studio Code 中 Markdown 的屏幕截图，显示嵌套编号行和项目符号的缩进。" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/nested-list-example-1.png"><img src="/assets/images/help/writing/nested-list-example-1.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了一个编号项，后跟两个不同级别的嵌套项目符号。" style="max-width: 100%;"></a></p>
+<p>若要在注释编辑器中创建嵌套列表，该编辑器 GitHub不使用单空格字体，可以在嵌套列表上方查看列表项，并计算项内容之前显示的字符数。 然后键入嵌套列表项前面的空格字符数。</p>
+<p>在此示例中，可以通过将嵌套列表项缩进至少五个空格来在列表项下添加嵌套列表项<code class="notranslate">100. First list item</code>，因为前面<code class="notranslate">100. </code>有五个字符（<code class="notranslate">First list item</code>）。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">100</span><span class="pl-v">.</span> First list item
+     <span class="pl-v">-</span> First nested list item</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/nested-list-example-3.png"><img src="/assets/images/help/writing/nested-list-example-3.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示编号为 100 的编号项，后跟嵌套一个级别的项目符号项。" style="max-width: 100%;"></a></p>
+<p>可以使用同一方法创建多个级别的嵌套列表。 例如，由于第一个嵌套列表项在嵌套列表内容<code class="notranslate">␣␣␣␣␣-␣</code>之前有七个字符（<code class="notranslate">First nested list item</code>），因此需要将第二个嵌套列表项缩进至少两个字符（最小 9 个空格）。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-s">100</span><span class="pl-v">.</span> First list item
+     <span class="pl-v">-</span> First nested list item
+       <span class="pl-v">-</span> Second nested list item</pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/nested-list-example-2.png"><img src="/assets/images/help/writing/nested-list-example-2.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示编号为 100 的编号项，后跟两个不同级别的嵌套项目。" style="max-width: 100%;"></a></p>
+<p>有关更多示例，请参阅 <a href="https://github.github.com/gfm/#example-265">GitHub Flavored Markdown Spec</a>。</p>
+<h2>任务列表</h2>
+<p>若要创建任务列表，请在列表项前加连字符和空格，后接 <code class="notranslate">[ ]</code>。 要将任务标记为完成，请使用 <code class="notranslate">[x]</code>。</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-v">-</span> <span class="pl-k">[x]</span> <span class="pl-s">#<span class="pl-corl">739</span></span>
+<span class="pl-v">-</span> <span class="pl-k">[ ]</span> <span class="pl-corl">https://github.com/octo-org/octo-repo/issues/740</span>
+<span class="pl-v">-</span> <span class="pl-k">[ ]</span> Add delight to the experience when all tasks are complete <span class="pl-s">:<span class="pl-k">tada</span>:</span></pre></div>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/task-list-rendered-simple.png"><img src="/assets/images/help/writing/task-list-rendered-simple.png" alt="显示 Markdown 的呈现版本的屏幕截图。 对问题的引用呈现为问题标题。" style="max-width: 100%;"></a></p>
+<p>如果任务列表项说明以括号开头，则需要使用 <kbd>\</kbd>：</p>
+<p><code class="notranslate">- [ ] \(Optional) Open a followup issue</code></p>
+<p>有关详细信息，请参阅“<a href="/zh/get-started/writing-on-github/working-with-advanced-formatting/about-tasklists">关于任务列表</a>”。</p>
+<h2>提及人员和团队</h2>
+<p>可以通过键入<a href="/zh/organizations/organizing-members-into-teams"></a>其用户名或团队名称来提及人员或GitHub@。 这将触发通知并引起他们对对话的关注。 如果编辑批注以提及其用户名或团队名称，则人员也会收到通知。 有关通知的详细信息，请参阅 <a href="/zh/subscriptions-and-notifications/concepts/about-notifications">关于通知</a>。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>只有当某人拥有存储库的读取权限，并且该存储库由组织拥有时，且该人是该组织的成员，才会收到有关提及的通知。</p>
+</div>
+<p><code class="notranslate">@github/support What do you think about these updates?</code></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/mention-rendered.png"><img src="/assets/images/help/writing/mention-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了团队如何提及“@github/support”呈现为粗体、可单击的文本。" style="max-width: 100%;"></a></p>
+<p>提到父团队时，其子团队的成员也会收到通知，从而简化与多个人员组的通信。 有关详细信息，请参阅“<a href="/zh/organizations/organizing-members-into-teams/about-teams">关于组织团队</a>”。</p>
+<p>键入符号 <kbd>@</kbd> 将显示项目中的人员或团队列表。 在键入时，列表会筛选，因此，找到要查找的人员或团队的名称后，可以使用箭头键将其选中，然后按 Tab 或 Enter 以完成名称。 对于团队，请输入 @organization/team-name 该团队的所有成员将订阅对话。</p>
+<p>自动完成结果仅限于存储库协作者和线程上的任何其他参与者。</p>
+<h2>引用问题和拉取请求</h2>
+<p>可以通过键入来 <kbd>#</kbd>显示存储库中建议的问题和拉取请求的列表。 键入问题或拉取请求编号或标题以筛选列表，然后按 Tab 或 Enter 以完成突出显示的结果。</p>
+<p>有关详细信息，请参阅“<a href="/zh/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls">自动链接引用和 URL</a>”。</p>
+<h2>引用外部资源</h2>
+<p>如果自定义自动链接引用配置用于仓库，则对外部资源（如 JIRA 议题或 Zendesk 事件单）的引用将转换为缩短的链接。 要了解在您的仓库中哪些自动链接可用，请联系拥有仓库管理员权限的人。 有关详细信息，请参阅“<a href="/zh/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/configuring-autolinks-to-reference-external-resources">配置自动链接以引用外部资源</a>”。</p>
+<h2>上传素材</h2>
+<p>可以通过拖放、从文件浏览器选择或粘贴来上传图像等资产。 可以将资产上传到存储库中的问题、拉取请求、注释和 <code class="notranslate">.md</code> 文件。</p>
+<h2>使用表情符号</h2>
+<p>可以通过键入 <code class="notranslate">:EMOJICODE:</code>一个冒号，后跟表情符号的名称，将表情符号添加到你的写作中。</p>
+<p><code class="notranslate">@octocat :+1: This PR looks great - it's ready to merge! :shipit:</code></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/emoji-rendered.png"><img src="/assets/images/help/writing/emoji-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了 +1 和 shipit 如何以表情符号的形式直观呈现表情符号。" style="max-width: 100%;"></a></p>
+<p>键入 <kbd>：</kbd> 将显示建议的表情符号列表。 键入时，列表将进行筛选，因此，找到要查找的表情符号后，按 <strong>Tab</strong> 或 <strong>Enter</strong> 以完成突出显示的结果。</p>
+<p>有关可用表情符号和代码的完整列表，请参阅 <a href="https://github.com/ikatyang/emoji-cheat-sheet/blob/github-actions-auto-update/README.md">表情符号备忘单</a>。</p>
+<h2>Paragraphs</h2>
+<p>可以通过在文本行之间留空行来创建新段落。</p>
+<h2>Footnotes</h2>
+<p>可以使用以下括号语法向内容添加脚注：</p>
+<pre lang="text" class="notranslate"><code class="notranslate">Here is a simple footnote[^1].
+
+A footnote can also have multiple lines[^2].
+
+[^1]: My reference.
+[^2]: To add line breaks within a footnote, add 2 spaces to the end of a line.  
+This is a second line.
+</code></pre>
+<p>脚注将如下所示呈现：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/footnote-rendered.png"><img src="/assets/images/help/writing/footnote-rendered.png" alt="已呈现的 Markdown 的屏幕截图，显示了用于指示脚注的上标数字，以及笔记中可选的换行符。" style="max-width: 100%;"></a></p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>Markdown 中脚注的位置不会影响脚注的呈现位置。 可以在对脚注的引用后立即编写脚注，脚注仍将呈现在 Markdown 底部。 Wiki 不支持脚注。</p>
+</div>
+<h2>Alerts</h2>
+<p><strong>警报</strong>（有时也称为 <strong>标注</strong> 或 <strong>告诫</strong>）是基于可用于强调关键信息的块语法的 Markdown 扩展。 打开 GitHub时，它们以独特的颜色和图标显示，以指示内容的重要性。</p>
+<p>仅在提醒对于用户体验成功至关重要时使用，并将其限制为每篇文章一到两个，以防止信息过载。 此外，应避免连续放置警报。 警报不能嵌套在其他元素中。</p>
+<p>要添加警报，请使用特定格式的引用块行来指定警报类型，后跟在标准引用块中的警报信息。 有五种类型的警报可用：</p>
+<div class="highlight highlight-text-md"><pre class="notranslate"><span class="pl-ent"><span class="pl-ent">&gt; </span><span class="pl-s">[</span>!NOTE<span class="pl-s">]</span></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Useful information that users should know, even when skimming content.</span>
+<span class="pl-ent"></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span><span class="pl-s">[</span>!TIP<span class="pl-s">]</span></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Helpful advice for doing things better or more easily.</span>
+<span class="pl-ent"></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span><span class="pl-s">[</span>!IMPORTANT<span class="pl-s">]</span></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Key information users need to know to achieve their goal.</span>
+<span class="pl-ent"></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span><span class="pl-s">[</span>!WARNING<span class="pl-s">]</span></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Urgent info that needs immediate user attention to avoid problems.</span>
+<span class="pl-ent"></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span><span class="pl-s">[</span>!CAUTION<span class="pl-s">]</span></span>
+<span class="pl-ent"><span class="pl-ent">&gt; </span>Advises about risks or negative outcomes of certain actions.</span></pre></div>
+<p>下面是呈现的警报：</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/alerts-rendered.png"><img src="/assets/images/help/writing/alerts-rendered.png" alt="呈现的 Markdown 警报的屏幕截图，显示了“注意”、“提示”、“重要事项”、“警告”和“注意事项”分别以不同的彩色文本和图标呈现的效果。" style="max-width: 100%;"></a></p>
+<h2>使用注释隐藏内容</h2>
+<p>可以通过将内容置于 HTML 注释中来告知 GitHub 隐藏呈现的 Markdown 中的内容。</p>
+<pre lang="text" class="notranslate"><code class="notranslate">&lt;!-- This content will not appear in the rendered Markdown --&gt;
+</code></pre>
+<h2>忽略 Markdown 格式</h2>
+<p>可以使用 Markdown 字符之前使用来指示 GitHub 忽略 Markdown 格式 <kbd>\</kbd> （或转义）。</p>
+<p><code class="notranslate">Let's rename \*our-new-project\* to \*our-old-project\*.</code></p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/escaped-character-rendered.png"><img src="/assets/images/help/writing/escaped-character-rendered.png" alt="呈现GitHub Markdown 的屏幕截图，其中显示了反斜杠如何防止星号转换为斜体。" style="max-width: 100%;"></a></p>
+<p>有关反斜杠的详细信息，请参阅 Daring Fireball 的 <a href="https://daringfireball.net/projects/markdown/syntax#backslash" rel="nofollow">Markdown 语法</a>。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>在问题或合并请求的标题中，Markdown 格式不会被忽略。</p>
+</div>
+<h2>禁用 Markdown 渲染</h2>
+<p>查看 Markdown 文件时，可单击文件顶部的“Code”以禁用 Markdown 呈现并改为查看文件的源。****</p>
+<p><a target="_blank" rel="noopener noreferrer" href="/assets/images/help/writing/display-markdown-as-source-global-nav-update.png"><img src="/assets/images/help/writing/display-markdown-as-source-global-nav-update.png" alt="仓库中的 Markdown 文件的屏幕截图，其中显示了用于与文件交互的选项。 标有“代码”的按钮用深橙色框出。" style="max-width: 100%;"></a></p>
+<p>禁用 Markdown 呈现使你能够使用源视图功能，例如行链接，这在查看呈现的 Markdown 文件时不可用。</p>
+<h2>延伸阅读</h2>
+<ul>
+<li><a href="https://github.github.com/gfm/"><br>
+GitHub 风格 Markdown 规范</a></li>
+<li><a href="/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/about-writing-and-formatting-on-github">关于在GitHub上撰写和格式化</a></li>
+<li><a href="/zh/get-started/writing-on-github/working-with-advanced-formatting">使用高级格式</a></li>
+<li><a href="/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/quickstart-for-writing-on-github">GitHub上写作的快速入门指南</a></li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Iamx688110.github.io">Iamx的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("04/16/2021"!=""){
+    var startSite=new Date("04/16/2021");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Iamx688110/Iamx688110.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
