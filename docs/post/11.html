@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekVercount.js'></script><script src='https://fastly.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js'></script><script>L2Dwidget.init({"model":{"jsonPath":"https://fastly.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json","display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20}},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2}})</script><script src='https://fastly.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js'></script><script>document.addEventListener('click',function(e){confetti({particleCount:100,spread:70,origin:{x:e.clientX/window.innerWidth,y:e.clientY/window.innerHeight}})})</script><style>#progress{position:fixed;top:0;left:0;height:3px;background:#006b75;z-index:9999}</style><script>window.onload=function(){var bar=document.createElement('div');bar.id='progress';document.body.appendChild(bar);window.onscroll=function(){var s=document.documentElement.scrollTop||document.body.scrollTop;var h=document.documentElement.scrollHeight-document.documentElement.clientHeight;bar.style.width=(s/h*100)+'%'}}</script><script async src='https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'></script><div style='text-align:center;margin:10px 0;font-size:14px;color:#666'><span id='busuanzi_container_site_uv'>访客数：<span id='busuanzi_value_site_uv'></span></span> &nbsp;<span id='busuanzi_container_site_pv'>总访问：<span id='busuanzi_value_site_pv'></span></span></div><script>document.addEventListener('mousemove',function(e){var tip=document.getElementById('mousetip');if(!tip){tip=document.createElement('div');tip.id='mousetip';tip.innerText='✨Iamx的博客';tip.style.position='fixed';tip.style.zIndex='9999';tip.style.pointerEvents='none';tip.style.color='#006b75';tip.style.fontSize='14px';document.body.appendChild(tip)}tip.style.left=(e.pageX+10)+'px';tip.style.top=(e.pageY+10)+'px'})</script><script src='https://fastly.jsdelivr.net/npm/snowfall-js@2.0.1/dist/snowfall.min.js'></script><script>new Snowfall({color:'#ffffff',count:80,minRadius:1,maxRadius:4,speed:1})</script><style>@media (prefers-color-scheme: dark){body{background:#121212;color:#ddd}.markdown-body{color:#ddd}}</style><script>function runTime(){var start=new Date('2021-04-16');var now=new Date();var diff=now-start;var d=Math.floor(diff/(24*60*60*1000));var h=Math.floor((diff%(24*60*60*1000))/(60*60*1000));var m=Math.floor((diff%(60*60*1000))/(60*1000));var rt=document.getElementById('runtime');if(rt)rt.innerText='本站已运行：'+d+'天'+h+'时'+m+'分'}setInterval(runTime,60000)</script><div id='runtime' style='text-align:center;color:#666;font-size:14px;margin-bottom:12px'></div><script src='https://js.puter.com/v2/'></script><script>puter.chatbot.init({collectPageContent:true,title:'📖文章AI助手',placeholder:'针对这篇文章提问...'});</script>
+    <link rel="icon" href="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# 须知
+这篇文章也有年头了，好不容易翻出来，也不知道之前发没有，可能是更换博客时落下的。">
+<meta property="og:title" content="[归档]静态特征及动态行为">
+<meta property="og:description" content="# 须知
+这篇文章也有年头了，好不容易翻出来，也不知道之前发没有，可能是更换博客时落下的。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://Iamx688110.github.io/post/11.html">
+<meta property="og:image" content="https://b.kafan.cn/001/33/65/84_avatar_middle.jpg">
+<title>[归档]静态特征及动态行为</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">[归档]静态特征及动态行为</h1>
+<div class="title-right">
+    <a href="https://Iamx688110.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/Iamx688110/Iamx688110.github.io/issues/11" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>须知</h1>
+<p>这篇文章也有年头了，好不容易翻出来，也不知道之前发没有，可能是更换博客时落下的。</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>因为文章内容可能已经过时，所以归档了</p>
+</div>
+<hr>
+<h1>正片开始</h1>
+<h2>一、静态特征</h2>
+<p>静态特征分析可以说是分析一个病毒的前奏，属于比较简单的分析。<br>
+1.漏洞平台检测（简单实用的方法，但是这也仅供一个参考，尽量还是要自己去分析）<br>
+用检测平台：VT等<br>
+可查看评论是否有安全专家分析结果，可查看可疑行为进行初步分析</p>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>若有报FSG壳病毒：Packer.FSG.A，可能加了FSG壳，exeinfo可能查不到壳，DIE等可以查到</p>
+</div>
+<hr>
+<p>2、编译时间</p>
+<blockquote>
+<p>有利于辨别一些系统文件（如svchost.exe等）是不是伪装</p>
+</blockquote>
+<p>另一种<br>
+当确定一个文件是恶意的，如Lab01-01.exe，若发现Lab01-01.dll的编译时间是相似的，那么有理由相信它们是出自同一个作者</p>
+<hr>
+<p>3.导入、导出函数</p>
+<p>函数库：<br>
+msvcrt.dll是几乎所有可执行文件都会导入的库（包含最基本的函数）<br>
+ws2_32.dll是网络库，可以看到其中有很多操作网络套接字的函数<br>
+kernel32.dll是控制着系统的内存管理、数据的输入输出操作和中断处理，有个创建进程的函数CreateProcess，这些都是可疑的函数，猜测病毒可能有恶意的网络行为<br>
+advapi32.dll是一个高级API应用程序接口服务库的一部分，包含的函数与对象的安全性，注册表的操控以及事件日志有关</p>
+<p>若样本DLL导出函数有ServiceMain、UninstallService等于服务有关的函数，这个DLL会将自己安装成一个服务</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg data-component="Octicon" class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>遍历文件的函数:FindFirstFileA、FindNextFileA<br>
+操作文件的函数UnmapViewOfFile、CreateFileMappingA等。通过这些可以猜测病毒有恶意操作文件的行为<br>
+疑似在提权的函数组合：OpenProcessToken、LookupPrivilegeValueA、AdjustTokenPrivileges<br>
+加载资源节中的数据函数组合：SizeofResource、CreateRemoteThread、FindResourceA<br>
+网上下载另一个程序的函数:URLDownloadToFileA（网址在可疑字符串中可能找的到）<br>
+从自己的资源节中读取数据的函数，可能存放的就是一段恶意代码:FreeResource、SizeofResource、LockResource、LoadResource、FindResourceA</p>
+</div>
+<hr>
+<p>4.可疑字符串<br>
+在IDA中按下Shift+F12即可显示出程序中的所有字符串</p>
+<p>系统函数库不会有c:\windows\system32\前缀，若有，则可能是病毒创建的一个恶意文件，伪装成系统函数库</p>
+<p>若有HTTP的操作，GET、DOWNLOAD、UPLOAD，疑似会跟黑客服务器进行通信</p>
+<h2>若有cmd.exe，疑似干了很不好的事（可能是典型的自删除）</h2>
+<h2>二、动态行为</h2>
+<p>1.查看进程信息<br>
+运行样本，查看进程信息，点击View-&gt;Lower Pane View-&gt;Handles</p>
+<p>当有Type为mutant互斥体对象，可疑</p>
+<p>点击View-&gt;Lower Pane View-&gt;DLLs，可以查看该进程导入了哪些DLL</p>
+<p>看的DLL的Description描述中有socket有关的DLL，可以猜测该进程发起了网络连接</p>
+<p>*Process Explorer还有个强大的功能，右键进程&gt;Properties-&gt;Strings，选择下方的Memory选项，即可查看该进程在内存中的所有字符串<br>
+若有xx.log明进程可能会创建这个文件，可以全局搜索这个文件,若有[ENTER]、[DEL]、[TAB]等键盘特征，有理由猜测进程在进行键盘记录的恶意行为</p>
+<hr>
+<p>2.进程监视<br>
+运行程序前先配置ProcMon的规则，用于筛选出我们关心的恶意行为例如：<br>
+进程名、写操作表的操作（RegSetValue）、创建文件的操作(WriteFile)</p>
+<p>若对DLL进程监控，需要用到rundll32.exe（用于在内存中运行DLL文件），命令<br>
+rundll32.exe xxx.dll,dll中的函数入口（比如：intallA，在导出函数中分析获得）</p>
+<p>每一个程序启动时都会帮随机数发生器更新种子，因此会有RegSetValue类型的Seed</p>
+<p>若操作地址在IPRIP下，则为创建恶意的服务，使用命令net start IPRIP来启动该服务<br>
+使用Process Explorer查看进程信息，可以找到该服务出现在哪个进程中</p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://Iamx688110.github.io">Iamx的博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if("04/16/2021"!=""){
+    var startSite=new Date("04/16/2021");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","Iamx688110/Iamx688110.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+<script src='https://blog.meekdai.com/Gmeek/plugins/articletoc.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/GmeekTOC.js'></script><script src='https://blog.meekdai.com/Gmeek/plugins/lightbox.js'></script>
+
+</html>
